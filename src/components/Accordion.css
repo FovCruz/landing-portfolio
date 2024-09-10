@@ -1,0 +1,72 @@
+/* Estilos del acordeón y contenedor */
+.accordion-grid {
+  display: flex;
+  flex-direction: column;
+}
+
+.accordion-item {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #ffddcc;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: left;
+  line-height: 2;
+  font-weight: lighter;
+  padding: 10px;
+  font-size: 0.8rem;
+  border-radius: 5px;
+  transition: background-color 0.2s ease-in;
+}
+
+.accordion-item:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Ajuste de tamaños y control de contenedores */
+.experience-left {
+  height: 100%;
+  width: 80%;
+  overflow-y: auto;
+}
+
+.experience-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 75%;
+  width: 100%;
+  box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.experience-right:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Mantener el fondo fijo */
+.fixed-bg {
+  background-size: cover;
+  background-position: center;
+}
+
+/* Control de tamaños de títulos */
+.experience-detail h3 {
+  font-size: 1.75rem; /* Tamaño del título */
+  font-weight: bold;
+}
+
+.experience-detail p {
+  font-size: 1.125rem; /* Tamaño de los textos de la descripción */
+}
+
+/* Efectos adicionales para el contenedor de la derecha */
+.experience-right {
+  transition: transform 0.1s ease, box-shadow 0.5s ease;
+}
+
+.experience-right:hover {
+  transform: scale(1.01);
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+}

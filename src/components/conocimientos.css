@@ -1,0 +1,83 @@
+.icon-carousel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+  }
+  
+  .icon-row {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    overflow: hidden;
+    position: relative;
+    width: 100%; /* Asegurarnos de que no se desborde de la pantalla */
+  }
+  
+  .icon-container {
+    font-size: 3rem; /* Tamaño de los iconos */
+    flex-shrink: 0; /* Para que los iconos no se encojan */
+  }
+  
+  /* Fila izquierda con animación continua */
+  .row-left {
+    animation: rotate-left 30s linear infinite;
+  }
+  
+  /* Fila derecha con animación continua */
+  .row-right {
+    animation: rotate-right 30s linear infinite;
+  }
+  
+  /* Gradiente para crear el efecto de difuminado en la entrada y salida */
+  .icon-row::before,
+  .icon-row::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 10%;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  /* Gradiente para el lado izquierdo */
+  .icon-row::before {
+    left: 0;
+    background: linear-gradient(to right, #ffddcc, rgba(255, 221, 204, 0));
+  }
+  
+  /* Gradiente para el lado derecho */
+  .icon-row::after {
+    right: 0;
+    background: linear-gradient(to left, #ffddcc, rgba(255, 221, 204, 0));
+  }
+  
+  /* Gradientes para el modo oscuro */
+  .dark .icon-row::before {
+    background: linear-gradient(to right, #ffddcc, rgba(255, 221, 204, 0));
+  }
+  
+  .dark .icon-row::after {
+    background: linear-gradient(to left, #ffddcc, rgba(255, 221, 204, 0));
+  }
+  
+  /* Animaciones de rotación continua */
+  @keyframes rotate-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  @keyframes rotate-right {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  
