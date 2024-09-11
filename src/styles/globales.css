@@ -1,0 +1,61 @@
+
+
+.section {
+    min-height: 100vh; /* Asegura que todas las secciones ocupen toda la altura de la pantalla */
+    padding: 4rem 0; /* Ajuste de padding para todos los lados */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .section-title {
+    font-size: 3rem; /* Tamaño uniforme para todos los títulos */
+    font-weight:normal;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .section-content {
+    max-width: 1200px; /* Asegura que todas las secciones tengan el mismo ancho */
+    width: 100%;
+    padding: 0 1rem;
+  }
+  .section-description {
+    margin: 5rem 0;
+    text-align: center;
+  }
+ 
+  .text-light {
+    color: #ffddcc;
+    font-weight: 600;
+  }
+  
+  .fade-effect {
+    position: relative;
+    height: 5rem; /* Asegura que la altura del contenido sea consistente */
+  }
+  
+  .fade-effect::before,
+  .fade-effect::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  
+  .fade-effect::before {
+    left: 0;
+    background: linear-gradient(to right, #374151, rgba(55, 65, 81, 0));
+  }
+  
+  .fade-effect::after {
+    right: 0;
+    background: linear-gradient(to left, #374151, rgba(55, 65, 81, 0));
+  }
+
+  hr{
+    padding: 5px 0;
+  }

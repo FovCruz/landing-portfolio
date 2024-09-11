@@ -1,72 +1,197 @@
-/* Estilos del acordeón y contenedor */
+/* Estilo de la línea de tiempo */
+.timeline-container {
+  position: absolute;
+  left: 20px;
+  top: 25px;
+  bottom: 55px;
+  width: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.timeline-item {
+  position: relative;
+}
+
+.timeline-marker {
+  width: 15px;
+  height: 15px;
+  background-color: #ffddcc;
+  border-radius: 50%;
+  position: absolute;
+  left: -9px;
+}
+
+/* Estilos para los botones de experiencia */
 .accordion-grid {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  /* Asegura que los botones coincidan con los marcadores */
 }
 
+/* Ajuste de tamaños y control de contenedores */
+.experience-left {
+  height: 100%;
+  width: 45%;
+  overflow-y: auto;
+}
+
+.experience-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  /* Asegura que el contenido no desborde */
+  border-radius: 15px;
+  /* Borde redondeado */
+  box-shadow: 5px 5px 17px rgba(0, 0, 0, 0.7);
+  /* Sombra opcional para mayor efecto */
+}
+
+.experience-right:hover {
+  box-shadow: 5px 5px 18px rgba(0, 0, 0, 0.8);
+  /* Sombra opcional para mayor efecto */
+  transition: box-shadow 0.2s ease-in;
+}
+
+.experience-image-placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.experience-image-placeholder img {
+  max-width: 50%;
+  height: auto;
+}
+
+/* Transición de opacidad para efecto fade */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Estilo del contenedor de detalles */
+.experience-detail {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  /* Asegura que ocupe toda la altura */
+  opacity: 1;
+  animation: fade-in 0.5s forwards;
+}
+
+/* Estilo para la parte fija (título, empresa, fechas) */
+.experience-header {
+  flex-shrink: 0;
+  /* Evita que se reduzca */
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+  /* Línea divisoria opcional */
+}
+
+/* La parte de la descripción que puede hacer scroll */
+.experience-description {
+  flex-grow: 1;
+  /* Permite que la descripción crezca */
+  overflow-y: auto;
+  /* Habilita el scroll en caso de que sea necesario */
+  padding-top: 1rem;
+  /* Espaciado para separar del título */
+}
+
+/* Control de tamaños de títulos */
+.experience-header h3 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 2rem;
+  /* margin-bottom: 0.8rem; */
+  /* Margen inferior ajustado */
+}
+
+/* Control de tamaños de los párrafos */
+.experience-description p {
+  font-size: 1.125rem;
+  line-height: 1.6rem;
+}
+
+/* Animación de bounce */
+@keyframes bounce {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-10px);
+  }
+
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Estilos generales para los botones */
 .accordion-item {
   background-color: rgba(0, 0, 0, 0.4);
   color: #ffddcc;
   text-transform: uppercase;
   letter-spacing: 1px;
   text-align: left;
-  line-height: 2;
+  line-height: 1.5;
   font-weight: lighter;
   padding: 10px;
   font-size: 0.8rem;
   border-radius: 5px;
-  transition: background-color 0.2s ease-in;
+  transition: background-color 0.2s ease-in, color 0.2s ease-in;
+  position: relative;
+  padding-left: 20px;
+  /* Espacio para la línea de tiempo */
 }
 
-.accordion-item:hover {
+.accordion-item:hover,
+.accordion-item.active {
   background-color: rgba(0, 0, 0, 0.6);
+  /* Efecto hover y activo */
+  transition: background-color 0.3s ease-in;
 }
 
-/* Ajuste de tamaños y control de contenedores */
-.experience-left {
-  height: 100%;
-  width: 80%;
-  overflow-y: auto;
+/* Estilos para los botones que están animados */
+.bounce {
+  animation: bounce 1.5s infinite;
 }
 
-.experience-right {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 75%;
-  width: 100%;
-  box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.2);
-  border-radius: 12px;
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
+
+/* Estilos para el botón con el efecto bounce */
+.accordion-item.bounce {
+  animation: bounce 1.5s infinite;
+  background-color: #ffddcc;
+  /* Cambia el color de fondo cuando tiene el efecto bounce */
+  color: black;
+  /* Cambia el color de la letra cuando tiene el efecto bounce */
 }
 
-.experience-right:hover {
-  transform: scale(1.02);
-  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+/* Estilo base para los enlaces */
+.link-hover {
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-/* Mantener el fondo fijo */
-.fixed-bg {
-  background-size: cover;
-  background-position: center;
-}
-
-/* Control de tamaños de títulos */
-.experience-detail h3 {
-  font-size: 1.75rem; /* Tamaño del título */
-  font-weight: bold;
-}
-
-.experience-detail p {
-  font-size: 1.125rem; /* Tamaño de los textos de la descripción */
-}
-
-/* Efectos adicionales para el contenedor de la derecha */
-.experience-right {
-  transition: transform 0.1s ease, box-shadow 0.5s ease;
-}
-
-.experience-right:hover {
-  transform: scale(1.01);
-  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+/* Efecto hover para los enlaces */
+.link-hover:hover {
+  color: #ffddcc; /* Color más destacado */
+  text-shadow: 0px 0px 3px #ffddcc; /* Efecto de brillo o sombra en el hover */
+  text-decoration: underline; /* Asegura que se subraye al pasar el mouse */
 }

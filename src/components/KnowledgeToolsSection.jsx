@@ -1,6 +1,6 @@
 import React from 'react';
 import Slider from 'react-infinite-logo-slider';
-import './conocimientos.css'; // Asegúrate de incluir los estilos
+import './conocimientos.css';
 
 const KnowledgeSection = () => {
   const icons = [
@@ -46,42 +46,37 @@ const KnowledgeSection = () => {
   ];
 
   return (
-    <section id="conocimientos" className="h-screen bg-gray-200 dark:bg-gray-700 flex justify-center items-center text-center">
-      <div className="max-w-7xl mx-auto relative w-full fade-effect">
-        {/* Título centrado */}
-        <h2 className="text-3xl font-bold mb-4 mt-10 dark:text-white">Mis Conocimientos</h2>
-
-        {/* Párrafo debajo del título */}
-        <p className="text-lg text-gray-700 dark:text-gray-300 mb-10">
-          Lenguajes, herramientas y utilizados con mayor o menor frecuencia en distintos proyectos laborales, personales y educacionales. 
-          Actualmente estoy enfocado en el aprendizaje continuo de <span className="highlighted">React</span>, 
-          <span className="highlighted"> MongoDB</span>, <span className="highlighted">Node</span> y 
-          <span className="highlighted"> Tailwind</span>.
+    <section id="conocimientos" className="section bg-gray-200 dark:bg-gray-700">
+      <div className="section-content">
+        <h2 className="section-title dark:text-white">Tecnologías & Herramientas</h2>
+        <hr />
+        <p className="section-description text-lg text-gray-700 dark:text-gray-300 mb-10;">
+          Lenguajes, herramientas y utilizados con mayor o menor frecuencia en distintos proyectos laborales, personales y educacionales.
+          Actualmente estoy enfocado en el aprendizaje continuo de <span className="text-light">React</span>, 
+          <span className="text-light"> MongoDB</span>, <span className="text-light">Node</span>, y 
+          <span className="text-light"> Tailwind</span>.
         </p>
-
-        {/* Fila 1 - Deslizando hacia la izquierda */}
         <div className="mb-8 fade-effect">
           <Slider
             width="100px"
-            duration={40}
+            duration={50}
             pauseOnHover={true}
             blurBorders={false}
             blurBorderColor={'#fff'}
           >
             {icons.slice(0, icons.length / 2).map((icon, index) => (
               <Slider.Slide key={index}>
-                <img src={icon.src} alt={icon.alt} className="w-20 h-20" /> {/* Ajuste del tamaño */}
+                <img src={icon.src} alt={icon.alt} className="w-20 h-20" />
               </Slider.Slide>
             ))}
           </Slider>
         </div>
 
-        {/* Fila 2 - Deslizando hacia la derecha */}
         <div className="fade-effect">
           <Slider
             width="100px"
-            duration={40}
-            toRight={false} // Deslizando hacia la derecha
+            duration={30}
+            toRight={false}
             pauseOnHover={true}
             blurBorders={false}
             blurBorderColor={'#fff'}
