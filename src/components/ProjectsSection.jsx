@@ -74,7 +74,7 @@ const ProjectsSection = () => {
               <div key={index} className="inline-block w-full h-full">
                 <div className="flex flex-col md:flex-row items-center justify-between bg-white dark:bg-gray-800 p-10 rounded-lg shadow-md h-full">
                   {/* Contenedor de imagenes con slider */}
-                  <div className="w-full md:w-1/2 relative overflow-hidden rounded-lg h-[353px]"> 
+                  <div className="w-full md:w-1/2 relative overflow-hidden rounded-lg h-[353px]">
                     <img
                       src={project.images[currentImage]} // Mostrar la imagen actual
                       alt={project.name}
@@ -98,7 +98,7 @@ const ProjectsSection = () => {
                       </>
                     )}
                   </div>
-                  
+
                   {/* Información del proyecto */}
                   <div className="w-full md:w-1/2 pl-6 text-left">
                     <h3 className="text-2xl font-semibold mb-5 dark:text-white break-words">
@@ -111,15 +111,14 @@ const ProjectsSection = () => {
                       {project.technologies.map((tech, idx) => (
                         <span
                           key={idx}
-                          className={`px-3 py-1 rounded text-sm ${
-                            tech === "Django"
+                          className={`px-3 py-1 rounded text-sm ${tech === "Django"
                               ? "bg-green-500 text-white"
                               : tech === "PostgreSQL"
-                              ? "bg-blue-500 text-white"
-                              : tech === "Bootstrap"
-                              ? "bg-purple-500 text-white"
-                              : "bg-gray-300 dark:bg-gray-600"
-                          }`}
+                                ? "bg-blue-500 text-white"
+                                : tech === "Bootstrap"
+                                  ? "bg-purple-500 text-white"
+                                  : "bg-gray-300 dark:bg-gray-600"
+                            }`}
                         >
                           {tech}
                         </span>
