@@ -22,3 +22,8 @@
     right: 0;
     background: linear-gradient(to left, #374151, rgba(55, 65, 81, 0));
   }
+
+  .highlighted {
+    color: #ffddcc;
+  }
+  

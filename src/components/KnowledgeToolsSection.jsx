@@ -2,7 +2,6 @@ import React from 'react';
 import Slider from 'react-infinite-logo-slider';
 import './conocimientos.css'; // Asegúrate de incluir los estilos
 
-
 const KnowledgeSection = () => {
   const icons = [
     { src: '/iconos/php.svg', alt: 'php' },
@@ -50,7 +49,15 @@ const KnowledgeSection = () => {
     <section id="conocimientos" className="h-screen bg-gray-200 dark:bg-gray-700 flex justify-center items-center text-center">
       <div className="max-w-7xl mx-auto relative w-full fade-effect">
         {/* Título centrado */}
-        <h2 className="text-3xl font-bold mb-20 mt-10 dark:text-white">Mis Conocimientos</h2>
+        <h2 className="text-3xl font-bold mb-4 mt-10 dark:text-white">Mis Conocimientos</h2>
+
+        {/* Párrafo debajo del título */}
+        <p className="text-lg text-gray-700 dark:text-gray-300 mb-10">
+          Lenguajes, herramientas y utilizados con mayor o menor frecuencia en distintos proyectos laborales, personales y educacionales. 
+          Actualmente estoy enfocado en el aprendizaje continuo de <span className="highlighted">React</span>, 
+          <span className="highlighted"> MongoDB</span>, <span className="highlighted">Node</span> y 
+          <span className="highlighted"> Tailwind</span>.
+        </p>
 
         {/* Fila 1 - Deslizando hacia la izquierda */}
         <div className="mb-8 fade-effect">
@@ -92,4 +99,3 @@ const KnowledgeSection = () => {
 };
 
 export default KnowledgeSection;
-
