@@ -9,6 +9,7 @@ import AboutMeSection from './components/AboutMeSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 
+
 const App = () => {
   return (
     <div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">

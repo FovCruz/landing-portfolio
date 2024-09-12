@@ -4,7 +4,7 @@ import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
 const HomeSection = () => {
   return (
-    <section id="inicio" className="h-screen bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-center">
+    <section id="inicio" className="section h-screen bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-center">
       <div className="max-w-xl mx-auto">
         <img src="ruta-a-tu-imagen.jpg" alt="Fabián Valencia" className="rounded-full w-40 mx-auto mb-4" />
         <h1 className="text-4xl font-bold mb-4 dark:text-white">Fabián Valencia Cruz</h1>

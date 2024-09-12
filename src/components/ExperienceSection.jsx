@@ -114,8 +114,8 @@ const ExperienceSection = () => {
       description: (
         <>
           <p>
-            Encargado de la creación de usuarios y correos corporativos en <span className="text-light">Mailrelay</span>; Administrar aula virtual
-            <span className="text-light">(Moodle)</span> para la realización de cursos; configuraciones del hosting en <span className="text-light">cPanel</span>; Informar a gerencia sobre
+            Encargado de la creación de usuarios y correos corporativos en <span className="text-light">Mailrelay</span>; Administrar aula virtual 
+            <span className="text-light"> (Moodle)</span> para la realización de cursos; configuraciones del hosting en <span className="text-light">cPanel</span>; Informar a gerencia sobre
             los avances en el área TI; Mantención y BKP de <span className="text-light">BBDD</span> con <span className="text-light">phpMyAdmin</span>; Creación del sitio web
             cycconsultores.cl; entrevistar y seleccionar a nuevos postulantes de práctica.
           </p>
@@ -148,7 +148,7 @@ const ExperienceSection = () => {
         <>
           <p>
             Administración y gestión de intranet de alumnos, cursos de capacitación, Informes de cumplimientos
-            <span className="text-light">KPI´s</span>a gerencia, convenios con organismos educacionales, toma de decisiones, registro e incidencia de
+            <span className="text-light"> KPI´s</span>a gerencia, convenios con organismos educacionales, toma de decisiones, registro e incidencia de
             alumnos, carga de datos a plataforma <span className="text-light">REUF (SENCE)</span>, relaciones públicas (privados, estatales y
             sindicatos), coordinación de relatores, remuneraciones, planificaciones y prácticas laborales.
           </p>

@@ -3,7 +3,7 @@ import React from 'react';
 
 const AboutMeSection = () => {
   return (
-    <section id="sobremi" className="h-screen bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-center">
+    <section id="sobremi" className="section h-screen bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-center">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl font-bold mb-8 dark:text-white">Sobre mí</h2>
         <p className="dark:text-gray-300">Soy Ingeniero Informático titulado de Duoc UC, con experiencia en desarrollo web, administración de sistemas y gestión de usuarios.</p>
