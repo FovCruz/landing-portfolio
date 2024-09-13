@@ -10,6 +10,10 @@ module.exports = {
       fontFamily: {
         sans: ['Lato', 'sans-serif'], // Fuente personalizada
       },
+      borderColor: {
+        'custom-brown': '#80664d', // Define tu color personalizado
+    },
+
     },
   },
   plugins: [],

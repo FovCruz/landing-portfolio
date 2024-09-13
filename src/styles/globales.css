@@ -1,42 +1,94 @@
+/* Estilos generales del Navbar */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import './Accordion.css';
+
+.logo-personalizado {
+  width: 200px; /* Ancho del logo */
+  height: auto; /* Mantiene la proporción de la imagen */
+  transition: transform 0.2s ease, filter 0.3s ease; /* Suaviza la transición de escala y brillo */
+  margin: 0; /* Margen cero para eliminar espacio alrededor */
+  padding: 0; /* Sin padding alrededor del logo */
+}
+
+.logo-personalizado:hover {
+  transform: scale(1.01); /* Efecto de agrandado en hover */
+  filter: brightness(1.5); /* Aumenta el brillo en hover */
+}
+
+nav {
+  position: fixed; /* Fija el navbar en la parte superior */
+  width: 100%; /* Ocupa todo el ancho de la pantalla */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil debajo del navbar */
+  z-index: 10; /* Asegura que esté por encima de otros elementos */
+  transition: background-color 0.3s ease-in-out; /* Suaviza el cambio de color de fondo */
+}
+
+.nav-link {
+  position: relative; /* Posiciona los elementos de forma relativa dentro del link */
+  padding-bottom: 0.5rem; /* Espacio debajo del texto del link */
+  color: inherit; /* Hereda el color actual */
+}
+
+.nav-link::after {
+  content: ''; /* Añade una línea después del link */
+  position: absolute; /* Posiciona la línea de forma absoluta */
+  width: 0; /* Comienza con un ancho de 0 */
+  height: 2px; /* Altura de la línea */
+  bottom: 0; /* Se posiciona en la parte inferior del link */
+  left: 0; /* Alineada a la izquierda */
+  transition: width 0.3s ease-in-out; /* Suaviza el aumento de ancho */
+}
+
+/* Subrayado oscuro en tema claro */
+.light .nav-link::after {
+  background-color: #000000; /* Subrayado oscuro para el tema claro */
+}
+
+/* Subrayado claro en tema oscuro */
+.dark .nav-link::after {
+  background-color: #ffddcc; /* Subrayado claro para el tema oscuro */
+}
+
+.nav-link:hover::after {
+  width: 100%; /* El subrayado se expande completamente en hover */
+  transition: width 0.3s ease-in-out; /* Suaviza la expansión del subrayado */
+}
+
 .section {
-  min-height: 100vh;
-  /* Asegura que todas las secciones ocupen toda la altura de la pantalla */
-  padding: 4rem 0;
-  /* Ajuste de padding para todos los lados */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  min-height: 100vh; /* La sección ocupa el alto completo de la ventana */
+  padding: 4rem 0; /* Relleno superior e inferior */
+  display: flex; /* Usa Flexbox para alinear contenido */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
 }
 
 .section-title {
-  font-size: 3rem;
-  /* Tamaño uniforme para todos los títulos */
-  font-weight: normal;
-  text-align: center;
-  margin-bottom: 2rem;
+  font-size: 3rem; /* Tamaño grande de la fuente para el título */
+  font-weight: normal; /* Peso normal del título */
+  text-align: center; /* Alinea el título al centro */
+  margin-bottom: 2rem; /* Margen inferior para separar del contenido */
 }
 
 .section-content {
-  max-width: 1200px;
-  /* Asegura que todas las secciones tengan el mismo ancho */
-  width: 100%;
-  padding: 0 1rem;
+  max-width: 1200px; /* Ancho máximo del contenido */
+  width: 100%; /* Ocupa todo el ancho disponible */
+  padding: 0 1rem; /* Relleno horizontal para separar del borde */
 }
 
 .section-description {
-  margin: 5rem 0;
-  text-align: center;
+  margin: 5rem 0; /* Margen superior e inferior */
+  text-align: center; /* Alinea el texto al centro */
 }
 
 .text-light {
-  color: #ffddcc;
-  font-weight: 600;
+  color: #ffddcc; /* Color personalizado claro */
+  font-weight: 600; /* Aplica un peso de fuente medio */
 }
 
+/* Estilos para el efecto de desvanecido */
 .fade-effect {
   position: relative;
   height: 5rem;
-  /* Asegura que la altura del contenido sea consistente */
 }
 
 .fade-effect::before,
@@ -60,6 +112,45 @@
   background: linear-gradient(to left, #374151, rgba(55, 65, 81, 0));
 }
 
+/* Línea divisoria */
 hr {
   padding: 5px 0;
 }
+
+/* Estilo global para los botones */
+.boton-global {
+  display: inline-flex; /* Flexbox para alinear el ícono y el texto en una fila */
+  align-items: center; /* Alinea verticalmente ícono y texto */
+  font-weight: lighter; /* Aplica un peso de fuente más ligero */
+  border: 0.1px solid #ffddcc; /* Borde con color personalizado */
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+  color: #ffddcc; /* Texto color #ffddcc */
+  padding: 10px 20px; /* Espaciado interno del botón */
+  border-radius: 999px; /* Bordes completamente redondeados */
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Transición suave */
+  text-align: center;
+}
+
+.boton-global svg {
+  width: 5px; /* Tamaño del ícono */
+  height: 5px; /* Mantiene la proporción del ícono */
+  margin-right: 5px; /* Espacio entre el ícono y el texto */
+}
+
+.boton-global:hover {
+  background-color: #333; /* Fondo más oscuro en hover */
+  color: white; /* Cambia el texto a blanco en hover */
+}
+
+/* globales.css */
+
+/* Estilo para el contenedor del proyecto */
+.border-container {
+  border: 5px solid #1f2937; /* Borde de 5px con color #1f2937 */
+}
+
+/* Estilo para las imágenes del proyecto */
+.border-image {
+  border: 3px solid #1f2937; /* Borde de 5px con color #1f2937 */
+}
+

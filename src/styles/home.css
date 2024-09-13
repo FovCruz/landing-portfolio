@@ -1,0 +1,36 @@
+/*INICIO EFECTO SOL LATENTE*/
+/* Efecto de latido suave con tonos dorados */
+@keyframes solarPulse {
+    0% {
+        background-position: 0% 0%;
+        box-shadow: 19.5rem 27rem 20rem 35rem rgba(255, 204, 153, 0.6);
+    }
+    25% {
+        background-position: 25% 25%;
+        box-shadow: 19.4rem 27rem 20rem 35.2rem rgba(255, 204, 153, 0.5);
+    }
+    50% {
+        background-position: 50% 50%;
+        box-shadow: 19.3m 27rem 20rem 35.3rem rgba(255, 204, 153, 0.4);
+    }
+    75% {
+        background-position: 75% 75%;
+        box-shadow: 19.3rem 27rem 20rem 35.2rem rgba(255, 204, 153, 0.5);
+    }
+    100% {
+        background-position: 100% 100%;
+        box-shadow: 19.5rem 27rem 20rem 35rem rgba(255, 204, 153, 0.6);
+    }
+}
+
+.animate-comet-shadow {
+    background: conic-gradient(from 0deg, rgba(255, 221, 204, 0.8), rgba(255, 204, 153, 0.8), rgba(255, 194, 102, 0.8), rgba(255, 221, 204, 0.8));
+    background-size: 200% 200%;
+    animation: solarPulse 3s ease-in-out infinite; /* Aumentar el tiempo de animación para hacerlo más lento */
+    border-radius: 50%;
+    padding: 1px;
+    transition: box-shadow 15s ease-in-out; /* Transición más larga */
+    filter: blur(0.2px);
+    /* Difuminación sutil del borde */
+}
+/*FIN EFECTO SOL LATENTE*/

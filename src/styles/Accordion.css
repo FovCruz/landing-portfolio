@@ -25,21 +25,17 @@
 
 /* Estilos para los botones de experiencia */
 .accordion-grid {
-  display: flex;
+
   flex-direction: column;
   justify-content: space-between;
   /* Asegura que los botones coincidan con los marcadores */
 }
 
 /* Ajuste de tamaños y control de contenedores */
-.experience-left {
-  height: 100%;
-  width: 45%;
-  overflow-y: auto;
-}
+boton-global
 
 .experience-right {
-  display: flex;
+
   justify-content: center;
   align-items: center;
   position: relative;
@@ -124,74 +120,4 @@
   line-height: 1.6rem;
 }
 
-/* Animación de bounce */
-@keyframes bounce {
 
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateY(0);
-  }
-
-  40% {
-    transform: translateY(-10px);
-  }
-
-  60% {
-    transform: translateY(-5px);
-  }
-}
-
-/* Estilos generales para los botones */
-.accordion-item {
-  background-color: rgba(0, 0, 0, 0.4);
-  color: #ffddcc;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  text-align: left;
-  line-height: 1.5;
-  font-weight: lighter;
-  padding: 10px;
-  font-size: 0.8rem;
-  border-radius: 5px;
-  transition: background-color 0.2s ease-in, color 0.2s ease-in;
-  position: relative;
-  padding-left: 20px;
-  /* Espacio para la línea de tiempo */
-}
-
-.accordion-item:hover,
-.accordion-item.active {
-  background-color: rgba(0, 0, 0, 0.6);
-  /* Efecto hover y activo */
-  transition: background-color 0.3s ease-in;
-}
-
-/* Estilos para los botones que están animados */
-.bounce {
-  animation: bounce 1.5s infinite;
-}
-
-
-/* Estilos para el botón con el efecto bounce */
-.accordion-item.bounce {
-  animation: bounce 1.5s infinite;
-  background-color: #ffddcc;
-  /* Cambia el color de fondo cuando tiene el efecto bounce */
-  color: black;
-  /* Cambia el color de la letra cuando tiene el efecto bounce */
-}
-
-/* Estilo base para los enlaces */
-.link-hover {
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-/* Efecto hover para los enlaces */
-.link-hover:hover {
-  color: #ffddcc; /* Color más destacado */
-  text-shadow: 0px 0px 3px #ffddcc; /* Efecto de brillo o sombra en el hover */
-  text-decoration: underline; /* Asegura que se subraye al pasar el mouse */
-}
