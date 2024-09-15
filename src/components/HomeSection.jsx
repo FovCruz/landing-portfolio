@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'; // Importa useState
+import React, { useState } from 'react';
 import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
 import '../styles/home.css';
 
@@ -33,48 +33,47 @@ const HomeSection = () => {
         <CardAnimatedBorderGradient />
 
         <div className="flex flex-col w-full text-left lg:pl-8">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium mb-4">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium mb-4">
             Fabián Valencia Cruz
           </h1>
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 text-gray-300 max-w-3xl">
-            Ingeniero Informático Apasionado por la automatización y la innovación tecnológica, especializado en el desarrollo web, la gestión de sistemas TI y las tecnologías cloud.
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-6 text-gray-300 max-w-3xl">
+            Ingeniero Informático apasionado por la automatización y la innovación tecnológica, especializado en el desarrollo web, la gestión de sistemas TI y las tecnologías cloud.
           </p>
 
           {/* Redes sociales */}
-          <div className="flex space-x-6 mb-6">
+          <div className="flex space-x-4 mb-6">
             <a href="https://www.linkedin.com/in/fabian-osvaldo-cruz/" target="_blank" rel="noopener noreferrer">
-              <FaLinkedin className='text-3xl sm:text-4xl text-[#ffddcc] hover:scale-110 transition-transform' />
+              <FaLinkedin className='text-2xl sm:text-3xl md:text-4xl text-[#ffddcc] hover:scale-110 transition-transform' />
             </a>
             <a href="https://github.com/FovCruz" target="_blank" rel="noopener noreferrer">
-              <FaGithub className='text-3xl sm:text-4xl text-[#ffddcc] hover:scale-110 transition-transform' />
+              <FaGithub className='text-2xl sm:text-3xl md:text-4xl text-[#ffddcc] hover:scale-110 transition-transform' />
             </a>
-            <a href="mailto:fov.cruz@gmail.com" className="flex items-center text-lg">
-              <FaEnvelope className='text-3xl text-[#ffddcc]' />
+            <a href="mailto:fov.cruz@gmail.com" className="flex items-center text-sm sm:text-base md:text-lg">
+              <FaEnvelope className='text-2xl sm:text-3xl md:text-4xl text-[#ffddcc]' />
               <span className="ml-2">fov.cruz@gmail.com</span>
             </a>
           </div>
 
-
-          <div className="flex justify-center mt-8 space-x-4">
-          <button onClick={toggleCV} className="boton-global">
-          Ver CV en línea
-          </button>
-        </div>
-
-
           {/* Botones para CV */}
-          <div className="flex flex-wrap justify-start gap-2 sm:gap-4">
+          <div className="flex justify-center mt-8 space-x-2 sm:space-x-4">
+            <a
+              href="#"
+              onClick={(e) => { e.preventDefault(); toggleCV(); }}
+              className='flex-1 font-light py-1 px-2 sm:py-1.5 sm:px-3 md:py-2 md:px-4 lg:py-3 lg:px-5 rounded-full border border-[#ffddcc] text-[#ffddcc] text-xs sm:text-sm md:text-base lg:text-lg hover:bg-[#ffddcc] hover:text-gray-900 transition-all duration-300 text-center'
+            >
+              Ver CV en línea
+            </a>
             <a
               href={`${process.env.PUBLIC_URL}/CV-Fabian-Valencia-C-09-2024-mod09-3.pdf`}
               download
-              className='font-light py-1.5 px-3 sm:py-2 sm:px-4 lg:py-3 lg:px-6 rounded-full border border-[#ffddcc] text-[#ffddcc] hover:bg-[#ffddcc] hover:text-gray-900 transition-all duration-300'
+              className='flex-1 font-light py-1 px-2 sm:py-1.5 sm:px-3 md:py-2 md:px-4 lg:py-3 lg:px-5 rounded-full border border-[#ffddcc] text-[#ffddcc] text-xs sm:text-sm md:text-base lg:text-lg hover:bg-[#ffddcc] hover:text-gray-900 transition-all duration-300 text-center'
             >
               Descargar CV
             </a>
             <a
               href={`${process.env.PUBLIC_URL}/CV_Fabian_Valencia_formato_ATS_.docx`}
               download
-              className='font-light py-1.5 px-3 sm:py-2 sm:px-4 lg:py-3 lg:px-6 rounded-full border border-[#ffddcc] text-[#ffddcc] hover:bg-[#ffddcc] hover:text-gray-900 transition-all duration-300'
+              className='flex-1 font-light py-1 px-2 sm:py-1.5 sm:px-3 md:py-2 md:px-4 lg:py-3 lg:px-5 rounded-full border border-[#ffddcc] text-[#ffddcc] text-xs sm:text-sm md:text-base lg:text-lg hover:bg-[#ffddcc] hover:text-gray-900 transition-all duration-300 text-center'
             >
               Descargar CV ATS
             </a>

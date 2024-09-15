@@ -5,16 +5,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#ffddcc', // Color personalizado
+        primary: '#e1c4b7', // Color personalizado
+        'custom-brown': '#80664d', // Color personalizado
       },
       fontFamily: {
-        sans: ['Lato', 'sans-serif'], // Fuente personalizada
+        sans: ['Poppins', 'sans-serif'], // Fuente principal
       },
-      borderColor: {
-        'custom-brown': '#80664d', // Define tu color personalizado
-    },
-
     },
   },
   plugins: [],
-}
+};
