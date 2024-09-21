@@ -32,5 +32,48 @@
     transition: box-shadow 15s ease-in-out; /* Transición más larga */
     filter: blur(0.2px);
     /* Difuminación sutil del borde */
+    margin: 20px 0;
 }
 /*FIN EFECTO SOL LATENTE*/
+
+
+.scroll-icon {
+    position: absolute;
+    bottom: 7vh;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 80;
+  }
+  
+  .scroll-arrow {
+    width: 2em;
+    height: 2em;
+    background-color: transparent;
+    border-width: 0 0.25em 0.25em 0;
+    border-style: solid;
+    border-color: antiquewhite;
+    position: absolute;
+    transform: translateY(0%) rotate(45deg);
+    animation: scrolldown 1.2s ease-in-out infinite;
+  }
+  
+  .scroll-arrow.delay {
+    bottom: 0vh;
+    animation-delay: 0.3s;
+  }
+  
+  @keyframes scrolldown {
+    0% {
+      transform: translateY(20%) rotate(45deg);
+      opacity: 0.7;
+    }
+    50% {
+      transform: translateY(0%) rotate(45deg);
+      opacity: 0.2;
+    }
+    100% {
+      transform: translateY(20%) rotate(45deg);
+      opacity: 0.7;
+    }
+  }
+  

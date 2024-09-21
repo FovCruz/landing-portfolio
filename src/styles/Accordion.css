@@ -14,6 +14,8 @@
   position: relative;
 }
 
+
+
 .timeline-marker {
   width: 15px;
   height: 15px;
@@ -23,101 +25,46 @@
   left: -9px;
 }
 
-/* Estilos para los botones de experiencia */
-.accordion-grid {
-
-  flex-direction: column;
-  justify-content: space-between;
-  /* Asegura que los botones coincidan con los marcadores */
+/* Botones de experiencia */
+.boton-global-experience {
+  border-radius: 10px;
+  border: 6px solid #ffddcc;
+  transition: all 0.3s ease;
 }
 
-/* Ajuste de tamaños y control de contenedores */
-boton-global
+.boton-global-experience:hover {
+  background-color: #ffddcc;
+  color: #333;
+}
+
+.boton-global-experience.active,
+.boton-global-experience.animate-bounce {
+  background-color: #ffddcc;
+  color: #333;
+}
 
 .experience-right {
-
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-  /* Asegura que el contenido no desborde */
-  border-radius: 15px;
-  /* Borde redondeado */
-  box-shadow: 5px 5px 17px rgba(0, 0, 0, 0.7);
-  /* Sombra opcional para mayor efecto */
-}
-
-.experience-right:hover {
-  box-shadow: 5px 5px 18px rgba(0, 0, 0, 0.8);
-  /* Sombra opcional para mayor efecto */
-  transition: box-shadow 0.2s ease-in;
-}
-
-.experience-image-placeholder {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-.experience-image-placeholder img {
-  max-width: 50%;
-  height: auto;
-}
-
-/* Transición de opacidad para efecto fade */
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-/* Estilo del contenedor de detalles */
-.experience-detail {
+  height: 400px; /* Mantener altura fija */
   display: flex;
   flex-direction: column;
-  height: 100%;
-  /* Asegura que ocupe toda la altura */
-  opacity: 1;
-  animation: fade-in 0.5s forwards;
+  justify-content: center;
 }
 
-/* Estilo para la parte fija (título, empresa, fechas) */
-.experience-header {
-  flex-shrink: 0;
-  /* Evita que se reduzca */
-  padding-bottom: 1rem;
-  border-bottom: 1px solid #ccc;
-  /* Línea divisoria opcional */
+@keyframes buzz {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-2px);
+  }
+  50% {
+    transform: translateX(2px);
+  }
+  75% {
+    transform: translateX(-2px);
+  }
 }
 
-/* La parte de la descripción que puede hacer scroll */
-.experience-description {
-  flex-grow: 1;
-  /* Permite que la descripción crezca */
-  overflow-y: auto;
-  /* Habilita el scroll en caso de que sea necesario */
-  padding-top: 1rem;
-  /* Espaciado para separar del título */
+.animate-buzz {
+  animation: buzz 0.7s ease infinite;
 }
-
-/* Control de tamaños de títulos */
-.experience-header h3 {
-  font-size: 1.75rem;
-  font-weight: 600;
-  line-height: 2rem;
-  /* margin-bottom: 0.8rem; */
-  /* Margen inferior ajustado */
-}
-
-/* Control de tamaños de los párrafos */
-.experience-description p {
-  font-size: 1.125rem;
-  line-height: 1.6rem;
-}
-
-

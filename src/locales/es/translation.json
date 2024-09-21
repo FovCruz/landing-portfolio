@@ -1,0 +1,65 @@
+{
+    "aboutMe": {
+        "title": "Sobre mí",
+        "photoAlt": "Foto de Fabián Valencia Cruz",
+        "description1": "Soy Ingeniero Informático titulado de Duoc UC, con pasión por el desarrollo de software y la tecnología. Me especializo en construir soluciones web usando tecnologías modernas y escalables.",
+        "description2": "Mi experiencia se centra en el uso de frameworks y herramientas como",
+        "and": "y plataformas en la nube como"
+    },
+    "home": {
+        "photoAlt": "Foto de Fabián Valencia",
+        "intro": "Ingeniero Informático Apasionado por la automatización y la innovación tecnológica, especializado en el desarrollo web, la gestión de sistemas TI y las tecnologías cloud.",
+        "viewCV": "Ver CV en línea",
+        "downloadCV": "Descargar CV",
+        "downloadATS": "Descargar CV ATS",
+        "viewCVOnline": "Ver CV en línea"
+    },
+    "navbar": {
+        "home": "Inicio",
+        "projects": "Proyectos",
+        "experience": "Experiencia",
+        "knowledge": "Conocimientos",
+        "aboutMe": "Sobre mí",
+        "contact": "Contacto"
+    },
+    "projects": {
+        "title": "Proyectos",
+        "viewSite": "Ver Sitio",
+        "viewGitHub": "Ver en GitHub",
+        "previousProject": "Proyecto Anterior",
+        "nextProject": "Siguiente Proyecto",
+        "iptvManagementSystem": {
+            "name": "Sistema de gestión de usuarios IPTV",
+            "description": "Un sistema CRUD para gestionar usuarios de una plataforma IPTV, con alertas por fecha de expiración."
+        }
+    },
+    "experience": {
+        "title": "Experiencias laborales",
+        "ineTitle": "Gestor TI Regional INE (Proyecto Censo 2024)",
+        "ineCompany": "INE - Instituto Nacional de Estadísticas, Valparaíso",
+        "ineDates": "Enero 2024 - Agosto 2024",
+        "ineDescription": "Encargado de gestionar los accesos, permisos, incidentes y solicitudes de usuarios en los distintos locales provinciales, utilizando plataformas de Helpdesk para la generación de requerimientos, cumpliendo los acuerdos SLA establecidos por la institución bajo las prácticas ITIL, asegurando la gestión de los servicios TI mediante registros, implementación, análisis y documentación.",
+        "tallerTitle": "Prestador de Servicios Desarrollador Jr.",
+        "tallerCompany": "Taller Digital, Providencia, Santiago",
+        "tallerDates": "Agosto 2022 - Febrero 2024",
+        "tallerDescription": "Colaboración en equipo para el desarrollo de sitios web dinámicos y responsivos utilizando WordPress y PHP para la creación y modificación de templates con campos personalizados mediante la conexión a los servidores por FTP o SSH.",
+        "ccTitle": "Administración de sistemas de información",
+        "ccCompany": "C & C CONSULTORES",
+        "ccDates": "Marzo 2021 - Abril 2022",
+        "ccDescription": "Encargado de la creación de usuarios y correos corporativos en Mailrelay, administración de Moodle, y configuraciones de hosting en cPanel.",
+        "zekeTitle": "Operaciones TI (N1)",
+        "zekeCompany": "ZEKE integradores de sistemas",
+        "zekeDates": "Febrero 2019 - Julio 2020",
+        "zekeDescription": "Monitoreo 24/7 de servicios en Nagios, gestión de incidentes y requerimientos en GLPI, y uso de Oracle SQL Developer y Putty para administración de bases de datos y servidores.",
+        "andresBelloTitle": "Administrador Zonal (OTEC)",
+        "andresBelloCompany": "Centro de Estudios Andrés Bello",
+        "andresBelloDates": "Enero 2017 - Noviembre 2018",
+        "andresBelloDescription": "Gestión y administración de intranet, carga de datos en REUF (SENCE), y coordinación de relatores y remuneraciones en los cursos de capacitación.",
+        "companyLabel": "Empresa",
+        "datesLabel": "Fechas"
+      },
+      "knowledge": {
+        "title": "Tecnologías & Herramientas",
+        "description": "Lenguajes, herramientas y tecnologías que utilizo con mayor o menor frecuencia en distintos proyectos laborales, personales y educacionales. Actualmente estoy enfocado en el aprendizaje continuo de"
+      }
+}

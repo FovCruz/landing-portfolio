@@ -1,0 +1,65 @@
+{
+    "aboutMe": {
+        "title": "About Me",
+        "photoAlt": "Photo of Fabián Valencia Cruz",
+        "description1": "I am a Software Engineer from Duoc UC, passionate about software development and technology. I specialize in building scalable web solutions using modern technologies.",
+        "description2": "My experience focuses on frameworks and tools such as",
+        "and": "and cloud platforms like"
+    },
+    "home": {
+        "photoAlt": "Photo of Fabián Valencia",
+        "intro": "Software Engineer passionate about automation and technological innovation, specializing in web development, IT systems management, and cloud technologies.",
+        "viewCV": "View CV Online",
+        "downloadCV": "Download CV",
+        "downloadATS": "Download ATS CV",
+        "viewCVOnline": "View CV Online"
+    },
+    "navbar": {
+        "home": "Home",
+        "projects": "Projects",
+        "experience": "Experience",
+        "knowledge": "Knowledge",
+        "aboutMe": "About Me",
+        "contact": "Contact"
+    },
+    "projects": {
+        "title": "Projects",
+        "viewSite": "View Site",
+        "viewGitHub": "View on GitHub",
+        "previousProject": "Previous Project",
+        "nextProject": "Next Project",
+        "iptvManagementSystem": {
+            "name": "IPTV User Management System",
+            "description": "A CRUD system to manage users of an IPTV platform, with expiration date alerts."
+        }
+    },
+    "experience": {
+        "title": "Work Experience",
+        "ineTitle": "Regional IT Manager INE (Census Project 2024)",
+        "ineCompany": "INE - National Statistics Institute, Valparaíso",
+        "ineDates": "January 2024 - August 2024",
+        "ineDescription": "Responsible for managing access, permissions, incidents, and user requests in various provincial locations, using Helpdesk platforms to generate requests, complying with the SLA agreements established by the institution under ITIL practices, ensuring IT service management through records, implementation, analysis, and documentation.",
+        "tallerTitle": "Junior Developer Service Provider",
+        "tallerCompany": "Taller Digital, Providencia, Santiago",
+        "tallerDates": "August 2022 - February 2024",
+        "tallerDescription": "Collaboration in team to develop dynamic and responsive websites using WordPress and PHP for creating and modifying templates with custom fields through FTP or SSH server connection.",
+        "ccTitle": "Information Systems Administration",
+        "ccCompany": "C & C Consultants",
+        "ccDates": "March 2021 - April 2022",
+        "ccDescription": "Responsible for creating users and corporate emails in Mailrelay, Moodle administration, and hosting configurations in cPanel.",
+        "zekeTitle": "IT Operations (N1)",
+        "zekeCompany": "ZEKE system integrators",
+        "zekeDates": "February 2019 - July 2020",
+        "zekeDescription": "24/7 monitoring of services in Nagios, incident and request management in GLPI, and use of Oracle SQL Developer and Putty for database and server administration.",
+        "andresBelloTitle": "Zonal Administrator (OTEC)",
+        "andresBelloCompany": "Centro de Estudios Andrés Bello",
+        "andresBelloDates": "January 2017 - November 2018",
+        "andresBelloDescription": "Management and administration of intranet, data upload to REUF (SENCE), and coordination of instructors and payroll in training courses.",
+        "companyLabel": "Company",
+        "datesLabel": "Dates"
+    },
+    "knowledge": {
+        "title": "Technologies & Tools",
+        "description": "Languages, tools, and technologies that I use with varying frequency across work, personal, and educational projects. Currently, I am focused on continuous learning in"
+      }
+}

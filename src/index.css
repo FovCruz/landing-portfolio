@@ -5,6 +5,6 @@
 @tailwind utilities;
 
 body {
-  @apply font-sans bg-primary text-gray-900; /* Aplicamos la fuente y el color primario */
+  @apply font-sans text-gray-900; /* Aplicamos la fuente y el color primario */
   margin: 0;
 }

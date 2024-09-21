@@ -1,0 +1,103 @@
+/* Estilos generales de la sección */
+.about-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom, var(--tw-gradient-stops));
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* Imagen con borde del color del fondo y sombra */
+.about-image-container {
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 10px solid; /* Borde */
+  border-color: var(--tw-bg-opacity); /* Color del borde igual al fondo */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Sombra para tema claro */
+}
+
+/* Sombra para modo oscuro */
+.dark .about-image-container {
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.15); /* Sombra para tema oscuro */
+}
+
+/* Halo brillante alrededor de la imagen */
+.halo-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 30px 10px rgba(255, 221, 204, 0.7); /* Halo brillante */
+  animation: pulse 2s infinite; /* Efecto de "pulsar" */
+}
+
+/* Animación de pulsar para el halo */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 30px 10px rgba(255, 221, 204, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 50px 15px rgba(255, 221, 204, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 30px 10px rgba(255, 221, 204, 0.7);
+  }
+}
+
+/* Texto en la columna derecha */
+.about-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 2rem;
+}
+
+.highlight {
+  color: #ffddcc;
+  font-weight: bold;
+}
+
+/* Habilidades e iconos */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.skill-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.skill-icon:hover {
+  transform: scale(1.1); /* Efecto de escala al pasar el cursor */
+}
+
+.skill-text {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--tw-text-opacity);
+}
+
+/* Diseño responsivo */
+@media (min-width: 768px) {
+  .about-container {
+    flex-direction: row;
+  }
+}

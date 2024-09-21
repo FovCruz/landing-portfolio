@@ -1,0 +1,47 @@
+/* Gradiente del slider para tema claro */
+.fade-effect::before,
+.fade-effect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Gradiente para el extremo izquierdo en tema claro */
+.fade-effect::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(226, 232, 240, 1), rgba(226, 232, 240, 0)); /* bg-gray-200 en tema claro */
+}
+
+/* Gradiente para el extremo derecho en tema claro */
+.fade-effect::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(226, 232, 240, 1), rgba(226, 232, 240, 0)); /* bg-gray-200 en tema claro */
+}
+
+/* Gradiente del slider para tema oscuro */
+.dark .fade-effect::before,
+.dark .fade-effect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Gradiente para el extremo izquierdo en tema oscuro */
+.dark .fade-effect::before {
+  left: 0;
+  background: linear-gradient(to right, rgb(55, 65, 81), rgba(31, 41, 55, 0)); /* bg-gray-800 en tema oscuro */
+}
+
+/* Gradiente para el extremo derecho en tema oscuro */
+.dark .fade-effect::after {
+  right: 0;
+  background: linear-gradient(to left, rgb(55, 65, 81), rgba(31, 41, 55, 0));/* bg-gray-800 en tema oscuro */
+}

@@ -1,0 +1,55 @@
+/* contact.css */
+
+.contact-section {
+    background: linear-gradient(120deg, #383745 50%, #22202B 50%);
+    color: #EEEEEE;
+  }
+  
+  .header {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+  
+  .profile-img {
+    border: 5px solid #ffddcc;
+  }
+  
+  .bio-link {
+    transition: color 300ms ease-in-out;
+  }
+  
+  .bio-link:hover {
+    color: #CA8D6E;
+  }
+  
+  .input-field::placeholder {
+    color: #7D6962;
+  }
+  
+  .input-field:focus {
+    border-bottom: 1px solid #CA8D6E;
+  }
+  
+  .submit-button {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    box-shadow: 0 0 40px 0 rgba(21, 21, 21, 0.6);
+  }
+  
+  .submit-button:hover {
+    animation: swell 500ms ease-in-out;
+    cursor: pointer;
+  }
+  
+  @keyframes swell {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  

@@ -7,12 +7,18 @@ import KnowledgeToolsSection from './components/KnowledgeToolsSection';
 import AboutMeSection from './components/AboutMeSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
+import { useTranslation } from 'react-i18next';
+import './i18n';
+import './styles/globales.css';
 
 const App = () => {
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+  const [fontSize, setFontSize] = useState(localStorage.getItem('fontSize') || 'medium'); // Guardar el tamaño de fuente
+  const { i18n } = useTranslation();
 
+  // Cambiar el tema claro/oscuro
   useEffect(() => {
-    const root = window.document.documentElement;
+    const root = document.documentElement;
     if (theme === 'dark') {
       root.classList.add('dark');
       root.classList.remove('light');
@@ -27,40 +33,44 @@ const App = () => {
     setTheme(theme === 'light' ? 'dark' : 'light');
   };
 
+  // Cambiar el tamaño de la fuente
+  const changeFontSize = () => {
+    const newSize = fontSize === 'small' ? 'medium' : fontSize === 'medium' ? 'large' : 'small';
+    setFontSize(newSize);
+    localStorage.setItem('fontSize', newSize); // Guardar la preferencia de tamaño de fuente
+  };
+
+  // Aplicar el tamaño de la fuente en el cuerpo del documento
   useEffect(() => {
-    const sections = document.querySelectorAll('.section');
-    let currentSection = 0;
+    const root = document.documentElement;
+    root.style.fontSize = fontSize === 'small' ? '14px' : fontSize === 'large' ? '18px' : '16px';
+  }, [fontSize]);
 
-    const handleScroll = (e) => {
-      e.preventDefault();
-
-      if (e.deltaY > 0) {
-        if (currentSection < sections.length - 1) currentSection++;
-      } else {
-        if (currentSection > 0) currentSection--;
-      }
-
-      sections[currentSection].scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
-    };
-
-    window.addEventListener('wheel', handleScroll);
-    return () => window.removeEventListener('wheel', handleScroll);
-  }, []);
+  // Cambiar el idioma
+  const changeLanguage = (lang) => {
+    i18n.changeLanguage(lang);
+  };
 
   return (
-    <div className={`bg-white dark:bg-gray-900 text-gray-900 dark:text-white`}>
-      <Navbar toggleTheme={toggleTheme} />
+    <div className={`app bg-white dark:bg-gray-900 text-gray-900 dark:text-white`}>
+      {/* Navbar */}
+      <Navbar 
+        toggleTheme={toggleTheme} 
+        changeFontSize={changeFontSize} 
+        changeLanguage={changeLanguage} 
+      />
+
+      {/* Contenido principal */}
       <main>
-        <HomeSection />
-        <ProjectsSection />
-        <ExperienceSection />
-        <KnowledgeToolsSection />
-        <AboutMeSection />
-        <ContactSection />
+        <HomeSection className="section" />
+        <ProjectsSection className="section" />
+        <ExperienceSection className="section" />
+        <KnowledgeToolsSection className="section" />
+        <AboutMeSection className="section" />
+        <ContactSection className="section" />
       </main>
+
+      {/* Footer */}
       <Footer />
     </div>
   );
