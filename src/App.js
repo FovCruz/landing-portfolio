@@ -13,10 +13,30 @@ import './styles/globales.css';
 
 const App = () => {
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
-  const [fontSize, setFontSize] = useState(localStorage.getItem('fontSize') || 'medium'); // Guardar el tamaño de fuente
+  const [fontSize, setFontSize] = useState(localStorage.getItem('fontSize') || 'medium');
   const { i18n } = useTranslation();
+  const [currentSection, setCurrentSection] = useState(0);
 
-  // Cambiar el tema claro/oscuro
+  useEffect(() => {
+    const handleScroll = (event) => {
+      if (event.deltaY > 0) {
+        setCurrentSection((prevSection) => Math.min(prevSection + 1, 5));
+      } else {
+        setCurrentSection((prevSection) => Math.max(prevSection - 1, 0));
+      }
+    };
+
+    window.addEventListener('wheel', handleScroll);
+    return () => window.removeEventListener('wheel', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const sections = document.querySelectorAll('.section');
+    if (sections[currentSection]) {
+      sections[currentSection].scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [currentSection]);
+
   useEffect(() => {
     const root = document.documentElement;
     if (theme === 'dark') {
@@ -29,38 +49,25 @@ const App = () => {
     localStorage.setItem('theme', theme);
   }, [theme]);
 
-  const toggleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
-  };
+  const toggleTheme = () => setTheme(theme === 'light' ? 'dark' : 'light');
 
-  // Cambiar el tamaño de la fuente
   const changeFontSize = () => {
     const newSize = fontSize === 'small' ? 'medium' : fontSize === 'medium' ? 'large' : 'small';
     setFontSize(newSize);
-    localStorage.setItem('fontSize', newSize); // Guardar la preferencia de tamaño de fuente
+    localStorage.setItem('fontSize', newSize);
   };
 
-  // Aplicar el tamaño de la fuente en el cuerpo del documento
   useEffect(() => {
     const root = document.documentElement;
     root.style.fontSize = fontSize === 'small' ? '14px' : fontSize === 'large' ? '18px' : '16px';
   }, [fontSize]);
 
-  // Cambiar el idioma
-  const changeLanguage = (lang) => {
-    i18n.changeLanguage(lang);
-  };
+  const changeLanguage = (lang) => i18n.changeLanguage(lang);
 
   return (
-    <div className={`app bg-white dark:bg-gray-900 text-gray-900 dark:text-white`}>
-      {/* Navbar */}
-      <Navbar 
-        toggleTheme={toggleTheme} 
-        changeFontSize={changeFontSize} 
-        changeLanguage={changeLanguage} 
-      />
+    <div className="app bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+      <Navbar toggleTheme={toggleTheme} changeFontSize={changeFontSize} changeLanguage={changeLanguage} />
 
-      {/* Contenido principal */}
       <main>
         <HomeSection className="section" />
         <ProjectsSection className="section" />
@@ -70,7 +77,6 @@ const App = () => {
         <ContactSection className="section" />
       </main>
 
-      {/* Footer */}
       <Footer />
     </div>
   );

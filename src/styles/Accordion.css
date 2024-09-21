@@ -14,8 +14,6 @@
   position: relative;
 }
 
-
-
 .timeline-marker {
   width: 15px;
   height: 15px;
@@ -68,3 +66,5 @@
 .animate-buzz {
   animation: buzz 0.7s ease infinite;
 }
+
+

@@ -1,6 +1,7 @@
 import React from 'react';
 import Slider from 'react-infinite-logo-slider';
 import { useTranslation } from 'react-i18next';
+import SectionWrapper from './SectionWrapper'; // Usamos el wrapper para la estructura común
 import '../styles/conocimientos.css'; // Archivo de estilos específicos
 
 const KnowledgeSection = () => {
@@ -50,46 +51,38 @@ const KnowledgeSection = () => {
   ];
 
   return (
-    <section id="knowledge" className="bg-gray-200 dark:bg-gray-700 section" aria-labelledby="knowledge-title">
-      <div className="section-content max-w-6xl mx-auto px-4 lg:px-8 py-12">
-        {/* Título traducido */}
-        <h1 id="knowledge-title" className="title-font mb-4 text-2xl font-medium dark:text-gray-100 sm:text-3xl">
-          {t('knowledge.title')}
-        </h1>
-        <hr />
+    <SectionWrapper id="conocimientos" title={t('knowledge.title')}>
+      {/* Descripción traducida */}
+      <p className="section-description text-lg text-gray-700 dark:text-gray-300 mb-10">
+        {t('knowledge.description')} 
+        <span className="font-bold"> React</span>, 
+        <span className="font-bold"> MongoDB</span>, 
+        <span className="font-bold"> Node</span>, 
+        <span className="font-bold"> Tailwind</span>.
+      </p>
 
-        {/* Descripción traducida */}
-        <p className="section-description text-lg text-gray-700 dark:text-gray-300 mb-10;">
-          {t('knowledge.description')} 
-          <span className="font-bold"> React</span>, 
-          <span className="font-bold"> MongoDB</span>, 
-          <span className="font-bold"> Node</span>, 
-          <span className="font-bold"> Tailwind</span>.
-        </p>
-
-        {/* Primer slider de iconos */}
-        <div className="mb-8 fade-effect dark:fade-effect-dark">
-          <Slider width="100px" duration={50} pauseOnHover={true} blurBorders={false}>
-            {icons.slice(0, Math.ceil(icons.length / 2)).map((icon, index) => (
-              <Slider.Slide key={index}>
-                <img src={icon.src} alt={icon.alt} className="w-20 h-20" loading="lazy" />
-              </Slider.Slide>
-            ))}
-          </Slider>
-        </div>
-
-        {/* Segundo slider de iconos */}
-        <div className="fade-effect dark:fade-effect-dark">
-          <Slider width="100px" duration={30} toRight={false} pauseOnHover={true} blurBorders={false}>
-            {icons.slice(Math.ceil(icons.length / 2)).map((icon, index) => (
-              <Slider.Slide key={index}>
-                <img src={icon.src} alt={icon.alt} className="w-20 h-20" loading="lazy" />
-              </Slider.Slide>
-            ))}
-          </Slider>
-        </div>
+      {/* Primer slider de iconos */}
+      <div className="mb-8 fade-effect dark:fade-effect-dark">
+        <Slider width="100px" duration={50} pauseOnHover={true} blurBorders={false}>
+          {icons.slice(0, Math.ceil(icons.length / 2)).map((icon, index) => (
+            <Slider.Slide key={index}>
+              <img src={icon.src} alt={icon.alt} className="w-20 h-20" loading="lazy" />
+            </Slider.Slide>
+          ))}
+        </Slider>
       </div>
-    </section>
+
+      {/* Segundo slider de iconos */}
+      <div className="fade-effect dark:fade-effect-dark">
+        <Slider width="100px" duration={30} toRight={false} pauseOnHover={true} blurBorders={false}>
+          {icons.slice(Math.ceil(icons.length / 2)).map((icon, index) => (
+            <Slider.Slide key={index}>
+              <img src={icon.src} alt={icon.alt} className="w-20 h-20" loading="lazy" />
+            </Slider.Slide>
+          ))}
+        </Slider>
+      </div>
+    </SectionWrapper>
   );
 };
 

@@ -61,5 +61,14 @@
     "knowledge": {
         "title": "Technologies & Tools",
         "description": "Languages, tools, and technologies that I use with varying frequency across work, personal, and educational projects. Currently, I am focused on continuous learning in"
-      }
+    },
+    "contact": {
+        "title": "Contact Me",
+        "description": "Feel free to get in touch, whether you have a question, comment, or collaboration proposal, I'd love to hear what it's about!",
+        "formName": "Name",
+        "formEmail": "Email",
+        "formMessage": "Message",
+        "formSubmit": "Send",
+        "formStatusSuccess": "Message sent successfully!"
+    }
 }

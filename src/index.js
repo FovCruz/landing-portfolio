@@ -4,6 +4,9 @@ import './styles/globales.css'; // Importa el archivo globales.css aquí
 import App from './App';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

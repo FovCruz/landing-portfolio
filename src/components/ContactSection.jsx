@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next'; // Importa el hook de traducción
 
 const ContactSection = () => {
+  const { t } = useTranslation(); // Hook para las traducciones
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -20,8 +23,8 @@ const ContactSection = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Aquí puedes implementar el envío del formulario, por ejemplo, utilizando fetch o axios
-    setFormStatus('¡Mensaje enviado con éxito!');
+    // Aquí puedes implementar el envío del formulario
+    setFormStatus(t('contact.formStatusSuccess'));
     setFormData({
       name: '',
       email: '',
@@ -39,10 +42,10 @@ const ContactSection = () => {
       <div className="container mx-auto px-5 py-24">
         <div className="mb-12 flex w-full flex-col text-center">
           <h1 id="contacto-title" className={`title-font mb-4 text-2xl font-medium text-white sm:text-3xl ${commonTextClasses}`}>
-            Contáctame
+            {t('contact.title')} {/* Título traducido */}
           </h1>
           <p className="mx-auto text-base leading-relaxed lg:w-2/3">
-            ¡No dudes en ponerte en contacto, ya sea que tengas alguna pregunta, comentario o propuesta de colaboración, me encantaría leer de que se trata!
+            {t('contact.description')} {/* Descripción traducida */}
           </p>
         </div>
 
@@ -57,7 +60,7 @@ const ContactSection = () => {
                     id="name"
                     name="name"
                     className="peer w-full rounded border border-gray-700 bg-gray-800 bg-opacity-40 py-1 px-3 text-base leading-8 text-gray-100 placeholder-transparent outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900"
-                    placeholder="Nombre"
+                    placeholder={t('contact.formName')} // Nombre traducido
                     value={formData.name}
                     onChange={handleChange}
                     required
@@ -69,7 +72,7 @@ const ContactSection = () => {
                       peer-placeholder-shown:left-3 peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 
                       peer-focus:left-3 peer-focus:-top-6 peer-focus:text-sm peer-focus:text-indigo-500"
                   >
-                    Nombre
+                    {t('contact.formName')} {/* Label traducido */}
                   </label>
                 </div>
               </div>
@@ -80,7 +83,7 @@ const ContactSection = () => {
                     id="email"
                     name="email"
                     className="peer w-full rounded border border-gray-700 bg-gray-800 bg-opacity-40 py-1 px-3 text-base leading-8 text-gray-100 placeholder-transparent outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900"
-                    placeholder="Correo electrónico"
+                    placeholder={t('contact.formEmail')} // Correo traducido
                     value={formData.email}
                     onChange={handleChange}
                     required
@@ -92,7 +95,7 @@ const ContactSection = () => {
                       peer-placeholder-shown:left-3 peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 
                       peer-focus:left-3 peer-focus:-top-6 peer-focus:text-sm peer-focus:text-indigo-500"
                   >
-                    Correo electrónico
+                    {t('contact.formEmail')} {/* Label traducido */}
                   </label>
                 </div>
               </div>
@@ -102,7 +105,7 @@ const ContactSection = () => {
                     id="message"
                     name="message"
                     className="peer h-32 w-full resize-none rounded border border-gray-700 bg-gray-800 bg-opacity-40 py-1 px-3 text-base leading-6 text-gray-100 placeholder-transparent outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900"
-                    placeholder="Mensaje"
+                    placeholder={t('contact.formMessage')} // Mensaje traducido
                     value={formData.message}
                     onChange={handleChange}
                     required
@@ -114,7 +117,7 @@ const ContactSection = () => {
                       peer-placeholder-shown:left-3 peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 
                       peer-focus:left-3 peer-focus:-top-6 peer-focus:text-sm peer-focus:text-indigo-500"
                   >
-                    Mensaje
+                    {t('contact.formMessage')} {/* Label traducido */}
                   </label>
                 </div>
               </div>
@@ -123,7 +126,7 @@ const ContactSection = () => {
                   type="submit"
                   className={`${commonButtonClasses} dark:border-[#ffddcc] border-gray-900 dark:text-[#ffddcc] text-gray-900 ${buttonHoverClasses} text-center`}
                 >
-                  Enviar
+                  {t('contact.formSubmit')} {/* Botón traducido */}
                 </button>
               </div>
 
