@@ -65,7 +65,7 @@ const App = () => {
   const changeLanguage = (lang) => i18n.changeLanguage(lang);
 
   return (
-    <div className="app bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+    <div className="app bg-white dark:bg-gray-900  text-gray-900 dark:text-white">
       <Navbar toggleTheme={toggleTheme} changeFontSize={changeFontSize} changeLanguage={changeLanguage} />
 
       <main>

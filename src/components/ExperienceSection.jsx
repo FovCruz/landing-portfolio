@@ -104,11 +104,11 @@ const ExperienceSection = () => {
   return (
     <section
       id="experiencia"
-      className="section min-h-screen flex items-center justify-center text-center relative dark:bg-dark-900 py-12"
+      className="section min-h-screen flex items-center justify-center text-center relative py-12"
       onMouseLeave={handleMouseLeaveContainer}
     >
       <div className="section-content max-w-6xl mx-auto px-4 lg:px-8 py-12">
-        <h1 className={`mb-4 text-2xl font-medium dark:text-[#ffddcc] sm:text-3xl text-gray-900 text-left `}>
+        <h1 className="mb-4 text-2xl font-medium dark:text-[#ffddcc] sm:text-3xl text-gray-900 text-left">
           {t('experience.title')}
         </h1>
 
@@ -120,7 +120,7 @@ const ExperienceSection = () => {
             onMouseEnter={handleMouseEnterButtons}
             onMouseLeave={handleMouseLeaveButtons}
           >
-            <ol className="timeline-container border-l-2  dark:border-[#ffddcc]">
+            <ol className="timeline-container border-l-2 dark:border-[#ffddcc]">
               {experiences.map((exp, index) => (
                 <li key={index} className="timeline-item">
                   <div className={`timeline-marker ${activeButtonIndex === index ? 'bg-[#ffddcc]' : 'bg-gray-400'}`}></div>
@@ -128,11 +128,11 @@ const ExperienceSection = () => {
               ))}
             </ol>
 
-            <div className="accordion-grid ml-6">
+            <div className="accordion-grid mobile-margin">
               {experiences.map((exp, index) => (
                 <div
                   key={index}
-                  className={`text-left border-gray-900 mb-3 font-normal py-2 px-2 sm:px-3 md:px-4 lg:px-5 rounded-lg border transition-all duration-300 dark:border-[#ffddcc] dark:hover:bg-[#ffddcc] dark:hover:text-gray-900 hover:bg-gray-900 hover:text-[#ffddcc] ${(activeButtonIndex === index || bounceIndex === index) ? 'dark:bg-[#ffddcc] dark:text-gray-900 bg-gray-900 text-[#ffddcc]' : ''} ${bounceIndex === index ? 'animate-buzz' : ''}`}
+                  className={`text-left border-gray-900 mb-3 font-normal py-2 px-2 sm:px-3 md:px-4 lg:px-5 rounded-lg border transition-all duration-300 dark:border-[#ffddcc] dark:hover:bg-[#ffddcc] dark:hover:text-gray-900 hover:text-[#ffddcc] ${(activeButtonIndex === index || bounceIndex === index) ? 'dark:bg-[#ffddcc] dark:text-gray-900 bg-gray-900 text-[#ffddcc]' : ''} ${bounceIndex === index ? 'animate-buzz' : ''}`}
                   onClick={() => handleSelectExperience(index)}
                   style={{ width: '100%', minHeight: '60px', cursor: 'pointer' }}
                 >

@@ -3,7 +3,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
 
 .about-container {
@@ -12,6 +11,7 @@
   align-items: center;
   justify-content: center;
   padding: 2rem;
+  width: 100%; /* Adaptado para ocupar todo el ancho en pantallas pequeñas */
 }
 
 /* Imagen con borde del color del fondo y sombra */
@@ -19,8 +19,8 @@
   border-radius: 50%;
   position: relative;
   overflow: hidden;
-  border: 10px solid; /* Borde */
-  border-color: var(--tw-bg-opacity); /* Color del borde igual al fondo */
+  border: 10px solid;
+  border-color: var(--tw-bg-opacity);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Sombra para tema claro */
 }
 
@@ -58,12 +58,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 2rem;
-}
-
-.highlight {
-  color: #ffddcc;
-  font-weight: bold;
 }
 
 /* Habilidades e íconos */

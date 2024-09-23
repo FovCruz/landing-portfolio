@@ -62,7 +62,7 @@ const KnowledgeSection = () => {
       </p>
 
       {/* Primer slider de iconos */}
-      <div className="mb-8 fade-effect dark:fade-effect-dark">
+      <div className="mb-8 fade-effect">
         <Slider width="100px" duration={50} pauseOnHover={true} blurBorders={false}>
           {icons.slice(0, Math.ceil(icons.length / 2)).map((icon, index) => (
             <Slider.Slide key={index}>
@@ -73,7 +73,7 @@ const KnowledgeSection = () => {
       </div>
 
       {/* Segundo slider de iconos */}
-      <div className="fade-effect dark:fade-effect-dark">
+      <div className="fade-effect">
         <Slider width="100px" duration={30} toRight={false} pauseOnHover={true} blurBorders={false}>
           {icons.slice(Math.ceil(icons.length / 2)).map((icon, index) => (
             <Slider.Slide key={index}>

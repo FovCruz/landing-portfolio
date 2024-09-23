@@ -1,47 +1,95 @@
-/* Gradiente del slider para tema claro */
-.fade-effect::before,
-.fade-effect::after {
+/* Estilos generales de la sección */
+.about-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  width: 100%; /* Adaptado para ocupar todo el ancho en pantallas pequeñas */
+}
+
+/* Imagen con borde del color del fondo y sombra */
+.about-image-container {
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 10px solid;
+  border-color: var(--tw-bg-opacity);
+  box-shadow: 0 0 30px 10px rgba(255, 221, 204, 0.7);
+}
+
+.dark .about-image-container {
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.15); /* Sombra para tema oscuro */
+}
+
+/* Halo brillante alrededor de la imagen */
+.halo-effect::before {
   content: '';
   position: absolute;
   top: 0;
-  bottom: 0;
-  width: 100px;
-  z-index: 2;
-  pointer-events: none;
-}
-
-/* Gradiente para el extremo izquierdo en tema claro */
-.fade-effect::before {
   left: 0;
-  background: linear-gradient(to right, rgba(226, 232, 240, 1), rgba(226, 232, 240, 0)); /* bg-gray-200 en tema claro */
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 30px 10px rgba(255, 221, 204, 0.7); /* Halo brillante */
+  animation: pulse 2s infinite; /* Efecto de "pulsar" */
 }
 
-/* Gradiente para el extremo derecho en tema claro */
-.fade-effect::after {
-  right: 0;
-  background: linear-gradient(to left, rgba(226, 232, 240, 1), rgba(226, 232, 240, 0)); /* bg-gray-200 en tema claro */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 30px 10px rgba(255, 221, 204, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 50px 15px rgba(255, 221, 204, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 30px 10px rgba(255, 221, 204, 0.7);
+  }
 }
 
-/* Gradiente del slider para tema oscuro */
-.dark .fade-effect::before,
-.dark .fade-effect::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100px;
-  z-index: 2;
-  pointer-events: none;
+/* Texto de la columna derecha */
+.about-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-/* Gradiente para el extremo izquierdo en tema oscuro */
-.dark .fade-effect::before {
-  left: 0;
-  background: linear-gradient(to right, rgb(55, 65, 81), rgba(31, 41, 55, 0)); /* bg-gray-800 en tema oscuro */
+/* Habilidades e íconos */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
-/* Gradiente para el extremo derecho en tema oscuro */
-.dark .fade-effect::after {
-  right: 0;
-  background: linear-gradient(to left, rgb(55, 65, 81), rgba(31, 41, 55, 0));/* bg-gray-800 en tema oscuro */
+.skill-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.skill-icon:hover {
+  transform: scale(1.1); /* Efecto de escala al pasar el cursor */
+}
+
+.skill-text {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--tw-text-opacity);
+}
+
+/* Diseño responsivo */
+@media (min-width: 768px) {
+  .about-container {
+    flex-direction: row;
+  }
 }

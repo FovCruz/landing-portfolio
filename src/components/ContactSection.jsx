@@ -38,7 +38,7 @@ const ContactSection = () => {
   const buttonHoverClasses = 'dark:hover:bg-[#ffddcc] dark:hover:text-gray-900 hover:bg-gray-900 hover:text-white';
 
   return (
-    <section id="contacto" className="section body-font relative bg-gray-900 text-gray-400" aria-labelledby="contacto-title">
+    <section id="contacto" className="section body-font relative text-gray-400" aria-labelledby="contacto-title">
       <div className="container mx-auto px-5 py-24">
         <div className="mb-12 flex w-full flex-col text-center">
           <h1 id="contacto-title" className={`title-font mb-4 text-2xl font-medium text-white sm:text-3xl ${commonTextClasses}`}>

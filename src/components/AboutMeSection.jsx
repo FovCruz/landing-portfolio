@@ -8,12 +8,11 @@ const AboutMeSection = () => {
   const { t } = useTranslation(); // Hook para la traducción
 
   return (
-    // Usamos el SectionWrapper para unificar el diseño de la sección
     <SectionWrapper id="sobremi" title={t('aboutMe.title')}>
       <div className="about-container flex flex-col lg:flex-row items-center justify-between">
 
         {/* Imagen personal con efecto de halo */}
-        <div className="about-image-container relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 overflow-hidden rounded-full border-4 border-transparent shadow-lg flex items-center justify-center halo-effect">
+        <div className="about-image-container relative w-full h-72 sm:w-full sm:h-80 lg:w-96 lg:h-96 overflow-hidden rounded-full border-1 border-transparent shadow-lg flex items-center justify-center halo-effect">
           <img
             src={`${process.env.PUBLIC_URL}/img_personal.jpeg`}
             alt={t('aboutMe.photoAlt')} // Traducción del alt
@@ -23,7 +22,7 @@ const AboutMeSection = () => {
         </div>
 
         {/* Texto y habilidades */}
-        <div className="about-text-container lg:pl-8 w-full lg:w-1/2">
+        <div className="about-text-container lg:pl-8 w-full lg:w-1/2 mt-8 lg:mt-0">
           <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
             {t('aboutMe.description1')} {/* Descripción traducida */}
           </p>

@@ -52,14 +52,14 @@ const ProjectsSection = () => {
 
   return (
     <SectionWrapper id="proyectos" title={t('projects.title')}>
-      <div className="project-hover flex flex-col md:flex-row items-center justify-between bg-white dark:bg-gray-800 p-3 shadow-md h-full relative transition-transform duration-500 ease-in-out rounded-lg border-[1px] dark:border-[#ffddcc] border-[#1f2937]">
+      <div className="project-hover flex flex-col md:flex-row items-center justify-between p-3 shadow-md h-full relative transition-transform duration-500 ease-in-out rounded-lg border-[1px] dark:border-[#ffddcc] border-[#1f2937]">
         <div className="w-full md:w-1/2 relative overflow-hidden rounded-lg h-[250px] md:h-[300px] lg:h-[400px] border-[1px] dark:border-[#ffddcc] border-[#1f2937] shadow-lg contenedor">
           <img src={projects[currentProject].images[currentImage]} alt={`Imagen del proyecto ${projects[currentProject].name}`} className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-90" loading="lazy" />
 
-          <button className="absolute top-0 left-0 h-full w-10 flex items-center justify-center transition-all dark:text-[#ffddcc] text-gray-900" style={{ backdropFilter: 'blur(2px)', backgroundColor: 'rgba(31, 41, 55, 0.23)' }} onClick={handlePrevImage} aria-label="Imagen anterior">
+          <button className="absolute top-0 left-0 h-full w-10 flex items-center justify-center transition-all dark:text-[#ffddcc] text-gray-900" style={{ backdropFilter: 'blur(2px)' }} onClick={handlePrevImage} aria-label="Imagen anterior">
             <FaArrowLeft className="text-2xl" />
           </button>
-          <button className="absolute top-0 right-0 h-full w-10 flex items-center justify-center transition-all dark:text-[#ffddcc] text-gray-900" style={{ backdropFilter: 'blur(2px)', backgroundColor: 'rgba(31, 41, 55, 0.23)' }} onClick={handleNextImage} aria-label="Imagen siguiente">
+          <button className="absolute top-0 right-0 h-full w-10 flex items-center justify-center transition-all dark:text-[#ffddcc] text-gray-900" style={{ backdropFilter: 'blur(2px)' }} onClick={handleNextImage} aria-label="Imagen siguiente">
             <FaArrowRight className="text-2xl" />
           </button>
         </div>
@@ -70,7 +70,7 @@ const ProjectsSection = () => {
 
           <div className="flex flex-wrap justify-start space-x-2 mb-4">
             {projects[currentProject].technologies.map((tech, idx) => (
-              <span key={idx} className="px-3 py-1 rounded text-sm bg-gray-300 dark:bg-gray-600">{tech}</span>
+              <span key={idx} className="px-3 py-1 rounded text-sm">{tech}</span>
             ))}
           </div>
 

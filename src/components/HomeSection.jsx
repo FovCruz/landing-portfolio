@@ -14,13 +14,13 @@ const HomeSection = () => {
 
   // Componente del borde animado con imagen
   const CardAnimatedBorderGradient = () => (
-    <div className='animate-comet-shadow relative h-60 w-60 sm:h-40 sm:w-40 lg:h-56 lg:w-56 xl:h-64 xl:w-80 overflow-hidden rounded-full border p-[2px] backdrop-blur-3xl'>
-      <span className='absolute inset-0 animate-[spin_4s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]' />
-      {/* Imagen personal con borde */}
+    <div className='animate-comet-shadow relative h-60 w-60 sm:h-40 sm:w-40 lg:h-56 lg:w-56 xl:h-64 xl:w-80 overflow-hidden rounded-full border p-[2px]'>
+      <span className='absolute inset-0 animate-spin' />
+      {/* Imagen personal */}
       <img
         src={`${process.env.PUBLIC_URL}/img_personal.jpeg`} // Ruta de la imagen personal
         alt={t('home.photoAlt')} // Texto alternativo
-        className='inline-flex h-full w-full items-center justify-center rounded-full bg-gray-950 text-sm font-medium text-gray-50 backdrop-blur-3xl'
+        className='inline-flex h-full w-full items-center justify-center rounded-full text-sm font-medium'
       />
     </div>
   );
@@ -28,7 +28,7 @@ const HomeSection = () => {
   return (
     <section
       id="inicio"
-      className="section min-h-screen flex items-center justify-center text-center relative transition-colors duration-300 bg-white dark:bg-gray-900"
+      className="section min-h-screen flex items-center justify-center text-center relative transition-colors duration-300"
     >
       <div className="relative flex flex-col lg:flex-row w-full max-w-6xl mx-auto px-4 lg:px-8 py-12 items-start justify-between">
 
@@ -79,7 +79,6 @@ const HomeSection = () => {
             >
               {t('home.downloadATS')}
             </CustomButton>
-
           </div>
         </div>
       </div>
@@ -87,7 +86,7 @@ const HomeSection = () => {
       {/* Visor de PDF */}
       {showCV && (
         <div className="fixed inset-0 bg-opacity-100 flex items-center justify-center z-40" onClick={toggleCV}>
-          <div className="relative w-full h-3/4 max-w-4xl max-h-full bg-white dark:bg-gray-900 p-1 rounded-md shadow-lg">
+          <div className="relative w-full h-3/4 max-w-4xl max-h-full p-1 rounded-md shadow-lg">
             <button
               className="absolute top-2 right-2 text-gray-500 dark:text-[#ffddcc] hover:text-black dark:hover:text-white"
               onClick={toggleCV}
