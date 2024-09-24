@@ -1,0 +1,131 @@
+/* Estilos generales para el contenedor de íconos */
+.social-icons {
+    position: fixed;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .social-icons ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .social-icons ul li {
+    margin: 10px 0;
+    position: relative; /* Necesario para la tooltip */
+  }
+  
+  .social-icons ul li a {
+    color: var(--color-parrafo); /* Color de los párrafos */
+    transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  .social-icons ul li a:hover {
+    color: #ffddcc; /* Cambia al color solicitado en hover */
+    background-color: rgba(255, 221, 204, 0.1); /* Fondo para hover */
+    transform: translateY(-5px);
+  }
+  
+  /* Estilos adicionales para los íconos (SVG con react-icons) */
+  .social-icons ul li a svg {
+    width: 22px; /* Tamaño más minimalista */
+    height: 22px;
+  }
+  
+  /* Tooltips (textos que se muestran al pasar el mouse) */
+  .tooltip {
+    position: absolute;
+    left: 35px;
+    background-color: #333;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap; /* Mantener el texto en una línea */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .social-icons ul li a:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+    background-color: rgba(255, 221, 204, 0.9); /* Mismo fondo que el hover del icono */
+    color: #333;
+  }
+  
+  /* Línea vertical decorativa, centrada respecto a los íconos */
+  .social-icons::after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 100px;
+    background-color: #ffddcc;
+    margin-top: 10px;
+  }
+  
+  /* Alineación a la izquierda */
+  .social-icons.left {
+    left: 20px;
+    bottom: 0;
+  }
+  
+  /* Alineación a la derecha (Correo) */
+  .social-icons.right {
+    right: 20px;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .email-vertical {
+    margin-bottom: 10px; /* Ajuste del espacio entre el correo y la línea */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .email-vertical a {
+    margin: 0;
+    padding: 10px;
+    font-family: var(--font-mono); /* Estilo de fuente específico */
+    font-size: var(--fz-xxs);
+    line-height: var(--fz-lg);
+    letter-spacing: 0.1em;
+    writing-mode: vertical-rl; /* Texto en modo vertical */
+    color: var(--color-parrafo); /* Color del texto del correo */
+    transition: color 0.3s ease;
+  }
+  
+  .email-vertical a:hover {
+    color: #ffddcc; /* Cambia el color al hacer hover */
+  }
+  
+  /* Centrar el correo respecto a la línea */
+  .social-icons.right::after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 100px;
+    background-color: #ffddcc;
+    margin-top: 10px; /* Ajusta la línea para que quede más alineada */
+  }
+  
+  /* Ocultar íconos en dispositivos móviles */
+  @media (max-width: 768px) {
+    .social-icons {
+      display: none;
+    }
+  }
+  
