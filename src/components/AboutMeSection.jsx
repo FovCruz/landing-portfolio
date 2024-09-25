@@ -10,9 +10,9 @@ const AboutMeSection = () => {
   return (
     <SectionWrapper id="sobremi" title={t('aboutMe.title')}>
       <div className="about-container flex flex-col lg:flex-row items-center justify-between">
-
+        
         {/* Imagen personal con efecto de halo */}
-        <div className="about-image-container relative w-full h-72 sm:w-full sm:h-80 lg:w-96 lg:h-96 overflow-hidden rounded-full border-1 border-transparent shadow-lg flex items-center justify-center halo-effect">
+        <div className="about-image-container relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 overflow-hidden rounded-full border-4 border-transparent shadow-lg flex items-center justify-center halo-effect">
           <img
             src={`${process.env.PUBLIC_URL}/img_personal.jpeg`}
             alt={t('aboutMe.photoAlt')} // Traducción del alt
@@ -23,10 +23,10 @@ const AboutMeSection = () => {
 
         {/* Texto y habilidades */}
         <div className="about-text-container lg:pl-8 w-full lg:w-1/2 mt-8 lg:mt-0">
-          <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
+          <p className="mb-6">
             {t('aboutMe.description1')} {/* Descripción traducida */}
           </p>
-          <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
+          <p className="mb-6">
             {t('aboutMe.description2')} {/* Segunda descripción */}
             <span className="highlight">React</span>, 
             <span className="highlight"> Django</span>, 
@@ -36,10 +36,10 @@ const AboutMeSection = () => {
 
           {/* Íconos de habilidades */}
           <div className="skills-container flex flex-wrap justify-start gap-6">
-            <SkillIcon Icon={FaReact} label="React" color="text-blue-400" />
-            <SkillIcon Icon={FaPython} label="Python" color="text-yellow-500" />
-            <SkillIcon Icon={FaAws} label="AWS" color="text-orange-500" />
-            <SkillIcon Icon={FaDatabase} label="PostgreSQL" color="text-purple-500" />
+            <SkillIcon Icon={FaReact} label="React" />
+            <SkillIcon Icon={FaPython} label="Python" />
+            <SkillIcon Icon={FaAws} label="AWS" />
+            <SkillIcon Icon={FaDatabase} label="PostgreSQL" />
           </div>
         </div>
       </div>
@@ -50,9 +50,9 @@ const AboutMeSection = () => {
 /**
  * Componente reutilizable para representar cada habilidad con su ícono y etiqueta
  */
-const SkillIcon = ({ Icon, label, color }) => (
+const SkillIcon = ({ Icon, label }) => (
   <div className="skill-icon group" role="img" aria-label={label}>
-    <Icon className={`text-5xl ${color} group-hover:scale-110 transition-transform`} />
+    <Icon className="text-5xl group-hover:scale-110 transition-transform" />
     <span className="skill-text mt-2 text-lg">{label}</span>
   </div>
 );

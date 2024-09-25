@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import { useTranslation } from 'react-i18next';
 import './i18n';
 import './styles/globales.css';
+import SocialIcons from './components/SocialIcons'; // Importa el componente de íconos sociales
 
 const App = () => {
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
@@ -66,6 +67,7 @@ const App = () => {
 
   return (
     <div className="app bg-white dark:bg-gray-900  text-gray-900 dark:text-white">
+      <SocialIcons />
       <Navbar toggleTheme={toggleTheme} changeFontSize={changeFontSize} changeLanguage={changeLanguage} />
 
       <main>

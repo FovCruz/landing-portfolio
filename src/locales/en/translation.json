@@ -7,12 +7,13 @@
         "and": "and cloud platforms like"
     },
     "home": {
+        "greeting": "Hello!",
+        "iAm": "My name is",
+        "name": "Fabián Cruz V.",
+        "description": "I am a Software Engineer passionate about automation and technological innovation. My focus is on web development and IT systems management, combining functional code with a minimalist design. I always seek scalable solutions using modern technologies and cloud platforms.",
         "photoAlt": "Photo of Fabián Valencia",
-        "intro": "Software Engineer passionate about automation and technological innovation, specializing in web development, IT systems management, and cloud technologies.",
-        "viewCV": "View CV Online",
-        "downloadCV": "Download CV",
-        "downloadATS": "Download ATS CV",
-        "viewCVOnline": "View CV Online"
+        "viewCV": "View CV",
+        "downloadCV": "Download CV"
     },
     "navbar": {
         "home": "Home",
@@ -35,8 +36,9 @@
     },
     "experience": {
         "title": "Work Experience",
-        "ineTitle": "Regional IT Manager INE (Census Project 2024)",
-        "ineCompany": "INE - National Statistics Institute, Valparaíso",
+        "intro": "I've been doing web development for about 2 years now, and I'm always eager to learn more in this fast-paced industry.",
+        "ineTitle": "Regional IT Manager INE (Project CENSO 2024)",
+        "ineCompany": "INE - Instituto Nacional de Estadisticas, Valparaíso",
         "ineDates": "January 2024 - August 2024",
         "ineDescription": "Responsible for managing access, permissions, incidents, and user requests in various provincial locations, using Helpdesk platforms to generate requests, complying with the SLA agreements established by the institution under ITIL practices, ensuring IT service management through records, implementation, analysis, and documentation.",
         "tallerTitle": "Junior Developer Service Provider",

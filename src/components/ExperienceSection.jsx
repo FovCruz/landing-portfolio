@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import '../styles/Accordion.css';
+import SectionWrapper from './SectionWrapper'; // Usamos el SectionWrapper para mantener la consistencia
+import '../styles/Accordion.css'; // Solo mantenemos lo necesario
 
 const ExperienceSection = () => {
   const { t } = useTranslation();
@@ -64,6 +65,7 @@ const ExperienceSection = () => {
   ];
 
   const [selectedExperience, setSelectedExperience] = useState(null);
+  const [hoveredExperience, setHoveredExperience] = useState(null);
   const [activeButtonIndex, setActiveButtonIndex] = useState(null);
   const [bounceIndex, setBounceIndex] = useState(null);
   const [showImage, setShowImage] = useState(true);
@@ -74,12 +76,14 @@ const ExperienceSection = () => {
     setActiveButtonIndex(index);
     setBounceIndex(null);
     setShowImage(false);
+    setHoveredExperience(null);
   };
 
   const handleMouseLeaveContainer = () => {
     setShowImage(true);
     setSelectedExperience(null);
     setActiveButtonIndex(null);
+    setHoveredExperience(null);
   };
 
   const handleMouseEnterButtons = () => {
@@ -89,6 +93,20 @@ const ExperienceSection = () => {
 
   const handleMouseLeaveButtons = () => {
     setIsMouseOverButtons(false);
+    if (!selectedExperience) {
+      const randomIndex = Math.floor(Math.random() * experiences.length);
+      setBounceIndex(randomIndex);
+    }
+  };
+
+  const handleHoverExperience = (index) => {
+    if (!selectedExperience) {
+      setHoveredExperience(experiences[index]);
+    }
+  };
+
+  const handleMouseLeaveExperience = () => {
+    setHoveredExperience(null);
   };
 
   useEffect(() => {
@@ -101,81 +119,81 @@ const ExperienceSection = () => {
     }
   }, [selectedExperience, experiences.length, showImage, isMouseOverButtons]);
 
+  const displayedExperience = hoveredExperience || selectedExperience;
+
   return (
-    <section
-      id="experiencia"
-      className="section min-h-screen flex items-center justify-center text-center relative py-12"
-      onMouseLeave={handleMouseLeaveContainer}
-    >
-      <div className="section-content max-w-6xl mx-auto px-4 lg:px-8 py-12">
-        <h1 className="mb-4 text-2xl font-medium dark:text-[#ffddcc] sm:text-3xl text-gray-900 text-left">
-          {t('experience.title')}
-        </h1>
+    <SectionWrapper id="experiencia" title={t('experience.title')}>
+      <p className="text-left my-5">
+        {t('experience.intro')} {/* Descripción traducida */}
+      </p>
+      <div className="flex flex-col md:flex-row w-full h-full justify-center items-center" onMouseLeave={handleMouseLeaveContainer}>
+        <div
+          className="w-full md:w-[45%] p-6 overflow-y-auto flex relative"
+          onMouseEnter={handleMouseEnterButtons}
+          onMouseLeave={handleMouseLeaveButtons}
+        >
+          <ol className="timeline-container border-l-2 border-gray-900 dark:border-[#ffddcc]">
+            {experiences.map((exp, index) => (
+              <li key={index} className="timeline-item">
+                <div className={`timeline-marker ${activeButtonIndex === index ? 'bg-primary-text' : 'bg-primary-text'} ${bounceIndex === index ? 'bg-[#ff7800]' : ''}`}></div>
+              </li>
+            ))}
+          </ol>
 
-        <hr className="border-1 border-gray-900 dark:border-[#ffddcc] my-4 mb-8" />
-
-        <div className="flex flex-col md:flex-row w-full">
-          <div
-            className="w-full md:w-[45%] p-6 overflow-y-auto flex relative"
-            onMouseEnter={handleMouseEnterButtons}
-            onMouseLeave={handleMouseLeaveButtons}
-          >
-            <ol className="timeline-container border-l-2 dark:border-[#ffddcc]">
-              {experiences.map((exp, index) => (
-                <li key={index} className="timeline-item">
-                  <div className={`timeline-marker ${activeButtonIndex === index ? 'bg-[#ffddcc]' : 'bg-gray-400'}`}></div>
-                </li>
-              ))}
-            </ol>
-
-            <div className="accordion-grid mobile-margin">
-              {experiences.map((exp, index) => (
-                <div
-                  key={index}
-                  className={`text-left border-gray-900 mb-3 font-normal py-2 px-2 sm:px-3 md:px-4 lg:px-5 rounded-lg border transition-all duration-300 dark:border-[#ffddcc] dark:hover:bg-[#ffddcc] dark:hover:text-gray-900 hover:text-[#ffddcc] ${(activeButtonIndex === index || bounceIndex === index) ? 'dark:bg-[#ffddcc] dark:text-gray-900 bg-gray-900 text-[#ffddcc]' : ''} ${bounceIndex === index ? 'animate-buzz' : ''}`}
-                  onClick={() => handleSelectExperience(index)}
-                  style={{ width: '100%', minHeight: '60px', cursor: 'pointer' }}
-                >
-                  {exp.title}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div
-            className="experience-right w-full md:w-[55%] p-6 border border-gray-900 dark:border-[#ffddcc] rounded-lg shadow-lg flex flex-col justify-center items-center"
-            style={{ height: '400px' }}
-          >
-            {selectedExperience ? (
-              <div className="experience-detail text-left overflow-y-auto h-full">
-                <h3 className="text-2xl font-semibold mb-4 dark:text-[#ffddcc] text-gray-900">
-                  {selectedExperience.title}
-                </h3>
-                <p className="text-lg dark:text-[#ffddcc] mb-2">
-                  <strong>{t('experience.companyLabel')}:</strong> {selectedExperience.company}
-                </p>
-                <p className="text-lg dark:text-[#ffddcc] mb-2">
-                  <strong>{t('experience.datesLabel')}:</strong> {selectedExperience.dates}
-                </p>
-                <div className="mt-4 dark:text-[#ffddcc]">
-                  {selectedExperience.description}
-                </div>
+          <div className="accordion-grid mobile-margin">
+            {experiences.map((exp, index) => (
+              <div
+                key={index}
+                className={`
+                  text-left border border-gray-900 dark:border-[#ffddcc] mb-3 font-normal py-4 px-2 sm:px-3 md:px-4 lg:px-5 rounded-lg 
+                  transition-all duration-300 cursor-pointer
+                  ${activeButtonIndex === index || bounceIndex === index ? 'bg-gray-900 text-white dark:bg-[#ffddcc] dark:text-gray-900' : 'bg-transparent text-gray-900 dark:bg-transparent dark:text-white'}
+                  ${bounceIndex === index ? 'animate-buzz bg-gray-900 text-white dark:bg-[#ffddcc] dark:text-gray-900' : ''} 
+                  hover:bg-gray-900 hover:text-white dark:hover:bg-[#ffddcc] dark:hover:text-gray-900`}
+                onClick={() => handleSelectExperience(index)}
+                onMouseEnter={() => handleHoverExperience(index)}
+                onMouseLeave={handleMouseLeaveExperience}
+              >
+                {exp.title}
               </div>
-            ) : (
-              showImage && (
-                <div className="experience-image-placeholder rounded-lg overflow-hidden">
-                  <img
-                    src={`${process.env.PUBLIC_URL}/exp_new.gif`}
-                    alt="Placeholder"
-                    className="w-auto h-auto object-cover"
-                  />
-                </div>
-              )
-            )}
+            ))}
           </div>
         </div>
+
+        <div
+          className="experience-right w-full md:w-[70%] p-0 rounded-lg flex justify-center"
+          style={{ height: '400px' }}
+        >
+          {displayedExperience ? (
+            <div className="experience-detail text-left overflow-y-auto h-full p-4">
+              <h3 className="text-2xl font-semibold mb-2">
+                {displayedExperience.title}
+              </h3>
+              <p className="text-lg mb-2">
+                <strong>{t('experience.companyLabel')}:</strong> {displayedExperience.company}
+              </p>
+              <p className="text-lg mb-2">
+                <strong>{t('experience.datesLabel')}:</strong> {displayedExperience.dates}
+              </p>
+              <hr className="my-4 border-gray-400" />
+              <div className="mt-4">
+                {displayedExperience.description}
+              </div>
+            </div>
+          ) : (
+            showImage && (
+              <div className="experience-image-placeholder rounded-lg max-w-[33rem] mx-auto">
+                <img
+                  src={`${process.env.PUBLIC_URL}/exp_new.gif`}
+                  alt="Placeholder"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            )
+          )}
+        </div>
       </div>
-    </section>
+    </SectionWrapper>
   );
 };
 

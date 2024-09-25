@@ -7,12 +7,13 @@
         "and": "y plataformas en la nube como"
     },
     "home": {
+        "greeting": "Hola!",
+        "iAm": "Mi nombre es",
+        "name": "Fabián Cruz V.",
+        "description": "Soy un Ingeniero Informático apasionado por la automatización y la innovación tecnológica. Mi enfoque está en el desarrollo web y la gestión de sistemas TI, combinando código funcional con un diseño minimalista. Siempre busco soluciones escalables utilizando tecnologías modernas y plataformas cloud.",
         "photoAlt": "Foto de Fabián Valencia",
-        "intro": "Ingeniero Informático Apasionado por la automatización y la innovación tecnológica, especializado en el desarrollo web, la gestión de sistemas TI y las tecnologías cloud.",
-        "viewCV": "Ver CV en línea",
-        "downloadCV": "Descargar CV",
-        "downloadATS": "Descargar CV ATS",
-        "viewCVOnline": "Ver CV en línea"
+        "viewCV": "Ver CV",
+        "downloadCV": "Descargar CV"
     },
     "navbar": {
         "home": "Inicio",
@@ -35,6 +36,7 @@
     },
     "experience": {
         "title": "Experiencias laborales",
+        "intro": "He estado desarrollando aplicaciones web durante aproximadamente 2 años, y siempre estoy ansioso por aprender más en esta industria de rápido crecimiento.",
         "ineTitle": "Gestor TI Regional INE (Proyecto Censo 2024)",
         "ineCompany": "INE - Instituto Nacional de Estadísticas, Valparaíso",
         "ineDates": "Enero 2024 - Agosto 2024",
