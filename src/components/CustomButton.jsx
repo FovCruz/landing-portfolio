@@ -1,13 +1,32 @@
 import React from 'react';
 
-const CustomButton = ({ link, onClick, children, ariaLabel, isSectionButton = false }) => {
-  // Clases comunes para botones
-  const commonButtonClasses = 'font-light py-1.5 px-3 sm:py-2 sm:px-4 rounded-full border-2 transition-all duration-500';
-  
-  // Clases personalizadas para el hover
-  const buttonHoverClasses = 'dark:hover:bg-[#ffddcc] dark:hover:text-gray-900 hover:bg-gray-900 hover:text-white';
-  const illuminationHoverClass = isSectionButton ? 'boton-iluminacion-hover' : ''; // Solo aplicamos la clase si es un botón de sección
-  const buttonClasses = `${commonButtonClasses} dark:border-[#ffddcc] border-gray-900 dark:text-[#ffddcc] text-gray-900 ${buttonHoverClasses} ${illuminationHoverClass} text-center`;
+const CustomButton = ({ link, onClick, children, ariaLabel, isSectionButton = false, isBuzzActive = false }) => {
+  // Clases comunes para botones, con diseño similar a los contenedores
+  const commonButtonClasses = 'font-light py-1.5 px-3 sm:py-2 sm:px-4 border rounded-lg transition-all duration-500 bg-[#f17e04] text-white';
+
+  // Clases personalizadas para hover, borde y color en modo oscuro y claro
+  const buttonHoverClasses = `
+    hover:bg-gray-900 dark:hover:bg-[#f17e04] 
+    hover:text-white dark:hover:text-gray-900 
+    box-shadow-[0_8px_24px_rgba(31,41,55,0.2)] dark:box-shadow-[0_8px_24px_rgba(255,221,204,0.2)]
+  `;
+
+  // Clases para el efecto buzz o cuando se selecciona un botón
+  const activeBuzzClasses = isBuzzActive ? 'bg-gray-900 text-white dark:bg-[#ffddcc] dark:text-gray-900' : '';
+
+  // Clases que aplican cuando el hover o buzz están activos
+  const illuminationHoverClass = isSectionButton ? 'boton-iluminacion-hover' : '';
+
+  // Clases finales combinando los estilos
+  const buttonClasses = `
+    ${commonButtonClasses} 
+    border-[1px] border-gray-900 dark:border-[#ffddcc] 
+    text-gray-900 text-gray-600 dark:text-[#ffddcc] 
+    ${buttonHoverClasses} 
+    ${illuminationHoverClass}
+    ${activeBuzzClasses}
+    text-center
+  `;
 
   if (link) {
     // Si se proporciona un enlace, renderizamos un <a>
@@ -35,5 +54,10 @@ const CustomButton = ({ link, onClick, children, ariaLabel, isSectionButton = fa
     );
   }
 };
+
+
+
+
+
 
 export default CustomButton;

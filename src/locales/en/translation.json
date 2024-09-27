@@ -8,7 +8,7 @@
     },
     "home": {
         "greeting": "Hello!",
-        "iAm": "My name is",
+        "iAm": "my name is",
         "name": "Fabián Cruz V.",
         "description": "I am a Software Engineer passionate about automation and technological innovation. My focus is on web development and IT systems management, combining functional code with a minimalist design. I always seek scalable solutions using modern technologies and cloud platforms.",
         "photoAlt": "Photo of Fabián Valencia",
@@ -61,7 +61,7 @@
         "datesLabel": "Dates"
     },
     "knowledge": {
-        "title": "Technologies & Tools",
+        "title": "Skills",
         "description": "Languages, tools, and technologies that I use with varying frequency across work, personal, and educational projects. Currently, I am focused on continuous learning in"
     },
     "contact": {

@@ -14,7 +14,7 @@ const AboutMeSection = () => {
         {/* Imagen personal con efecto de halo */}
         <div className="about-image-container relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 overflow-hidden rounded-full border-4 border-transparent shadow-lg flex items-center justify-center halo-effect">
           <img
-            src={`${process.env.PUBLIC_URL}/img_personal.jpeg`}
+            src={`${process.env.PUBLIC_URL}/img_personal.png`}
             alt={t('aboutMe.photoAlt')} // Traducción del alt
             className="w-full h-full object-cover rounded-full"
             loading="lazy"
@@ -22,11 +22,11 @@ const AboutMeSection = () => {
         </div>
 
         {/* Texto y habilidades */}
-        <div className="about-text-container lg:pl-8 w-full lg:w-1/2 mt-8 lg:mt-0">
-          <p className="mb-6">
+        <div className="about-text-container  lg:pl-8 w-full lg:w-1/2 mt-8 lg:mt-0">
+          <p className="mb-6 text-gray-700">
             {t('aboutMe.description1')} {/* Descripción traducida */}
           </p>
-          <p className="mb-6">
+          <p className="mb-6 text-gray-700">
             {t('aboutMe.description2')} {/* Segunda descripción */}
             <span className="highlight">React</span>, 
             <span className="highlight"> Django</span>, 

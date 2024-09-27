@@ -1,95 +1,166 @@
-/* Estilos generales de la sección */
-.about-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.about-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  width: 100%; /* Adaptado para ocupar todo el ancho en pantallas pequeñas */
-}
-
-/* Imagen con borde del color del fondo y sombra */
-.about-image-container {
-  border-radius: 50%;
+/* Efecto de desvanecimiento (fade) */
+.fade-effect {
   position: relative;
-  overflow: hidden;
-  border: 10px solid;
-  border-color: var(--tw-bg-opacity);
-  box-shadow: 0 0 30px 10px rgba(255, 221, 204, 0.7);
+  height: 5rem;
+  z-index: 3;
 }
 
-.dark .about-image-container {
-  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.15); /* Sombra para tema oscuro */
-}
-
-/* Halo brillante alrededor de la imagen */
-.halo-effect::before {
+/* Gradiente común */
+.fade-effect::before,
+.fade-effect::after {
   content: '';
   position: absolute;
   top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Gradiente para el extremo izquierdo */
+.fade-effect::before {
   left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  box-shadow: 0 0 30px 10px rgba(255, 221, 204, 0.7); /* Halo brillante */
-  animation: pulse 2s infinite; /* Efecto de "pulsar" */
+  color: #ffa600;
+  background: linear-gradient(to right, var(--fade-left-color, rgba(226, 232, 240, 1)), rgba(226, 232, 240, 0));
 }
 
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 30px 10px rgba(255, 221, 204, 0.7);
+/* Gradiente para el extremo derecho */
+.fade-effect::after {
+  right: 0;
+  background: linear-gradient(to left, var(--fade-right-color, rgba(226, 232, 240, 1)), rgba(226, 232, 240, 0));
+}
+
+/* Tema oscuro */
+.dark .fade-effect::before {
+  --fade-left-color: rgb(21, 38, 60); /* Gradiente izquierdo para oscuro */
+}
+
+.dark .fade-effect::after {
+  --fade-right-color: rgb(21, 32, 50); /* Gradiente derecho para oscuro */
+}
+
+/* Estilos generales de la sección */
+.section-description {
+  min-height: 80px; /* Para que no cambie si el texto varía */
+}
+
+/* Slider de iconos */
+.fade-effect.show {
+  opacity: 1;
+  height: 120px; /* Ajuste del espacio del slider */
+}
+
+.fade-effect img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+@media (max-width: 768px) {
+  .w-16 {
+    width: 50px;
   }
-  50% {
-    box-shadow: 0 0 50px 15px rgba(255, 221, 204, 0.4);
-  }
-  100% {
-    box-shadow: 0 0 30px 10px rgba(255, 221, 204, 0.7);
+
+  .h-16 {
+    height: 50px;
   }
 }
 
-/* Texto de la columna derecha */
-.about-text-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+/* ELEMENTO TAB */
+.wrapper {
+  text-align: center;
+  position: relative;
 }
 
-/* Habilidades e íconos */
-.skills-container {
+/* Tabs Navigation */
+.tabs {
+  margin-top: 10px;
+  font-size: 15px;
+  padding: 0;
+  list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
-  margin-top: 2rem;
+  justify-content: space-around;
+  border-radius: 5px;
+  position: relative;
+  background-color: #f4f4f4; /* Fondo de los tabs */
+  padding: 10px;
 }
 
-.skill-icon {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease-in-out;
+.tabs a {
+  text-transform: uppercase;
+  padding: 10px 15px;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  color: #333;
+  font-weight: 600;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 5px;
 }
 
-.skill-icon:hover {
-  transform: scale(1.1); /* Efecto de escala al pasar el cursor */
+.tabs a:hover {
+  background-color: #f17e04; /* Color al pasar el ratón */
+  color: white;
 }
 
-.skill-text {
-  margin-top: 0.5rem;
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--tw-text-opacity);
+.tabs a.active {
+  background-color: #f17e04; /* Color del tab activo */
+  color: white;
 }
 
-/* Diseño responsivo */
+.tabs .selector {
+  height: 100%;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  border-radius: 50px;
+  background: #f17e04;
+}
+
+.light .tabs .selector {
+  background: #f17e04;
+}
+
+/* Deshabilitamos la animación en móviles */
+@media (max-width: 767px) {
+  .tabs .selector {
+    display: none; /* Sin selector en móviles */
+  }
+}
+
+/* Ajustes para pantallas más grandes */
 @media (min-width: 768px) {
-  .about-container {
-    flex-direction: row;
+  .tabs {
+    justify-content: center;
+  }
+
+  .tabs a {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  .tabs .selector {
+    transition-duration: 0.6s;
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+}
+
+@media (min-width: 1024px) {
+  .tabs a {
+    padding: 15px 25px;
+    font-size: 1.25rem;
+  }
+}
+
+.tabs__panel {
+  height: 200px;
+}
+
+@media (min-width: 1024px) {
+  .tabs__panel {
+    height: 250px;
   }
 }

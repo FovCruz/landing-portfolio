@@ -8,7 +8,7 @@
     },
     "home": {
         "greeting": "Hola!",
-        "iAm": "Mi nombre es",
+        "iAm": "mi nombre es",
         "name": "Fabián Cruz V.",
         "description": "Soy un Ingeniero Informático apasionado por la automatización y la innovación tecnológica. Mi enfoque está en el desarrollo web y la gestión de sistemas TI, combinando código funcional con un diseño minimalista. Siempre busco soluciones escalables utilizando tecnologías modernas y plataformas cloud.",
         "photoAlt": "Foto de Fabián Valencia",
@@ -61,7 +61,7 @@
         "datesLabel": "Fechas"
       },
       "knowledge": {
-        "title": "Tecnologías & Herramientas",
+        "title": "Skills",
         "description": "Lenguajes, herramientas y tecnologías que utilizo con mayor o menor frecuencia en distintos proyectos laborales, personales y educacionales. Actualmente estoy enfocado en el aprendizaje continuo de"
       },
       "contact": {

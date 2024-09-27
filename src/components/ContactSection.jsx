@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next'; // Importa el hook de traducción
+import '../styles/globales.css'; // Mantenemos lo necesario
+
 
 const ContactSection = () => {
   const { t } = useTranslation(); // Hook para las traducciones

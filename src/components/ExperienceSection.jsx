@@ -123,7 +123,7 @@ const ExperienceSection = () => {
 
   return (
     <SectionWrapper id="experiencia" title={t('experience.title')}>
-      <p className="text-left my-5">
+      <p className="text-left text-gray-700 dark:text-gray-300 my-5">
         {t('experience.intro')} {/* Descripción traducida */}
       </p>
       <div className="flex flex-col md:flex-row w-full h-full justify-center items-center" onMouseLeave={handleMouseLeaveContainer}>
@@ -145,9 +145,15 @@ const ExperienceSection = () => {
               <div
                 key={index}
                 className={`
-                  text-left border border-gray-900 dark:border-[#ffddcc] mb-3 font-normal py-4 px-2 sm:px-3 md:px-4 lg:px-5 rounded-lg 
-                  transition-all duration-300 cursor-pointer
-                  ${activeButtonIndex === index || bounceIndex === index ? 'bg-gray-900 text-white dark:bg-[#ffddcc] dark:text-gray-900' : 'bg-transparent text-gray-900 dark:bg-transparent dark:text-white'}
+                  text-left 
+                  font-light
+                  border border-gray-400 dark:border-secondary 
+                  dark:text-gray-400 
+                  mb-3 py-4 px-2 sm:px-3 md:px-4 lg:px-5 
+                  rounded-lg 
+                  transition-all duration-300 
+                  cursor-pointer
+                  ${activeButtonIndex === index || bounceIndex === index ? 'bg-[#f17e04] dark:bg-[#f17e04] text-white ' : 'bg-transparent text-gray-900 dark:bg-transparent dark:text-white'}
                   ${bounceIndex === index ? 'animate-buzz bg-gray-900 text-white dark:bg-[#ffddcc] dark:text-gray-900' : ''} 
                   hover:bg-gray-900 hover:text-white dark:hover:bg-[#ffddcc] dark:hover:text-gray-900`}
                 onClick={() => handleSelectExperience(index)}
