@@ -2,15 +2,15 @@
     "aboutMe": {
         "title": "Sobre mí",
         "photoAlt": "Foto de Fabián Valencia Cruz",
-        "description1": "Soy Ingeniero Informático titulado de Duoc UC, con pasión por el desarrollo de software y la tecnología. Me especializo en construir soluciones web usando tecnologías modernas y escalables.",
-        "description2": "Mi experiencia se centra en el uso de frameworks y herramientas como",
+        "description1": "Soy Ingeniero Informático titulado de Duoc UC, especializado en el desarrollo de soluciones web escalables y modernas.<br/><br/>Tengo experiencia tanto en frontend como en backend, trabajando con arquitecturas full stack utilizando Python y Django. He creado interfaces dinámicas con frameworks como React y NodeJS, y he trabajado con bases de datos como PostgreSQL, así como en la gestión y orquestación de despliegues en la nube con AWS y Linode.<br/><br/>También he integrado tecnologías como Tailwind y MongoDB para construir aplicaciones modernas, escalables y eficientes. Cuento con una certificación en Desarrollo Full Stack Python, que me ha permitido profundizar en desarrollo frontend, bases de datos y programación avanzada en Python.<br/>",
+        "description2": "",
         "and": "y plataformas en la nube como"
     },
     "home": {
         "greeting": "Hola!",
-        "iAm": "mi nombre es",
+        "iAm": "soy",
         "name": "Fabián Cruz V.",
-        "description": "Soy un Ingeniero Informático apasionado por la automatización y la innovación tecnológica. Mi enfoque está en el desarrollo web y la gestión de sistemas TI, combinando código funcional con un diseño minimalista. Siempre busco soluciones escalables utilizando tecnologías modernas y plataformas cloud.",
+        "description": "+3 años de experiencia en TI para área de operaciones, coordinación y desarrollo de tipo front-end. Últimamente certificado como Full Stack Python por Desafío Latam. Experiencia en desarrollo de software desde landings simples hasta aplicaciones web con interfaces dinámicas utilizando distintos frameworks y servicios en la nube.",
         "photoAlt": "Foto de Fabián Valencia",
         "viewCV": "Ver CV",
         "downloadCV": "Descargar CV"
@@ -30,13 +30,21 @@
         "previousProject": "Proyecto Anterior",
         "nextProject": "Siguiente Proyecto",
         "iptvManagementSystem": {
-            "name": "Sistema de gestión de usuarios IPTV",
-            "description": "Un sistema CRUD para gestionar usuarios de una plataforma IPTV, con alertas por fecha de expiración."
+            "name": "Sistema de gestión de usuarios y ventas",
+            "description": "Un sistema CRUD para gestionar usuarios, productos y el diseño de una tienda en línea. Desarrollado con Django y Tailwind bajo la arquitectura MVC sobre AWS."
+        },
+        "defensoria": {
+            "name": "Informe Anual 2023 - Defensoría de la Niñez",
+            "description": "Sitio web responsive desarrollado para la Defensoría de la Niñez, creado en WP con templates personalizados (CFS) utilizando PHP y Bootstrap."
+        },
+        "consultoresCyc": {
+            "name": "Sitio web para OTEC “C&C Consultores”",
+            "description": "Rediseño del Sitio web responsive desarrollado a solicitud para el establecimiento educacional C&C Consultores, construido con WP, CFS para personalizar templates con PHP y Bootstrap."
         }
     },
     "experience": {
         "title": "Experiencias laborales",
-        "intro": "He estado desarrollando aplicaciones web durante aproximadamente 2 años, y siempre estoy ansioso por aprender más en esta industria de rápido crecimiento.",
+        "intro": "He estado desarrollando aplicaciones web durante aproximadamente 2 años, usando diversas tecnologías front-end y back-end manteniendo una base de código semántica, modular y DRY.",
         "ineTitle": "Gestor TI Regional INE (Proyecto Censo 2024)",
         "ineCompany": "INE - Instituto Nacional de Estadísticas, Valparaíso",
         "ineDates": "Enero 2024 - Agosto 2024",
@@ -59,18 +67,18 @@
         "andresBelloDescription": "Gestión y administración de intranet, carga de datos en REUF (SENCE), y coordinación de relatores y remuneraciones en los cursos de capacitación.",
         "companyLabel": "Empresa",
         "datesLabel": "Fechas"
-      },
-      "knowledge": {
+    },
+    "knowledge": {
         "title": "Skills",
         "description": "Lenguajes, herramientas y tecnologías que utilizo con mayor o menor frecuencia en distintos proyectos laborales, personales y educacionales. Actualmente estoy enfocado en el aprendizaje continuo de"
-      },
-      "contact": {
+    },
+    "contact": {
         "title": "Contáctame",
-        "description": "¡No dudes en ponerte en contacto, ya sea que tengas alguna pregunta, comentario o propuesta de colaboración, me encantaría leer de que se trata!",
+        "description": "¡No dudes en ponerte en contacto, ya sea que tengas alguna pregunta, comentario o propuesta de colaboración, me encantaría leer de qué se trata!",
         "formName": "Nombre",
         "formEmail": "Correo electrónico",
         "formMessage": "Mensaje",
         "formSubmit": "Enviar",
         "formStatusSuccess": "¡Mensaje enviado con éxito!"
-      }
+    }
 }

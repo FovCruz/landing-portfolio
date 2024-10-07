@@ -11,7 +11,7 @@ body {
   font-family: 'Inter', sans-serif !important;
   margin: 0;
   padding: 0;
-  background-image: url('../styles/assets/bg-white.jpg');
+  /* background-image: url('../styles/assets/bg-white.jpg'); */
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -31,8 +31,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Secciones generales */
 .section {
-  min-height: 100vh;
-  padding: 4rem 0;
+  /* padding: 4rem 0; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -160,7 +159,3 @@ button, a {
 .dark .project-hover:hover {
   box-shadow: 0 0 10px rgba(51, 130, 168, 0.22);
 }
-
-
-
-

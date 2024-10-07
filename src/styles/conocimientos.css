@@ -1,9 +1,14 @@
+/* Estilos generales de la sección */
+.section-description {
+  min-height: 80px; /* Para que no cambie si el texto varía */
+}
+
 /* Efecto de desvanecimiento (fade) */
-.fade-effect {
+/* .fade-effect {
   position: relative;
   height: 5rem;
   z-index: 3;
-}
+} */
 
 /* Gradiente común */
 .fade-effect::before,
@@ -12,7 +17,7 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 100px;
+  width:100px;
   z-index: 2;
   pointer-events: none;
 }
@@ -20,42 +25,38 @@
 /* Gradiente para el extremo izquierdo */
 .fade-effect::before {
   left: 0;
-  color: #ffa600;
-  background: linear-gradient(to right, var(--fade-left-color, rgba(226, 232, 240, 1)), rgba(226, 232, 240, 0));
+  background: linear-gradient(to right, var(--fade-left-color, rgba(255, 255, 255)), rgba(226, 232, 240, 0));
 }
 
 /* Gradiente para el extremo derecho */
 .fade-effect::after {
   right: 0;
-  background: linear-gradient(to left, var(--fade-right-color, rgba(226, 232, 240, 1)), rgba(226, 232, 240, 0));
+  background: linear-gradient(to left, var(--fade-right-color, rgba(255, 255, 255)), rgba(226, 232, 240, 0));
 }
 
 /* Tema oscuro */
 .dark .fade-effect::before {
-  --fade-left-color: rgb(21, 38, 60); /* Gradiente izquierdo para oscuro */
+  --fade-left-color: rgb(26, 42, 63); /* Gradiente izquierdo para oscuro */
 }
 
 .dark .fade-effect::after {
-  --fade-right-color: rgb(21, 32, 50); /* Gradiente derecho para oscuro */
+  --fade-right-color: rgb(26, 42, 63); /* Gradiente derecho para oscuro */
 }
 
-/* Estilos generales de la sección */
-.section-description {
-  min-height: 80px; /* Para que no cambie si el texto varía */
-}
+
 
 /* Slider de iconos */
 .fade-effect.show {
   opacity: 1;
-  height: 120px; /* Ajuste del espacio del slider */
+  height:65px; /* Ajuste del espacio del slider */
 }
 
-.fade-effect img {
+/* .fade-effect img {
   max-width: 100%;
   max-height: 100%;
-}
+} */
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .w-16 {
     width: 50px;
   }
@@ -63,104 +64,104 @@
   .h-16 {
     height: 50px;
   }
-}
+} */
 
-/* ELEMENTO TAB */
-.wrapper {
-  text-align: center;
+
+/* ELEMENTOS TABS */
+.tab_container {
   position: relative;
+  padding-bottom: 100px; /* Espacio para el slider */
+}
+/* Solo afecta los inputs y secciones dentro de tab_container */
+.tab_container input[type="radio"],
+.tab_container section {
+  display: none;
 }
 
-/* Tabs Navigation */
-.tabs {
-  margin-top: 10px;
+
+/* Solo afecta los labels dentro de tab_container */
+.tab_container label {
+  font-weight: 300;
   font-size: 15px;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  border-radius: 5px;
-  position: relative;
-  background-color: #f4f4f4; /* Fondo de los tabs */
-  padding: 10px;
-}
-
-.tabs a {
-  text-transform: uppercase;
-  padding: 10px 15px;
-  display: inline-block;
-  position: relative;
-  z-index: 1;
-  color: #333;
-  font-weight: 600;
+  /* display: block; */
+  float: left;
+  width: 20%;
+  padding: 1.5em;
+  /* color: #757575; */
+  cursor: pointer;
   text-align: center;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  border-radius: 5px;
+  background: #f1d1c2;
+  transition: background 0.3s, color 0.3s;
 }
 
-.tabs a:hover {
-  background-color: #f17e04; /* Color al pasar el ratón */
-  color: white;
+.tab_container label:hover {
+  background: #e0e0e0;
 }
 
-.tabs a.active {
-  background-color: #f17e04; /* Color del tab activo */
-  color: white;
+.tab_container [id^="tab"]:checked + label {
+  background: #1b2c4240;
+  box-shadow: inset 0 3px #ffa11c;
 }
 
-.tabs .selector {
-  height: 100%;
-  display: inline-block;
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 0;
-  border-radius: 50px;
-  background: #f17e04;
+.tab_container [id^="tab"]:checked + label .fa {
+  color: rgba(255, 236, 205, 0.845);
+}
+/* 
+label .fa {
+  font-size: 1.3em;
+  margin-right: 0.4em;
+} */
+
+@media only screen and (max-width: 900px) {
+  .tab_container {
+    width: 98%;
+    margin: 20px 0;
+  }
+}
+.tab_container .tab-content {
+  padding: 20px;
+  background: #ffffff00;
+  color: rgb(31, 41, 55);
+  border: 1px solid #1b2c42;
+  background: #1b2c4240;
+    /* border-bottom: 1px solid rgba(31, 41, 55, 0.295); */
+  display: none;
 }
 
-.light .tabs .selector {
-  background: #f17e04;
+.dark .tab-content {
+  color: #f8d7c7;
 }
 
-/* Deshabilitamos la animación en móviles */
-@media (max-width: 767px) {
-  .tabs .selector {
-    display: none; /* Sin selector en móviles */
+.tab_container .tab-content.show {
+  display: block;
+}
+
+.tab_container .tab-content p,
+.tab_container .tab-content h3 {
+  animation: fadeInScale 0.7s ease-in-out;
+}
+
+@keyframes fadeInScale {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 }
 
-/* Ajustes para pantallas más grandes */
-@media (min-width: 768px) {
-  .tabs {
-    justify-content: center;
-  }
-
-  .tabs a {
-    padding: 10px 20px;
-    font-size: 1rem;
-  }
-
-  .tabs .selector {
-    transition-duration: 0.6s;
-    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  }
+.fixed-height {
+  padding: auto;
+  height: 180px; /* Ajusta esta altura */
+  overflow: auto; /* Permite el desplazamiento si el contenido es mayor al contenedor */
 }
 
-@media (min-width: 1024px) {
-  .tabs a {
-    padding: 15px 25px;
-    font-size: 1.25rem;
-  }
-}
-
-.tabs__panel {
-  height: 200px;
-}
-
-@media (min-width: 1024px) {
-  .tabs__panel {
-    height: 250px;
-  }
+/* Slider de iconos */
+.slider-icon {
+  width: 55px; /* Tamaño reducido de los íconos */
+  height: 55px; /* Tamaño reducido de los íconos */
+  margin: 0 10px; /* Espacio entre los íconos */
+  transition: transform 0.3s ease; /* Suaviza la animación al pasar el mouse */
 }

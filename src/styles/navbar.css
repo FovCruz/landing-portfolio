@@ -1,60 +1,21 @@
-/* Estilos generales del Navbar */
-nav {
-    position: fixed;
-    width: 100%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 10;
-    backdrop-filter: blur(5px);
-    background-color: rgba(15, 23, 42, 0.8);
-    transition: background-color 0.3s ease-in-out;
-    padding-left: 0; /* Asegurar que no haya padding en el navbar */
-}
-
 /* Estilos para los enlaces del Navbar */
 .nav-link {
     position: relative;
-    padding-bottom: 0.5rem;
-    color: inherit;
+    padding-bottom: 0.2rem;
     transition: all 0.3s ease-in-out;
 }
-
 /* Efecto de hover para los enlaces del navbar */
 .nav-link::after {
     content: '';
     position: absolute;
     width: 0;
-    height: 2px;
+    height: 1px;
     bottom: 0;
     left: 0;
     transition: width 0.3s ease-in-out;
 }
-
 /* Hover para mostrar línea de fondo debajo del enlace */
 .nav-link:hover::after {
     width: 100%;
     background-color: #ffddcc;
-}
-
-/* Estilo del logo */
-.logo-personalizado {
-    width: 200px;
-    height: auto;
-    transition: color 0.3s ease-in-out;
-    color: #61DAFB;
-}
-
-/* Menú desplegable para móvil */
-ul.lg\\:hidden {
-    background-color: rgba(15, 23, 42, 0.8); /* Fondo semi-transparente para el menú móvil */
-}
-
-/* Transiciones de íconos y botones en el navbar */
-button, a {
-    transition: all 0.3s ease;
-}
-
-/* Iconos del menú e íconos de tema/cambio de fuente */
-.icono {
-    color: #ffddcc;
-    transition: color 0.3s ease-in-out;
 }

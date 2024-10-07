@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
-import { useTranslation } from 'react-i18next'; // Importa el hook de traducción
-import '../styles/globales.css'; // Mantenemos lo necesario
-
+import { FaGithub, FaLinkedinIn, FaFileDownload  } from 'react-icons/fa';
+import { BsFiletypePdf } from "react-icons/bs";
+import { useTranslation } from 'react-i18next';
+import emailjs from 'emailjs-com';
+import Swal from 'sweetalert2';  // Importa SweetAlert2
+import withReactContent from 'sweetalert2-react-content'; // Para usar React en los popups
+// import '../styles/contact.css';
 
 const ContactSection = () => {
-  const { t } = useTranslation(); // Hook para las traducciones
+  const { t } = useTranslation();
+  const MySwal = withReactContent(Swal);  // Configurar SweetAlert2 para usar con React
 
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: ''
   });
-
-  const [formStatus, setFormStatus] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,19 +25,99 @@ const ContactSection = () => {
     }));
   };
 
+  // Función para validar el correo electrónico
+  const validateEmail = (email) => {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailPattern.test(email);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Aquí puedes implementar el envío del formulario
-    setFormStatus(t('contact.formStatusSuccess'));
-    setFormData({
-      name: '',
-      email: '',
-      message: ''
-    });
+
+    // Validar el formulario antes de enviar
+    if (!formData.name) {
+      MySwal.fire({
+        title: 'Error',
+        text: 'Por favor, ingresa tu nombre.',
+        icon: 'error',
+        confirmButtonText: 'OK',
+      });
+      return;
+    }
+
+    if (!formData.email) {
+      MySwal.fire({
+        title: 'Error',
+        text: 'Por favor, ingresa tu correo electrónico.',
+        icon: 'error',
+        confirmButtonText: 'OK',
+      });
+      return;
+    }
+
+    if (!validateEmail(formData.email)) {
+      MySwal.fire({
+        title: 'Error',
+        text: 'Por favor, ingresa un correo electrónico válido (ejemplo@dominio.com).',
+        icon: 'error',
+        confirmButtonText: 'OK',
+      });
+      return;
+    }
+
+    if (!formData.message) {
+      MySwal.fire({
+        title: 'Error',
+        text: 'Por favor, ingresa un mensaje.',
+        icon: 'error',
+        confirmButtonText: 'OK',
+      });
+      return;
+    }
+
+    // Detectar el tema del sitio (claro u oscuro)
+    const isDarkMode = document.body.classList.contains('dark-mode');
+
+    // Crear un objeto que coincida con las variables del template en EmailJS
+    const emailParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      message: formData.message,
+    };
+
+    // Configura EmailJS
+    emailjs.send('service_citpnab', 'template_qojtbji', emailParams, 'Wa5ifEqnS-Rath25z')
+      .then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
+        // Mostrar el popup con SweetAlert2
+        MySwal.fire({
+          title: '¡Muchas gracias por enviarme tu mensaje!',
+          html: '<p>Responderé tan pronto como sea posible 😊</p><div class="emoji">😊</div>',  // El emoji con movimiento
+          icon: 'success',
+          showConfirmButton: false,
+          timer: 5000,
+          background: isDarkMode ? '#374151' : '#fff',  // bg-gray-700 (hex: #374151) para oscuro
+          color: isDarkMode ? '#D1D5DB' : '#000',  // text-gray-300 (hex: #D1D5DB) para oscuro
+        });
+        setFormData({
+          name: '',
+          email: '',
+          message: ''
+        });
+      }, (error) => {
+        console.error('FAILED...', error);
+        MySwal.fire({
+          title: 'Error',
+          text: 'Hubo un problema al enviar el mensaje. Intenta de nuevo más tarde.',
+          icon: 'error',
+          background: isDarkMode ? '#374151' : '#fff',  // bg-gray-700 para oscuro
+          color: isDarkMode ? '#D1D5DB' : '#000',  // text-gray-300 para oscuro
+        });
+      });
   };
 
   // Clases comunes para textos y botones
-  const commonTextClasses = 'dark:text-[#ffddcc] text-gray-900';
+  const commonTextClasses = 'dark:text-[#D1D5DB] text-gray-900';  // text-gray-300 en dark
   const commonButtonClasses = 'font-light font-normal py-2 px-2 sm:px-3 md:px-4 lg:px-5 rounded-lg border transition-all duration-300';
   const buttonHoverClasses = 'dark:hover:bg-[#ffddcc] dark:hover:text-gray-900 hover:bg-gray-900 hover:text-white';
 
@@ -43,10 +125,11 @@ const ContactSection = () => {
     <section id="contacto" className="section body-font relative text-gray-400" aria-labelledby="contacto-title">
       <div className="container mx-auto px-5 py-24">
         <div className="mb-12 flex w-full flex-col text-center">
-          <h1 id="contacto-title" className={`title-font mb-4 text-2xl font-medium text-white sm:text-3xl ${commonTextClasses}`}>
+          <h1 id="contacto-title" className={`className="title-font text-2xl font-medium dark:text-secondary sm:text-3xl text-center mb-6 ${commonTextClasses}`}>
             {t('contact.title')} {/* Título traducido */}
           </h1>
-          <p className="mx-auto text-base leading-relaxed lg:w-2/3">
+
+          <p className="mx-auto text-base leading-relaxed lg:w-2/3 text-gray-700 dark:text-gray-300">
             {t('contact.description')} {/* Descripción traducida */}
           </p>
         </div>
@@ -61,8 +144,8 @@ const ContactSection = () => {
                     type="text"
                     id="name"
                     name="name"
-                    className="peer w-full rounded border border-gray-700 bg-gray-800 bg-opacity-40 py-1 px-3 text-base leading-8 text-gray-100 placeholder-transparent outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900"
-                    placeholder={t('contact.formName')} // Nombre traducido
+                    className="peer w-full rounded border border-gray-700 bg-transparent dark:bg-gray-800 py-1 px-3 text-base leading-8 text-gray-900 dark:text-gray-300 placeholder-transparent outline-none transition-colors duration-200 ease-in-out focus:border-[#f8d7c7] focus:bg-transparent focus:ring-0"
+                    placeholder={t('contact.formName')}
                     value={formData.name}
                     onChange={handleChange}
                     required
@@ -70,11 +153,11 @@ const ContactSection = () => {
                   />
                   <label
                     htmlFor="name"
-                    className="absolute left-3 -top-6 bg-transparent text-sm leading-7 text-indigo-500 transition-all 
+                    className="absolute left-3 -top-6 bg-transparent text-sm leading-7 text-[#f8d7c7] transition-all 
                       peer-placeholder-shown:left-3 peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 
-                      peer-focus:left-3 peer-focus:-top-6 peer-focus:text-sm peer-focus:text-indigo-500"
+                      peer-focus:left-3 peer-focus:-top-6 peer-focus:text-sm peer-focus:text-[#f8d7c7]"
                   >
-                    {t('contact.formName')} {/* Label traducido */}
+                    {t('contact.formName')}
                   </label>
                 </div>
               </div>
@@ -84,8 +167,8 @@ const ContactSection = () => {
                     type="email"
                     id="email"
                     name="email"
-                    className="peer w-full rounded border border-gray-700 bg-gray-800 bg-opacity-40 py-1 px-3 text-base leading-8 text-gray-100 placeholder-transparent outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900"
-                    placeholder={t('contact.formEmail')} // Correo traducido
+                    className="peer w-full rounded border border-gray-700 bg-transparent dark:bg-gray-800 py-1 px-3 text-base leading-8 text-gray-900 dark:text-gray-300 placeholder-transparent outline-none transition-colors duration-200 ease-in-out focus:border-[#f8d7c7] focus:bg-transparent focus:ring-0"
+                    placeholder={t('contact.formEmail')}
                     value={formData.email}
                     onChange={handleChange}
                     required
@@ -93,11 +176,11 @@ const ContactSection = () => {
                   />
                   <label
                     htmlFor="email"
-                    className="absolute left-3 -top-6 bg-transparent text-sm leading-7 text-indigo-500 transition-all 
+                    className="absolute left-3 -top-6 bg-transparent text-sm leading-7 text-[#f8d7c7] transition-all 
                       peer-placeholder-shown:left-3 peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 
-                      peer-focus:left-3 peer-focus:-top-6 peer-focus:text-sm peer-focus:text-indigo-500"
+                      peer-focus:left-3 peer-focus:-top-6 peer-focus:text-sm peer-focus:text-[#f8d7c7]"
                   >
-                    {t('contact.formEmail')} {/* Label traducido */}
+                    {t('contact.formEmail')}
                   </label>
                 </div>
               </div>
@@ -106,8 +189,8 @@ const ContactSection = () => {
                   <textarea
                     id="message"
                     name="message"
-                    className="peer h-32 w-full resize-none rounded border border-gray-700 bg-gray-800 bg-opacity-40 py-1 px-3 text-base leading-6 text-gray-100 placeholder-transparent outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900"
-                    placeholder={t('contact.formMessage')} // Mensaje traducido
+                    className="peer h-32 w-full resize-none rounded border border-gray-700 bg-transparent dark:bg-gray-800 py-1 px-3 text-base leading-6 text-gray-900 dark:text-gray-300 placeholder-transparent outline-none transition-colors duration-200 ease-in-out focus:border-[#f8d7c7] focus:bg-transparent focus:ring-0"
+                    placeholder={t('contact.formMessage')}
                     value={formData.message}
                     onChange={handleChange}
                     required
@@ -115,11 +198,11 @@ const ContactSection = () => {
                   ></textarea>
                   <label
                     htmlFor="message"
-                    className="absolute left-3 -top-6 bg-transparent text-sm leading-7 text-indigo-500 transition-all 
+                    className="absolute left-3 -top-6 bg-transparent text-sm leading-7 text-[#f8d7c7] transition-all 
                       peer-placeholder-shown:left-3 peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 
-                      peer-focus:left-3 peer-focus:-top-6 peer-focus:text-sm peer-focus:text-indigo-500"
+                      peer-focus:left-3 peer-focus:-top-6 peer-focus:text-sm peer-focus:text-[#f8d7c7]"
                   >
-                    {t('contact.formMessage')} {/* Label traducido */}
+                    {t('contact.formMessage')}
                   </label>
                 </div>
               </div>
@@ -128,34 +211,27 @@ const ContactSection = () => {
                   type="submit"
                   className={`${commonButtonClasses} dark:border-[#ffddcc] border-gray-900 dark:text-[#ffddcc] text-gray-900 ${buttonHoverClasses} text-center`}
                 >
-                  {t('contact.formSubmit')} {/* Botón traducido */}
+                  {t('contact.formSubmit')}
                 </button>
               </div>
-
-              {formStatus && (
-                <div className="w-full p-2 text-center text-green-500">
-                  {formStatus}
-                </div>
-              )}
             </form>
 
-            {/* Pie de página */}
             <div className="mt-8 w-full border-t border-gray-800 p-2 pt-8 text-center">
-              <a href="mailto:fov.cruz@gmail.com" className="text-indigo-400 hover:underline">
+              <a href="mailto:fov.cruz@gmail.com" className="text-[#f8d7c7] hover:underline">
                 fov.cruz@gmail.com
               </a>
               <span className="inline-flex">
-                <a href="https://facebook.com/tu_perfil" className="text-gray-500 hover:text-white mx-2" aria-label="Facebook">
-                  <FaFacebookF className="h-5 w-5" />
+                <a href="https://github.com/FovCruz" className="text-gray-500 hover:text-white mx-2" aria-label="Facebook">
+                  <FaGithub className="h-5 w-5" />
                 </a>
-                <a href="https://twitter.com/tu_usuario" className="text-gray-500 hover:text-white mx-2" aria-label="Twitter">
-                  <FaTwitter className="h-5 w-5" />
-                </a>
-                <a href="https://instagram.com/tu_usuario" className="text-gray-500 hover:text-white mx-2" aria-label="Instagram">
-                  <FaInstagram className="h-5 w-5" />
-                </a>
-                <a href="https://linkedin.com/in/tu_usuario" className="text-gray-500 hover:text-white mx-2" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/in/fabian-osvaldo-cruz/" className="text-gray-500 hover:text-white mx-2" aria-label="Twitter">
                   <FaLinkedinIn className="h-5 w-5" />
+                </a>
+                <a href={`${process.env.PUBLIC_URL}/CV_Fabian_Valencia_formato_ATS_.docx`} className="text-gray-500 hover:text-white mx-2" download aria-label="Descargar CV ATS ">
+                  <FaFileDownload className="h-5 w-5" />
+                </a>
+                <a href={`${process.env.PUBLIC_URL}/CV-Fabian-Valencia-C-09-2024-mod09-3.pdf`} className="text-gray-500 hover:text-white mx-2" download aria-label="Descargar CV ATS ">
+                  <BsFiletypePdf className="h-5 w-5" />
                 </a>
               </span>
             </div>

@@ -17,11 +17,18 @@ const ProjectsSection = () => {
       images: [`${process.env.PUBLIC_URL}/vthome.jpg`, `${process.env.PUBLIC_URL}/vthome2.jpg`],
     },
     {
-      name: 'Informe Anual 2023',
-      description: 'Sitio web creado en WordPress con templates personalizados por CFS con PHP para el Informe Anual 2023 de la Defensoría de la Niñez.',
-      technologies: ['PHP', 'CSS', 'WordPress'],
+      name: t('projects.defensoria.name'),
+      description: t('projects.defensoria.description'),
+      technologies: ['PHP', 'WordPress', 'CSS'],
       siteLink: 'https://www.defensorianinez.cl/informe-anual-2023/',
       images: [`${process.env.PUBLIC_URL}/cta_publica.jpg`, `${process.env.PUBLIC_URL}/cta_publica2.jpg`, `${process.env.PUBLIC_URL}/def_ninez.jpg`],
+    },
+    {
+      name: 'OTEC C&C Consultores Website',
+      description: 'Website for course management, redesigned with WordPress and dynamic PHP templates using CFS.',
+      technologies: ['WordPress', 'PHP', 'CSS', 'cPanel'],
+      siteLink: 'https://consultorescyc.cl',
+      images: [`${process.env.PUBLIC_URL}/cyc.jpg`, `${process.env.PUBLIC_URL}/cyc1.jpg`, `${process.env.PUBLIC_URL}/cyc2.jpg`],
     },
   ];
 
@@ -32,9 +39,9 @@ const ProjectsSection = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prevImage) => (prevImage === projects[currentProject].images.length - 1 ? 0 : prevImage + 1));
-    }, 3000); // Intervalo de 3 segundos
+    }, 3000);
 
-    return () => clearInterval(interval); // Limpieza del intervalo
+    return () => clearInterval(interval);
   }, [currentImage, currentProject, projects]);
 
   const handlePrevClick = () => {
@@ -57,7 +64,7 @@ const ProjectsSection = () => {
 
   return (
     <SectionWrapper id="proyectos" title={t('projects.title')}>
-      <div className="project-hover flex flex-col md:flex-row items-center justify-between p-3 h-full relative ">
+      <div className="project-hover flex flex-col md:flex-row items-center justify-between py-3 h-full relative">
         <div className="w-full md:w-1/2 relative overflow-hidden rounded-lg h-[250px] md:h-[300px] lg:h-[400px] border-[1px] shadow-lg contenedor">
           <img
             src={projects[currentProject].images[currentImage]}
@@ -88,13 +95,13 @@ const ProjectsSection = () => {
 
           <div className="flex space-x-4">
             {projects[currentProject].siteLink && (
-              <CustomButton link={projects[currentProject].siteLink} ariaLabel={`Ver sitio de ${projects[currentProject].name}`} isSectionButton={true}>
+              <CustomButton link={projects[currentProject].siteLink} ariaLabel={`View site of ${projects[currentProject].name}`} isSectionButton={true}>
                 <FaGlobe className="inline mr-2 text-gray-900 dark:text-[#ffddcc]" /> {t('projects.viewSite')}
               </CustomButton>
             )}
 
             {projects[currentProject].githubLink && (
-              <CustomButton link={projects[currentProject].githubLink} ariaLabel={`Ver en GitHub de ${projects[currentProject].name}`} isSectionButton={true}>
+              <CustomButton link={projects[currentProject].githubLink} ariaLabel={`View GitHub of ${projects[currentProject].name}`} isSectionButton={true}>
                 <FaGithub className="inline mr-2 text-gray-900 dark:text-[#ffddcc]" /> {t('projects.viewGitHub')}
               </CustomButton>
             )}
@@ -103,10 +110,10 @@ const ProjectsSection = () => {
       </div>
 
       <div className="flex justify-center mt-8 space-x-4">
-        <CustomButton onClick={handlePrevClick} isSectionButton={true} ariaLabel="Proyecto anterior">
+        <CustomButton onClick={handlePrevClick} isSectionButton={true} ariaLabel="Previous project">
           <FaArrowLeft className="inline mr-2 text-gray-900 dark:text-[#ffddcc]" /> {t('projects.previousProject')}
         </CustomButton>
-        <CustomButton onClick={handleNextClick} isSectionButton={true} ariaLabel="Siguiente proyecto">
+        <CustomButton onClick={handleNextClick} isSectionButton={true} ariaLabel="Next project">
           {t('projects.nextProject')} <FaArrowRight className="inline ml-2 text-gray-900 dark:text-[#ffddcc]" />
         </CustomButton>
       </div>

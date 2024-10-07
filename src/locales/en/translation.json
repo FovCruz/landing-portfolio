@@ -2,15 +2,15 @@
     "aboutMe": {
         "title": "About Me",
         "photoAlt": "Photo of Fabián Valencia Cruz",
-        "description1": "I am a Software Engineer from Duoc UC, passionate about software development and technology. I specialize in building scalable web solutions using modern technologies.",
-        "description2": "My experience focuses on frameworks and tools such as",
+        "description1": "I am a Software Engineer from Duoc UC, specialized in developing scalable and modern web solutions.<br/><br/>I have experience in both frontend and backend, working with full stack architectures using Python and Django. I have created dynamic interfaces with frameworks like React and NodeJS, and worked with databases such as PostgreSQL, as well as cloud orchestration and deployment management with AWS and Linode.<br/><br/>I have also integrated technologies like Tailwind and MongoDB to build modern, scalable, and efficient applications. I hold a Full Stack Python Development certification, which has allowed me to deepen my knowledge in frontend development, databases, and advanced Python programming.<br/>",
+        "description2": "",
         "and": "and cloud platforms like"
     },
     "home": {
         "greeting": "Hello!",
-        "iAm": "my name is",
+        "iAm": "I´m",
         "name": "Fabián Cruz V.",
-        "description": "I am a Software Engineer passionate about automation and technological innovation. My focus is on web development and IT systems management, combining functional code with a minimalist design. I always seek scalable solutions using modern technologies and cloud platforms.",
+        "description": "+3 years of experience in IT for operations, coordination, and front-end development. Recently certified as a Full Stack Python developer by Desafío Latam. Experience in software development, from simple landings to web applications with dynamic interfaces using various frameworks and cloud services.",
         "photoAlt": "Photo of Fabián Valencia",
         "viewCV": "View CV",
         "downloadCV": "Download CV"
@@ -30,13 +30,21 @@
         "previousProject": "Previous Project",
         "nextProject": "Next Project",
         "iptvManagementSystem": {
-            "name": "IPTV User Management System",
-            "description": "A CRUD system to manage users of an IPTV platform, with expiration date alerts."
+            "name": "User and Sales Management System",
+            "description": "A CRUD system for managing users, products, and the design of an online store. Developed with Django and Tailwind under the MVC architecture on AWS."
+        },
+        "defensoria": {
+            "name": "Annual Report 2023 - Children's Ombudsman",
+            "description": "Responsive website developed for the Children's Ombudsman, created in WP with custom templates (CFS) using PHP and Bootstrap."
+        },
+        "consultoresCyc": {
+            "name": "OTEC C&C Consultores Website",
+            "description": "Responsive website redesign developed upon request for the educational institution C&C Consultores, built with WP, CFS to customize templates with PHP and Bootstrap."
         }
     },
     "experience": {
         "title": "Work Experience",
-        "intro": "I've been doing web development for about 2 years now, and I'm always eager to learn more in this fast-paced industry.",
+        "intro": "I have been developing web applications for approximately 2 years, using various front-end and back-end technologies while maintaining a semantic, modular, and DRY codebase.",
         "ineTitle": "Regional IT Manager INE (Project CENSO 2024)",
         "ineCompany": "INE - Instituto Nacional de Estadisticas, Valparaíso",
         "ineDates": "January 2024 - August 2024",

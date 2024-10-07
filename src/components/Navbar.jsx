@@ -96,7 +96,7 @@ const Navbar = ({ toggleTheme, changeFontSize, changeLanguage }) => {
             <img
               src={`${process.env.PUBLIC_URL}/logo.svg`}
               alt="Logo de F.Cruz"
-              className="logo-personalizado"
+              className="w-36"
               style={{ marginLeft: '0' }} // Asegúrate de que no tenga margen
             />
           </div>

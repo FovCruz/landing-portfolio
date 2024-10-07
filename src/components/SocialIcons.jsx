@@ -12,7 +12,7 @@ const SocialIcons = () => {
   return (
     <>
       {/* Contenedor de íconos en la izquierda */}
-      <div className="social-icons left">
+      <div className="social-icons left text-gray-900 dark:text-gray-300">
         <ul>
           {/* Icono de GitHub */}
           <li>
@@ -77,7 +77,7 @@ const SocialIcons = () => {
       )}
 
       {/* Contenedor de íconos en la derecha (Correo en vertical) */}
-      <div className="social-icons right">
+      <div className="social-icons right text-gray-900 dark:text-gray-300"> 
         <div className="email-vertical">
           <a href="mailto:fov.cruz@gmail.com">fov.cruz@gmail.com</a>
         </div>

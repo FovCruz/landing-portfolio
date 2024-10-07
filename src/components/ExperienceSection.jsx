@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import SectionWrapper from './SectionWrapper'; // Usamos el SectionWrapper para mantener la consistencia
-import '../styles/Accordion.css'; // Solo mantenemos lo necesario
+// import '../styles/Accordion.css';
 
 const ExperienceSection = () => {
   const { t } = useTranslation();
@@ -168,10 +168,10 @@ const ExperienceSection = () => {
 
         <div
           className="experience-right w-full md:w-[70%] p-0 rounded-lg flex justify-center"
-          style={{ height: '400px' }}
+          style={{ height: '310px' }}
         >
           {displayedExperience ? (
-            <div className="experience-detail text-left overflow-y-auto h-full p-4">
+            <div className="experience-detail text-left overflow-y-auto h-full p-4 dark:text-gray-300">
               <h3 className="text-2xl font-semibold mb-2">
                 {displayedExperience.title}
               </h3>
