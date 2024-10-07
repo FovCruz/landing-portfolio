@@ -128,7 +128,7 @@ const ExperienceSection = () => {
       </p>
       <div className="flex flex-col md:flex-row w-full h-full justify-center items-center" onMouseLeave={handleMouseLeaveContainer}>
         <div
-          className="w-full md:w-[45%] p-6 overflow-y-auto flex relative"
+          className="w-full md:w-[50%] p-6 overflow-y-auto flex relative"
           onMouseEnter={handleMouseEnterButtons}
           onMouseLeave={handleMouseLeaveButtons}
         >
