@@ -14,7 +14,7 @@ const ExperienceSection = () => {
       locationType: t('experience.hybrid'),
       description: (
         <>
-          {t('experience.ineDescription')} <span className="text-light">SLA</span> {t('experience.and')} <span className="text-light">ITIL</span>.
+          {t('experience.ineDescription')}
         </>
       ),
     },
@@ -25,7 +25,7 @@ const ExperienceSection = () => {
       locationType: t('experience.hybrid'),
       description: (
         <>
-          {t('experience.tallerDescription')} <span className="text-light">WordPress</span> y <span className="text-light">PHP</span>.
+          {t('experience.tallerDescription')}
         </>
       ),
     },
@@ -36,7 +36,7 @@ const ExperienceSection = () => {
       locationType: t('experience.remote'),
       description: (
         <>
-          {t('experience.ccDescription')} <span className="text-light">Mailrelay</span>, {t('experience.and')} <span className="text-light">cPanel</span>.
+          {t('experience.ccDescription')}
         </>
       ),
     },
@@ -47,7 +47,7 @@ const ExperienceSection = () => {
       locationType: t('experience.hybrid'),
       description: (
         <>
-          {t('experience.zekeDescription')} <span className="text-light">Nagios</span>, <span className="text-light">GLPI</span>, <span className="text-light">Oracle SQL Developer</span> {t('experience.and')} <span className="text-light">Putty</span>.
+          {t('experience.zekeDescription')}
         </>
       ),
     },

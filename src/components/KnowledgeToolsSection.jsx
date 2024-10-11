@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { FaReact, FaCode, FaDatabase, FaTools, FaBook } from 'react-icons/fa'; // Importando los íconos relevantes
+import { FaReact, FaCode, FaDatabase, FaTools, FaBook } from 'react-icons/fa';
 import SectionWrapper from './SectionWrapper';
 import '../styles/conocimientos.css';
 import Slider from 'react-infinite-logo-slider';
@@ -19,137 +19,153 @@ const KnowledgeSection = () => {
         {t('knowledge.description')}
         <span className="font-bold"> React</span>,
         <span className="font-bold"> MongoDB</span>,
-        <span className="font-bold"> Node</span>.
+        <span className="font-bold"> Node.js</span>.
       </p>
 
-      {/* Diseño adaptado a tabs responsivos */}
       <div className="tab_container w-full">
-        <input id="tab1" type="radio" name="tabs" checked={activeTab === 'tab1'} onChange={() => handleTabChange('tab1')} />
-        <label htmlFor="tab1" className={`cursor-pointer p-4 flex items-center justify-center
-          ${activeTab === 'tab1' ? 'bg-white text-[#ffa11c]' : 'bg-gray-800 text-gray-600'}
-          ${activeTab !== 'tab1' ? 'hover:bg-gray-700' : ''}`}>
-          <FaReact className="mr-2" />
-          <span className="hidden sm:inline">{t('Front-end')}</span>
-        </label>
+        {/* Tabs */}
+        {['tab1', 'tab2', 'tab3', 'tab4', 'tab5'].map((tab, index) => {
+          const tabLabels = ['Front-end', 'Back-end', 'Tecnologías', 'Educación', 'Otros'];
+          const tabIcons = [<FaReact />, <FaCode />, <FaDatabase />, <FaBook />, <FaTools />];
 
-        <input id="tab2" type="radio" name="tabs" checked={activeTab === 'tab2'} onChange={() => handleTabChange('tab2')} />
-        <label htmlFor="tab2" className={`cursor-pointer p-4 flex items-center justify-center
-          ${activeTab === 'tab2' ? 'bg-white text-[#ffa11c]' : 'bg-gray-800 text-gray-600'}
-          ${activeTab !== 'tab2' ? 'hover:bg-gray-700' : ''}`}>
-          <FaCode className="mr-2" />
-          <span className="hidden sm:inline">{t('Back-end')}</span>
-        </label>
+          return (
+            <React.Fragment key={tab}>
+              <input id={tab} type="radio" name="tabs" checked={activeTab === tab} onChange={() => handleTabChange(tab)} />
+              <label
+                htmlFor={tab}
+                className={`cursor-pointer p-4 flex items-center justify-center
+                  ${activeTab === tab ? 'bg-gray-800 text-[#ffa11c]' : 'bg-[#f8d7c7]'}
+                  hover:bg-gray-800 transition-all duration-300`}
+              >
+                <span className="mr-2">{tabIcons[index]}</span>
+                <span className="hidden sm:inline">{tabLabels[index]}</span>
+              </label>
+            </React.Fragment>
+          );
+        })}
 
-        <input id="tab3" type="radio" name="tabs" checked={activeTab === 'tab3'} onChange={() => handleTabChange('tab3')} />
-        <label htmlFor="tab3" className={`cursor-pointer p-4 flex items-center justify-center
-          ${activeTab === 'tab3' ? 'bg-white text-[#ffa11c]' : 'bg-gray-800 text-gray-600'}
-          ${activeTab !== 'tab3' ? 'hover:bg-gray-700' : ''}`}>
-          <FaDatabase className="mr-2" />
-          <span className="hidden sm:inline">{t('Fullstack')}</span>
-        </label>
-
-        <input id="tab4" type="radio" name="tabs" checked={activeTab === 'tab4'} onChange={() => handleTabChange('tab4')} />
-        <label htmlFor="tab4" className={`cursor-pointer p-4 flex items-center justify-center
-          ${activeTab === 'tab4' ? 'bg-white text-[#ffa11c]' : 'bg-gray-800 text-gray-600'}
-          ${activeTab !== 'tab4' ? 'hover:bg-gray-700' : ''}`}>
-          <FaTools className="mr-2" />
-          <span className="hidden sm:inline">{t('Herramientas')}</span>
-        </label>
-
-        <input id="tab5" type="radio" name="tabs" checked={activeTab === 'tab5'} onChange={() => handleTabChange('tab5')} />
-        <label htmlFor="tab5" className={`cursor-pointer p-4 flex items-center justify-center
-          ${activeTab === 'tab5' ? 'bg-white text-[#ffa11c]' : 'bg-gray-800 text-gray-600'}
-          ${activeTab !== 'tab5' ? 'hover:bg-gray-700' : ''}`}>
-          <FaBook className="mr-2" />
-          <span className="hidden sm:inline">{t('Cursos & Talleres')}</span>
-        </label>
-
+        {/* Contenido de Front-end */}
         <section id="content1" className={`tab-content ${activeTab === 'tab1' ? 'show' : ''} fixed-height`}>
-          <div className="columns-2 tech-items">
-            <div className="flex items-center mb-4 tech-item">
-              <img src={`${process.env.PUBLIC_URL}/iconos/react.svg`} alt="React" className="w-6 h-6 mr-2" />
-              React
-            </div>
-            <div className="flex items-center mb-4 tech-item">
-              <img src={`${process.env.PUBLIC_URL}/iconos/html5.svg`} alt="HTML5" className="w-6 h-6 mr-2" />
-              HTML5
-            </div>
-            <div className="flex items-center mb-4 tech-item">
-              <img src={`${process.env.PUBLIC_URL}/iconos/css.svg`} alt="CSS3" className="w-6 h-6 mr-2" />
-              CSS3
-            </div>
-            <div className="flex items-center mb-4 tech-item">
-              <img src={`${process.env.PUBLIC_URL}/iconos/tailwindcss.svg`} alt="TailwindCSS" className="w-6 h-6 mr-2" />
-              TailwindCSS
-            </div>
-            <div className="flex items-center mb-4 tech-item">
-              <img src={`${process.env.PUBLIC_URL}/iconos/Bootstrap(2).svg`} alt="Bootstrap" className="w-6 h-6 mr-2" />
-              Bootstrap
-            </div>
-            <div className="flex items-center tech-item">
-              <img src={`${process.env.PUBLIC_URL}/iconos/javascript-1.svg`} alt="JavaScript" className="w-6 h-6 mr-2" />
-              JavaScript
-            </div>
+          <div className="grid grid-cols-2 gap-4 tech-items sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+            {['html5', 'css', 'javascript-1', 'react', 'Bootstrap(2)', 'sass', 'tailwindcss'].map((icon, index) => (
+              <div key={index} className="flex items-center mb-4 tech-item">
+                <img src={`${process.env.PUBLIC_URL}/iconos/${icon}.svg`} alt={icon} className="w-8 h-8 sm:w-6 sm:h-6 mr-2" />
+                <span className="text-sm md:text-base">{icon.charAt(0).toUpperCase() + icon.slice(1)}</span>
+              </div>
+            ))}
           </div>
         </section>
 
+        {/* Contenido de Back-end */}
         <section id="content2" className={`tab-content ${activeTab === 'tab2' ? 'show' : ''} fixed-height`}>
-          <div className="columns-2 tech-items">
-            <div className="flex items-center mb-4 tech-item">
-              <img src={`${process.env.PUBLIC_URL}/iconos/django-community.svg`} alt="Django" className="w-6 h-6 mr-2" />
-              Django
-            </div>
-            <div className="flex items-center mb-4 tech-item">
-              <img src={`${process.env.PUBLIC_URL}/iconos/python(1).svg`} alt="Python" className="w-6 h-6 mr-2" />
-              Python
-            </div>
-            <div className="flex items-center mb-4 tech-item">
-              <img src={`${process.env.PUBLIC_URL}/iconos/php.svg`} alt="PHP" className="w-6 h-6 mr-2" />
-              PHP
-            </div>
-            <div className="flex items-center mb-4 tech-item">
-              <img src={`${process.env.PUBLIC_URL}/iconos/PostgresSQL.svg`} alt="PostgreSQL" className="w-6 h-6 mr-2" />
-              PostgreSQL
-            </div>
-            <div className="flex items-center tech-item">
-              <img src={`${process.env.PUBLIC_URL}/iconos/mongodb-icon-2.svg`} alt="MongoDB" className="w-6 h-6 mr-2" />
-              MongoDB
-            </div>
+          <div className="grid grid-cols-2 gap-4 tech-items sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+            {['mongodb-icon-2', 'mysql', 'postgresql', 'php', 'microsoft-sql-server-1'].map((icon, index) => (
+              <div key={index} className="flex items-center mb-4 tech-item">
+                <img src={`${process.env.PUBLIC_URL}/iconos/${icon}.svg`} alt={icon} className="w-8 h-8 sm:w-6 sm:h-6 mr-2" />
+                <span className="text-sm md:text-base">{icon.charAt(0).toUpperCase() + icon.slice(1).replace(/-/g, ' ')}</span>
+              </div>
+            ))}
           </div>
         </section>
 
+        {/* Contenido de Tecnologías */}
         <section id="content3" className={`tab-content ${activeTab === 'tab3' ? 'show' : ''} fixed-height`}>
-          <p>{t('Conocimientos Fullstack')}</p>
-        </section>
-
-        <section id="content4" className={`tab-content ${activeTab === 'tab4' ? 'show' : ''} fixed-height`}>
-          <p>{t('Herramientas')}</p>
-        </section>
-
-        <section id="content5" className={`tab-content ${activeTab === 'tab5' ? 'show' : ''} fixed-height`}>
-          <div>
-            <div className="flex justify-between items-center mb-4 course-item">
-              <span>Curso Fullstack Python</span>
-              <button
-                className="text-blue-600 hover:underline"
-                onClick={() => window.open('https://www.ejemplo.com/certificado-react', "_blank")}
-              >
-                Ver certificado
-              </button>
-            </div>
-            <div className="flex justify-between items-center mb-4 course-item">
-              <span>Taller de Python para Web</span>
-              <button
-                className="text-blue-600 hover:underline"
-                onClick={() => window.open('https://www.ejemplo.com/certificado-python', "_blank")}
-              >
-                Ver certificado
-              </button>
-            </div>
+          <div className="grid grid-cols-2 gap-4 tech-items sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+            {[
+              'Anaconda',
+              'aws',
+              'docker',
+              'vscode',
+              'cloudflare',
+              'DBeaver',
+              'digitalocean',
+              'eclipse',
+              'figma',
+              'FileZilla'
+            ].map((icon, index) => (
+              <div key={index} className="flex items-center mb-4 tech-item">
+                <img src={`${process.env.PUBLIC_URL}/iconos/${icon}.svg`} alt={icon} className="w-8 h-8 sm:w-6 sm:h-6 mr-2" />
+                <span className="text-sm md:text-base">{icon.charAt(0).toUpperCase() + icon.slice(1)}</span>
+              </div>
+            ))}
           </div>
+        </section>
+
+        {/* Contenido de Educación */}
+        <section id="content4" className={`tab-content ${activeTab === 'tab4' ? 'show' : ''} fixed-height w-full`}>
+          {/* Tabla de educación */}
+          <div className="overflow-x-auto">
+            <table className="w-full text-gray-800 dark:text-[#fdc] text-left rounded-sm">
+              <thead>
+                <tr className="bg-gray-900 text-[#ffa11c]">
+                  <th className="p-4 font-medium">Título</th>
+                  <th className="p-4 font-medium">Institución</th>
+                  <th className="p-4 font-medium hidden md:table-cell">Estado</th>
+                  <th className="p-4 font-medium hidden md:table-cell">Duración</th>
+                  <th className="p-4 font-medium">Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-gray-700">
+                  <td className="p-4">Ingeniería en Computación e Informática</td>
+                  <td className="p-4">Duoc UC</td>
+                  <td className="p-4 hidden md:table-cell">Titulado</td>
+                  <td className="p-4 hidden md:table-cell">4,5 años</td>
+                  <td className="p-4">
+                    <div className="flex justify-center">
+                      <a
+                        href="#"
+                        className="inline-block w-32 text-center bg-[#ffa11c] text-gray-800 font-medium py-2 px-4 rounded transition duration-300 ease-in-out hover:bg-[#fdc] hover:text-gray-900"
+                      >
+                        Ver
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+                <tr className="border-b border-gray-700">
+                  <td className="p-4">Fullstack Developer Python</td>
+                  <td className="p-4">Desafío Latam</td>
+                  <td className="p-4 hidden md:table-cell">Egresado (Certificado)</td>
+                  <td className="p-4 hidden md:table-cell">7 Meses</td>
+                  <td className="p-4">
+                    <div className="flex justify-center">
+                      <a
+                        href="#"
+                        className="inline-block w-32 text-center bg-[#ffa11c] text-gray-800 font-medium py-2 px-4 rounded transition duration-300 ease-in-out hover:bg-[#fdc] hover:text-gray-900"
+                      >
+                        Ver
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td className="p-4">Bases de Datos en la Nube con Azure</td>
+                  <td className="p-4">Código Facilito</td>
+                  <td className="p-4 hidden md:table-cell">En Proceso</td>
+                  <td className="p-4 hidden md:table-cell">3 Meses</td>
+                  <td className="p-4">
+                    <div className="flex justify-center">
+                      <a
+                        href="https://codigofacilito.com/bootcamps/"
+                        className="inline-block w-32 text-center bg-[#ffa11c] text-gray-800 font-medium py-2 px-4 rounded transition duration-300 ease-in-out hover:bg-[#fdc] hover:text-gray-900"
+                      >
+                        Ir al curso
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        {/* Contenido de Otros */}
+        <section id="content5" className={`tab-content ${activeTab === 'tab5' ? 'show' : ''} fixed-height`}>
+          {/* Otros contenidos aquí */}
         </section>
       </div>
 
+      {/* Icon Slider */}
       <div className="fade-effect show" style={{ zIndex: 3, position: 'relative' }}>
         <Slider
           pauseOnHover={false} // El slider no se detendrá al pasar el mouse sobre él.
@@ -201,7 +217,6 @@ const KnowledgeSection = () => {
 
         </Slider>
       </div>
-
     </SectionWrapper>
   );
 };

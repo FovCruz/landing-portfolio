@@ -10,7 +10,7 @@
         "greeting": "Hola!",
         "iAm": "soy",
         "name": "Fabián Cruz V.",
-        "description": "+3 años de experiencia en TI para área de operaciones, coordinación y desarrollo de tipo front-end. Últimamente certificado como Full Stack Python por Desafío Latam. Experiencia en desarrollo de software desde landings simples hasta aplicaciones web con interfaces dinámicas utilizando distintos frameworks y servicios en la nube.",
+        "description": "+3 años de experiencia en TI para área de operaciones, coordinación y desarrollo de tipo front-end. Últimamente certificado como Full Stack Python. Experiencia en desarrollo de software desde landings pages hasta aplicaciones web con interfaces dinámicas utilizando distintos frameworks y servicios en la nube.",
         "photoAlt": "Foto de Fabián Valencia",
         "viewCV": "Ver CV",
         "downloadCV": "Descargar CV"
@@ -48,7 +48,7 @@
         "ineTitle": "Gestor TI Regional INE (Proyecto Censo 2024)",
         "ineCompany": "INE - Instituto Nacional de Estadísticas, Valparaíso",
         "ineDates": "Enero 2024 - Agosto 2024",
-        "ineDescription": "Encargado de gestionar los accesos, permisos, incidentes y solicitudes de usuarios en los distintos locales provinciales, utilizando plataformas de Helpdesk para la generación de requerimientos, cumpliendo los acuerdos SLA establecidos por la institución bajo las prácticas ITIL, asegurando la gestión de los servicios TI mediante registros, implementación, análisis y documentación.",
+        "ineDescription": "Encargado de gestionar accesos, permisos, incidentes y solicitudes de usuarios en  distintos locales de la provincia, utilizando plataformas internas para la gestión de requerimientos cumpliendo los acuerdos SLA establecidos por la institución bajo prácticas ITIL, asegurando la gestión de los servicios IT mediante registros, implementación, análisis y documentación.",
         "tallerTitle": "Prestador de Servicios Desarrollador Jr.",
         "tallerCompany": "Taller Digital, Providencia, Santiago",
         "tallerDates": "Agosto 2022 - Febrero 2024",

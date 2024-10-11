@@ -1,6 +1,6 @@
 /* Estilos generales de la sección */
 .section-description {
-  min-height: 80px; /* Para que no cambie si el texto varía */
+  min-height: 65px; /* Para que no cambie si el texto varía */
 }
 
 /* Efecto de desvanecimiento (fade) */
@@ -70,7 +70,7 @@
 /* ELEMENTOS TABS */
 .tab_container {
   position: relative;
-  padding-bottom: 100px; /* Espacio para el slider */
+  padding-bottom: 15px; /* Espacio para el slider */
 }
 /* Solo afecta los inputs y secciones dentro de tab_container */
 .tab_container input[type="radio"],
@@ -83,24 +83,22 @@
 .tab_container label {
   font-weight: 300;
   font-size: 15px;
-  /* display: block; */
   float: left;
   width: 20%;
   padding: 1.5em;
-  /* color: #757575; */
   cursor: pointer;
   text-align: center;
-  background: #f1d1c2;
   transition: background 0.3s, color 0.3s;
 }
 
 .tab_container label:hover {
-  background: #e0e0e0;
+  background: #ffa11c;
+  font-weight:500;
 }
 
 .tab_container [id^="tab"]:checked + label {
-  background: #1b2c4240;
-  box-shadow: inset 0 3px #ffa11c;
+  background:transparent;
+  box-shadow: inset 0 3px rgb(254, 220, 203);
 }
 
 .tab_container [id^="tab"]:checked + label .fa {
@@ -119,11 +117,11 @@ label .fa {
   }
 }
 .tab_container .tab-content {
-  padding: 20px;
-  background: #ffffff00;
+  padding: 20px 1px;
+  /* background: #ffffff00;
   color: rgb(31, 41, 55);
   border: 1px solid #1b2c42;
-  background: #1b2c4240;
+  background: #1b2c4240; */
     /* border-bottom: 1px solid rgba(31, 41, 55, 0.295); */
   display: none;
 }
@@ -154,7 +152,7 @@ label .fa {
 
 .fixed-height {
   padding: auto;
-  height: 180px; /* Ajusta esta altura */
+  height: 310px; /* Ajusta esta altura */
   overflow: auto; /* Permite el desplazamiento si el contenido es mayor al contenedor */
 }
 
