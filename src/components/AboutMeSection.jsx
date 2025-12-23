@@ -2,6 +2,7 @@ import React from 'react';
 import { FaReact, FaPython, FaAws, FaDatabase } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import SectionWrapper from './SectionWrapper'; // Usamos el wrapper para la estructura común
+import imgPersonal from '../assets/img_personal.png';
 
 const AboutMeSection = () => {
   const { t } = useTranslation(); // Hook para la traducción
@@ -9,12 +10,12 @@ const AboutMeSection = () => {
   return (
     <SectionWrapper id="sobremi" title={t('aboutMe.title')}>
       <div className="about-container flex flex-col lg:flex-row items-center justify-between mt-8 lg:mt-12">
-        
+
         {/* Imagen personal con efecto de halo */}
         <div className="about-image-container w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 overflow-hidden rounded-full border-4 border-transparent shadow-lg flex items-center justify-center halo-effect">
           <img
-            src={`${process.env.PUBLIC_URL}/img_personal.png`}
-            alt={t('aboutMe.photoAlt')} // Traducción del alt
+            src={imgPersonal}
+            alt={t('aboutMe.photoAlt')}
             className="w-full h-full object-cover rounded-full"
             loading="lazy"
           />
@@ -25,7 +26,7 @@ const AboutMeSection = () => {
           {t('aboutMe.description1').split('<br/>').map((paragraph, index) => (
             <p key={index} className="mb-4">{paragraph}</p>
           ))}
-          
+
           {/* Íconos de habilidades */}
           <div className="skills-container flex flex-wrap justify-start gap-6 mt-6">
             <SkillIcon Icon={FaReact} label="React" />

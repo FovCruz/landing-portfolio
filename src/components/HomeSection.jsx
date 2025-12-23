@@ -2,6 +2,10 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import CustomButton from './CustomButton';
 import '../styles/globales.css'; // Archivo de estilos globales
+import imgPersonal from '../assets/40509771.jpg';
+//import cvPdf from '../assets/CV-Fabian-Valencia.pdf';
+import cvPdf from '../assets/Currículum-12-2025-act.pdf';
+
 
 const HomeSection = () => {
   const { t } = useTranslation();
@@ -12,15 +16,12 @@ const HomeSection = () => {
       className="section pt-28 md:py-12 min-h-screen flex flex-col items-center justify-center text-center relative transition-colors duration-300 px-4"
     >
       <div className="max-w-6xl lg:px-8 sm:py-10 lg:py-16 flex flex-col lg:flex-row items-center space-y-8 lg:space-y-0 lg:space-x-12">
-        <div className="relative h-64 w-64 sm:h-52 sm:w-52 lg:h-80 lg:w-80 xl:h-96 xl:w-96 rounded-full overflow-hidden">
-          <div
-            className="absolute top-0 left-0 h-full w-full border-[10px] border-gray-400 rounded-full"
-            style={{ zIndex: -1 }}
-          ></div>
+        <div className="about-image-container w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 overflow-hidden rounded-full border-4 border-transparent shadow-lg flex items-center justify-center halo-effect">
           <img
-            src={`${process.env.PUBLIC_URL}/img_personal.png`}
-            alt={t('home.photoAlt')}
-            className="h-full w-full rounded-full object-cover relative"
+            src={imgPersonal}
+            alt={t('aboutMe.photoAlt')}
+            className="w-full h-full object-cover rounded-full"
+            loading="lazy"
           />
         </div>
 
@@ -37,9 +38,10 @@ const HomeSection = () => {
           </p>
           <div className="flex flex-wrap justify-center lg:justify-start gap-4">
             <CustomButton
-              link={`${process.env.PUBLIC_URL}/CV-Fabian-Valencia-C-09-2024-mod09-3.pdf`}
+              target="_blank"
+              link={cvPdf}
               ariaLabel={t('home.downloadCV')}
-              isSectionButton={true}
+              isSectionButton
             >
               {t('home.downloadCV')}
             </CustomButton>

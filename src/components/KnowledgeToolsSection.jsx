@@ -123,15 +123,15 @@ const KnowledgeSection = () => {
                   </td>
                 </tr>
                 <tr className="border-b border-gray-700">
-                  <td className="p-4">Fullstack Developer Python</td>
+                  <td className="p-4">Full Stack Python Developer (Especialidad)</td>
                   <td className="p-4">Desafío Latam</td>
-                  <td className="p-4 hidden md:table-cell">Egresado (Certificado)</td>
+                  <td className="p-4 hidden md:table-cell">Certificado</td>
                   <td className="p-4 hidden md:table-cell">7 Meses</td>
                   <td className="p-4">
                     <div className="flex justify-center">
                       <a
-                        href="#"
-                        className="inline-block w-32 text-center bg-[#ffa11c] text-gray-800 font-medium py-2 px-4 rounded transition duration-300 ease-in-out hover:bg-[#fdc] hover:text-gray-900"
+                        href="https://www.acreditta.com/credential/57c58860-fd18-46b3-ad55-846a9d29057a?utm_source=copy&resource_type=badge&resource=57c58860-fd18-46b3-ad55-846a9d29057a"
+                        target="_blank" className="inline-block w-32 text-center bg-[#ffa11c] text-gray-800 font-medium py-2 px-4 rounded transition duration-300 ease-in-out hover:bg-[#fdc] hover:text-gray-900"
                       >
                         Ver
                       </a>
@@ -139,17 +139,33 @@ const KnowledgeSection = () => {
                   </td>
                 </tr>
                 <tr>
-                  <td className="p-4">Bases de Datos en la Nube con Azure</td>
-                  <td className="p-4">Código Facilito</td>
-                  <td className="p-4 hidden md:table-cell">En Proceso</td>
-                  <td className="p-4 hidden md:table-cell">3 Meses</td>
+                  <td className="p-4">Arquitectura Cloud (Especialidad)</td>
+                  <td className="p-4">Desafío Latam</td>
+                  <td className="p-4 hidden md:table-cell">Certificado</td>
+                  <td className="p-4 hidden md:table-cell">7 Meses</td>
                   <td className="p-4">
                     <div className="flex justify-center">
                       <a
-                        href="https://codigofacilito.com/bootcamps/"
-                        className="inline-block w-32 text-center bg-[#ffa11c] text-gray-800 font-medium py-2 px-4 rounded transition duration-300 ease-in-out hover:bg-[#fdc] hover:text-gray-900"
+                        href="https://www.acreditta.com/credential/4d9bf17b-9f7b-42e9-9b7d-dea9ce54d98b?utm_source=copy&resource_type=badge&resource=4d9bf17b-9f7b-42e9-9b7d-dea9ce54d98b"
+                        target="_blank" className=" inline-block w-32 text-center bg-[#ffa11c] text-gray-800 font-medium py-2 px-4 rounded transition duration-300 ease-in-out hover:bg-[#fdc] hover:text-gray-900"
                       >
-                        Ir al curso
+                        Ver
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td className="p-4">Capacitación certificada en metodologías Ágiles</td>
+                  <td className="p-4">Oracle-Alura Latam</td>
+                  <td className="p-4 hidden md:table-cell">Certificado</td>
+                  <td className="p-4 hidden md:table-cell">2 Meses</td>
+                  <td className="p-4">
+                    <div className="flex justify-center">
+                      <a
+                        href="https://app.aluracursos.com/degree/certificate/674eeb31-7b47-494f-96ce-662b11ebbeda"
+                        target="_blank" className=" inline-block w-32 text-center bg-[#ffa11c] text-gray-800 font-medium py-2 px-4 rounded transition duration-300 ease-in-out hover:bg-[#fdc] hover:text-gray-900"
+                      >
+                        Ver
                       </a>
                     </div>
                   </td>
