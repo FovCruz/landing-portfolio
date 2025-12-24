@@ -117,7 +117,7 @@ const KnowledgeSection = () => {
                         href="#"
                         className="inline-block w-32 text-center bg-[#ffa11c] text-gray-800 font-medium py-2 px-4 rounded transition duration-300 ease-in-out hover:bg-[#fdc] hover:text-gray-900"
                       >
-                        Ver
+                        Solicitar
                       </a>
                     </div>
                   </td>
