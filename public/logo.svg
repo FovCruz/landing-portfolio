@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" class="logo-personalizado">
+  <style>
+    .logo-title, .logo-slogan {
+      font-family: 'Great Vibes', cursive;
+      fill: #ffddcc; /* Color por defecto */
+    }
+    .logo-title {
+      font-size: 2rem;
+      font-weight: 400;
+    }
+    .logo-slogan {
+      font-size: 1rem;
+    }
+  </style>
+  <text x="50%" y="40%" dominant-baseline="middle" text-anchor="middle" class="logo-title">Fabián Cruz</text>
+  <text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" class="logo-slogan">Ing. Informático | Fullstack dev</text>
+</svg>
+

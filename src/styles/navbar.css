@@ -1,0 +1,21 @@
+/* Estilos para los enlaces del Navbar */
+.nav-link {
+    position: relative;
+    padding-bottom: 0.2rem;
+    transition: all 0.3s ease-in-out;
+}
+/* Efecto de hover para los enlaces del navbar */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease-in-out;
+}
+/* Hover para mostrar línea de fondo debajo del enlace */
+.nav-link:hover::after {
+    width: 100%;
+    background-color: #ffddcc;
+}

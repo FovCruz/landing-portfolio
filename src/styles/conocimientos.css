@@ -1,0 +1,170 @@
+/* Estilos generales de la sección */
+.section-description {
+  min-height: 65px; /* Para que no cambie si el texto varía */
+}
+
+/* Efecto de desvanecimiento (fade) */
+/* .fade-effect {
+  position: relative;
+  height: 5rem;
+  z-index: 3;
+} */
+
+/* Gradiente común */
+.fade-effect::before,
+.fade-effect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width:20%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Gradiente para el extremo izquierdo */
+.fade-effect::before {
+  left: 0;
+  background: linear-gradient(to right, var(--fade-left-color, rgba(255, 255, 255)), rgba(226, 232, 240, 0));
+}
+
+/* Gradiente para el extremo derecho */
+.fade-effect::after {
+  right: 0;
+  /*background: linear-gradient(to left, var(--fade-right-color, rgba(255, 255, 255)), rgba(226, 232, 240, 0));*/
+  background: linear-gradient(to left, rgb(16, 17, 26), rgba(226, 232, 240, 0));
+}
+
+/* Tema oscuro */
+.dark .fade-effect::before {
+  --fade-left-color: rgb(26, 42, 63); /* Gradiente izquierdo para oscuro */
+}
+
+.dark .fade-effect::after {
+  --fade-right-color: rgb(26, 42, 63); /* Gradiente derecho para oscuro */
+}
+
+
+
+/* Slider de iconos */
+.fade-effect.show {
+  opacity: 1;
+  height:65px; /* Ajuste del espacio del slider */
+}
+
+/* .fade-effect img {
+  max-width: 100%;
+  max-height: 100%;
+} */
+
+/* @media (max-width: 768px) {
+  .w-16 {
+    width: 50px;
+  }
+
+  .h-16 {
+    height: 50px;
+  }
+} */
+
+
+/* ELEMENTOS TABS */
+.tab_container {
+  position: relative;
+  padding-bottom: 15px; /* Espacio para el slider */
+}
+/* Solo afecta los inputs y secciones dentro de tab_container */
+.tab_container input[type="radio"],
+.tab_container section {
+  display: none;
+}
+
+
+/* Solo afecta los labels dentro de tab_container */
+.tab_container label {
+  font-weight: 300;
+  font-size: 15px;
+  float: left;
+  width: 20%;
+  padding: 1.5em;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.3s, color 0.3s;
+}
+
+.tab_container label:hover {
+  background: #ffa11c;
+  font-weight:500;
+}
+
+.tab_container [id^="tab"]:checked + label {
+  background:transparent;
+  box-shadow: inset 0 3px rgb(254, 220, 203);
+}
+
+.tab_container [id^="tab"]:checked + label .fa {
+  color: rgba(255, 236, 205, 0.845);
+}
+/* 
+label .fa {
+  font-size: 1.3em;
+  margin-right: 0.4em;
+} */
+
+@media only screen and (max-width: 900px) {
+  .tab_container {
+    width: 98%;
+    margin: 20px 0;
+  }
+}
+.tab_container .tab-content {
+  padding: 20px 1px;
+  /* background: #ffffff00;
+  color: rgb(31, 41, 55);
+  border: 1px solid #1b2c42;
+  background: #1b2c4240; */
+    /* border-bottom: 1px solid rgba(31, 41, 55, 0.295); */
+  display: none;
+}
+
+#content4{
+  padding: 0 ;
+}
+
+.dark .tab-content {
+  color: #f8d7c7;
+}
+
+.tab_container .tab-content.show {
+  display: block;
+}
+
+.tab_container .tab-content p,
+.tab_container .tab-content h3 {
+  animation: fadeInScale 0.7s ease-in-out;
+}
+
+@keyframes fadeInScale {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.fixed-height {
+  padding: auto;
+  height: 310px; /* Ajusta esta altura */
+  overflow: auto; /* Permite el desplazamiento si el contenido es mayor al contenedor */
+}
+
+/* Slider de iconos */
+.slider-icon {
+  width: 55px; /* Tamaño reducido de los íconos */
+  height: 55px; /* Tamaño reducido de los íconos */
+  margin: 0 10px; /* Espacio entre los íconos */
+  transition: transform 0.3s ease; /* Suaviza la animación al pasar el mouse */
+}
