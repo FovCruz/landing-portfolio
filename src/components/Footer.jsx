@@ -12,7 +12,7 @@ const Footer = () => {
           Hecho con <span className="text-red-500">♥</span> en React + Tailwind CSS
         </p>
         <p className="text-gray-300 dark:text-gray-300 font-medium">
-          © 2024 Fabián Valencia C. | <span id="busuanzi_value_site_pv"></span>
+          ©2024 Fabián Valencia C. | <span id="busuanzi_value_site_pv">()</span>
         </p>
       </div>
     </footer>

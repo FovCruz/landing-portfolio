@@ -80,10 +80,10 @@ const Navbar = ({ toggleTheme, changeFontSize, changeLanguage }) => {
           <div className="hidden lg:flex items-center space-x-4">
             <button onClick={changeFontSize} className="text-[#ffddcc] hover:text-white text-2xl"><MdTextFields/></button>
 
-            {/* Botón idioma corregido */}
+            {/* Botón de idioma */}
             <button onClick={toggleLanguageHandler} className="text-[#ffddcc] hover:text-white">
               <img
-                src={`${import.meta.env.BASE_URL}iconos/${language === 'es' ? 'flag_es.svg' : 'flag_uk.svg'}`}
+                src={`${import.meta.env.BASE_URL}iconos/${language === 'es' ? 'flag_uk.svg' : 'flag_es.svg'}`}
                 alt={language === 'es' ? 'ES' : 'EN'}
                 className="w-6 h-6"
               />
