@@ -12,13 +12,15 @@ const AboutMeSection = () => {
       <div className="about-container flex flex-col lg:flex-row items-center justify-between mt-8 lg:mt-12">
 
         {/* Imagen personal con efecto de halo */}
-        <div className="about-image-container w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 overflow-hidden rounded-full border-4 border-transparent shadow-lg flex items-center justify-center halo-effect">
-          <img
-            src={imgPersonal}
-            alt={t('aboutMe.photoAlt')}
-            className="w-full h-full object-cover rounded-full"
-            loading="lazy"
-          />
+        <div className="halo-effect rounded-full shadow-lg about-image-container">
+          <div className="w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden flex items-center justify-center halo-inner">
+            <img
+              src={imgPersonal}
+              alt={t('aboutMe.photoAlt')}
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
         </div>
 
         {/* Texto y habilidades */}

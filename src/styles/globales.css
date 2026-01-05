@@ -1,37 +1,27 @@
-/* Importar fuente "Inter" de Tailwind */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-/* TailwindCSS Directives */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Aplicar la fuente y el color global al body */
 body {
   font-family: 'Inter', sans-serif !important;
   margin: 0;
   padding: 0;
-  /* background-image: url('../styles/assets/bg-white.jpg'); */
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
 
-/* Ajustes para tema claro */
-
-
 .light h1, .light h2, .light h3, .light h4, .light h5, .light h6 {
   color: #111827;
 }
 
-/* Estilo para encabezados */
 h1, h2, h3, h4, h5, h6 {
   color: rgb(255, 221, 204);
 }
 
-/* Secciones generales */
 .section {
-  /* padding: 4rem 0; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,16 +33,10 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0 1rem;
 }
 
-/* .section-description {
-  margin: 5rem 0;
-  text-align: center;
-} */
-
 hr {
   border-color: rgb(56, 80, 92);
 }
 
-/* Estilo para el contenedor del proyecto */
 .border-container {
   border: 1px solid #1f2937;
 }
@@ -69,12 +53,10 @@ hr {
   transform: scale(0.95);
 }
 
-/* Estilos de botones */
 button, a {
   transition: all 0.3s ease;
 }
 
-/* Proyecto hover */
 .project-hover:hover {
   box-shadow: 0 8px 24px rgba(31, 41, 55, 0.2);
   transition: 0.2s ease-in-out;
@@ -84,7 +66,6 @@ button, a {
   box-shadow: 0 8px 24px rgba(255, 221, 204, 0.2);
 }
 
-/* Badge de tecnologías */
 .badge {
   padding: 0.25rem 0.5rem;
   border-radius: 9999px;
@@ -98,7 +79,6 @@ button, a {
   color: #ffddcc;
 }
 
-/* Estilos para la línea de tiempo */
 .timeline-container {
   position: absolute;
   left: 7px;
@@ -131,31 +111,59 @@ button, a {
   background-color: #ffddcc;
 }
 
-/* Efecto de buzz para los botones */
 .animate-buzz {
   animation: buzz 0.5s ease infinite;
 }
 
 @keyframes buzz {
-  0%, 100% {
-    transform: translateX(0);
-  }
-  25% {
-    transform: translateX(-2px);
-  }
-  50% {
-    transform: translateX(2px);
-  }
-  75% {
-    transform: translateX(-2px);
-  }
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  50% { transform: translateX(2px); }
+  75% { transform: translateX(-2px); }
 }
 
-/* Sombra y bordes para el hover del proyecto */
-.project-hover:hover {
-  box-shadow: 0 0 10px rgba(31, 41, 55, 0.2);
+/* ===== BORDER ANIMADO: BANDA GRADIENTE MÓVIL ===== */
+
+/* Contenedor externo que contiene el halo animado. Usar padding para definir grosor del borde. */
+.halo-effect {
+  position: relative;
+  display: inline-block;
+  border-radius: 9999px;
+  padding: 6px; /* grosor del borde visible */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
-.dark .project-hover:hover {
-  box-shadow: 0 0 10px rgba(51, 130, 168, 0.22);
+/* Pseudo-elemento con gradiente cónico, animado por rotación. Queda detrás del contenido gracias a z-index. */
+.halo-effect::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: conic-gradient(from 0deg, #cafbfb, #107591, #80e1ff, #42a5c0);
+  filter: blur(40px);
+  z-index: 0;
+  transform: rotate(0deg);
+  animation: halo-rotate 10s linear infinite;
+  opacity: 0.95;
 }
+
+/* Contenedor interior que mantiene la imagen y recorta el gradiente. */
+.halo-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  overflow: hidden;
+}
+
+@keyframes halo-rotate {
+  to { transform: rotate(360deg); }
+}
+
+/* Ajustes opcionales: versión menos intensa para modos claros/oscuro */
+.light .halo-effect::before {
+  background: conic-gradient(from 0deg, #fb9759, #ff884d, #fae299, #f36f0f);
+}
+
