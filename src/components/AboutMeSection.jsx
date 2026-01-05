@@ -13,7 +13,7 @@ const AboutMeSection = () => {
 
         {/* Imagen personal con efecto de halo */}
         <div className="halo-effect rounded-full shadow-lg about-image-container">
-          <div className="w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden flex items-center justify-center halo-inner">
+          <div className="w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden flex items-center justify-center halo-inner border-[1.4px] border-sky-900">
             <img
               src={imgPersonal}
               alt={t('aboutMe.photoAlt')}
