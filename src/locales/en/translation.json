@@ -2,7 +2,7 @@
     "aboutMe": {
         "title": "About Me",
         "photoAlt": "Photo of Fabián Valencia Cruz",
-        "description1": "I am a Software Engineer from Duoc UC, specialized in developing scalable and modern web solutions.<br/><br/>I have experience in both frontend and backend, working with full stack architectures using Python and Django. I have created dynamic interfaces with frameworks like React and NodeJS, and worked with databases such as PostgreSQL, as well as cloud orchestration and deployment management with AWS and Linode.<br/><br/>I have also integrated technologies like Tailwind and MongoDB to build modern, scalable, and efficient applications. I hold a Full Stack Python Development certification, which has allowed me to deepen my knowledge in frontend development, databases, and advanced Python programming.<br/>",
+        "description1": "I am a Computer and Informatics Engineer, graduated from Duoc UC, with more than 3 years of experience in IT, combining front-end and back-end development, systems administration, and cloud technologies in web projects, institutional platforms, and ERP environments.<br/><br/>I have worked on developing full-stack solutions using Python and Django, creating dynamic and modern interfaces with React, Node.js, and Tailwind CSS, and integrating relational and non-relational databases such as PostgreSQL and MongoDB. Additionally, I have experience in managing and deploying applications to the cloud using AWS and Linode, ensuring secure, scalable, and optimized environments.<br/><br/>I am certified as a Full Stack Python Developer and recently certified in Cloud Architecture on AWS. I am currently deepening my work on integrating artificial intelligence into practical projects, working with flow automation using n8n, RAG architectures with databases, LangChain, and webhooks, exploring the use of AI applied to processes, data, and web applications.",
         "description2": "",
         "and": "and cloud platforms like"
     },
@@ -10,7 +10,7 @@
         "greeting": "Hello!",
         "iAm": "I´m",
         "name": "Fabián Cruz V.",
-        "description": "+3 years of experience in IT for operations, coordination, and front-end development. Recently certified as a Full Stack Python developer. Experience in software development, from landings pages to web applications with dynamic interfaces using various frameworks and cloud services.",
+        "description": "+3 years of experience combining front-end and back-end development, systems administration, and cloud technologies in web projects, institutional platforms, and ERP environments, participating in both technical implementation and IT team management and coordination.<br/><br/>I am a Computer and Informatics Engineer certified in Full Stack Python and recently certified in Cloud Architecture on AWS. I am currently deepening my knowledge of AI solutions in practical projects using n8n for flow automation, RAG architectures with databases, LangChain, and webhooks, exploring the incorporation of AI applied to processes, data, and web applications.",
         "photoAlt": "Photo of Fabián Valencia",
         "viewCV": "View CV",
         "downloadCV": "Download CV"
@@ -70,8 +70,45 @@
     },
     "knowledge": {
         "title": "Skills",
-        "description": "Languages, tools, and technologies that I use with varying frequency across work, personal, and educational projects. Currently, I am focused on continuous learning in"
+        "description": "Languages, tools, and technologies that I use with varying frequency across work, personal, and educational projects. Currently, I am focused on continuous learning in",
+        "tabs": {
+            "frontend": "Front-end",
+            "backend": "Back-end",
+            "technologies": "Technologies",
+            "education": "Education",
+            "certifications": "Certifications"
+        },
+        "certifications": {
+            "viewCertificate": "View certificate",
+            "items": {
+                "fsPython": {
+                    "shortName": "Full Stack Python Developer",
+                    "description": "Program aimed at developing the skills necessary to build and maintain software components in Python and Python-based frameworks, create full-stack Python web applications, and operate a database to store.",
+                    "institution": "Desafío Latam",
+                    "duration": "462 HOURS",
+                    "link": "https://www.acreditta.com/credential/57c58860-fd18-46b3-ad55-846a9d29057a?utm_source=copy&resource_type=badge&resource=57c58860-fd18-46b3-ad55-846a9d29057a",
+                    "image": "cert_python.webp"
+                },
+                "cloudArch": {
+                    "shortName": "Cloud Architecture",
+                    "description": "Certification focused on AWS cloud architectures, covering design and best practices for deploying secure and scalable applications in the cloud.",
+                    "institution": "Desafío Latam",
+                    "duration": "7 months",
+                    "link": "https://www.acreditta.com/credential/4d9bf17b-9f7b-42e9-9b7d-dea9ce54d98b?utm_source=copy&resource_type=badge&resource=4d9bf17b-9f7b-42e9-9b7d-dea9ce54d98b",
+                    "image": "cert_arq_cloud.webp"
+                },
+                "agile": {
+                    "shortName": "Agile Methodologies",
+                    "description": "Introductory course on agile methodologies (Scrum and Kanban), covering roles, ceremonies and best practices for iterative project management.",
+                    "institution": "Oracle-Alura Latam",
+                    "duration": "2 months",
+                    "link": "https://app.aluracursos.com/degree/certificate/674eeb31-7b47-494f-96ce-662b11ebbeda",
+                    "image": "new-logo-corner-cut.png"
+                }
+            }
+        }
     },
+
     "contact": {
         "title": "Contact Me",
         "description": "Feel free to get in touch, whether you have a question, comment, or collaboration proposal, I'd love to hear what it's about!",

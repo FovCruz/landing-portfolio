@@ -18,6 +18,8 @@
     "react-fast-marquee": "^1.6.5",
     "react-i18next": "^16.5.0",
     "react-icons": "^5.5.0",
+    "react-slick": "^0.31.0",
+    "slick-carousel": "^1.8.1",
     "sweetalert2": "^11.26.17",
     "sweetalert2-react-content": "^5.1.1"
   },

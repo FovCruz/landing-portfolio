@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import CustomButton from './CustomButton';
 import '../styles/globales.css';
-import imgPersonal from '../assets/40509771.jpg';
+import imgPersonal from '../assets/img_personal.jpg';
 
 const HomeSection = () => {
   const { t } = useTranslation();
@@ -38,9 +38,7 @@ const HomeSection = () => {
 
           <hr className="border-1 my-2 w-full lg:w-auto border-gray-900 dark:border-secondary" />
 
-          <p className="text-center text-justify text-gray-700 dark:text-gray-300 mb-4">
-            {t('home.description')}
-          </p>
+          <p className="text-center text-justify text-gray-700 dark:text-gray-300 mb-4" dangerouslySetInnerHTML={{ __html: t('home.description') }}></p>
 
           <div className="flex flex-wrap justify-center lg:justify-start gap-4">
             <CustomButton

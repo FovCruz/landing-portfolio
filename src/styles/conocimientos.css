@@ -168,3 +168,144 @@ label .fa {
   margin: 0 10px; /* Espacio entre los íconos */
   transition: transform 0.3s ease; /* Suaviza la animación al pasar el mouse */
 }
+
+/* Styles for Slick certification slides */
+:root {
+  /* Larger, responsive heights so every slide matches and adapts to viewport height */
+  --cert-height-desktop: clamp(420px, 45vh, 760px);
+  --cert-height-mobile: clamp(360px, 50vh, 520px);
+  /* Avatar sizes scale with the card height but are capped to reasonable values */
+  --cert-avatar-size-desktop: min(260px, calc(var(--cert-height-desktop) * 0.56));
+  --cert-avatar-size-mobile: min(170px, calc(var(--cert-height-mobile) * 0.55));
+}
+
+/* Make every slide the same height (responsive) */
+.cert-slide { display: flex; align-items: center; padding: 0; height: var(--cert-height-desktop); }
+.cert-slide .card { width: 100%; max-width: 100%; background: transparent; box-shadow: none; border-radius: 8px; display: flex; align-items: stretch; height: 100%; padding: 1rem; box-sizing: border-box; }
+
+/* Ensure the text area spans full card height and pushes actions to the bottom */
+.cert-slide .card .w-2\/3, .cert-slide .card .w-full { display: flex; flex-direction: column; justify-content: space-between; height: 100%; }
+.cert-slide .card .meta-and-action { margin-top: auto; align-items: center; }
+
+@media (max-width: 640px) {
+  .cert-slide, .cert-slide .card { height: var(--cert-height-mobile); }
+}
+
+
+/* Ensure the card's inner content sits closer together */
+.card .info > div:first-child p { margin-top: 0.25rem; }
+.meta-and-action { margin-top: 0.25rem; }
+.card { background: transparent !important; }
+
+/* Compact text spacing inside card */
+.card h3 { margin-bottom: 0.25rem; }
+.card p { margin-top: 0.25rem; }
+
+/* Remove scroll for certifications tab and let card size determine section height */
+#content2.fixed-height { height: auto; overflow: visible; padding: 0.75rem 0; }
+
+/* Nav buttons (vertical full-height) */
+.cert-nav-button { width: 48px; display: flex; align-items: center; justify-content: center; }
+.cert-nav-button.left { left: 0; }
+.cert-nav-button.right { right: 0; }
+
+/* Slider inner padding so slides don't go under nav buttons */
+.slider-inner { padding-left: 56px; padding-right: 56px; }
+
+/* Hide side nav buttons on tablet and mobile to avoid overlapping the slide content; keep them on desktop */
+@media (max-width: 1024px) {
+  .cert-nav-button { display: none !important; }
+  /* Reduce lateral padding when buttons are hidden so slides span more of the viewport */
+  .slider-inner { padding-left: 8px; padding-right: 8px; }
+}
+
+@media (max-width: 767px) {
+  .slider-inner { padding-left: 8px; padding-right: 8px; }
+  .cert-nav-button { width: 40px; }
+}
+
+/* Force consistent image area width on larger screens */
+.cert-slide .card .w-1\/3 { min-width: 33%; max-width: 33%; }
+
+/* Make all slides equal height and keep circular avatar rules (use size vars defined above) */
+.cert-slide .card {
+  overflow: hidden;
+}
+
+/* Image container: fixed square that becomes circular via img border-radius */
+.cert-slide .card > div:first-child {
+  flex: 0 0 auto;
+  width: var(--cert-avatar-size-desktop);
+  height: var(--cert-avatar-size-desktop);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+
+/* Circular image */
+.cert-slide .card > div:first-child img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  background-color: rgba(0,0,0,0.04);
+}
+
+/* If image missing, keep the circular area visible */
+.cert-slide .card > div:first-child:empty {
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 50%;
+}
+
+/* Responsive sizes - mobile */
+@media (max-width: 640px) {
+  .cert-slide,
+  .cert-slide .card { height: var(--cert-height-mobile); }
+  .cert-slide .card > div:first-child {
+    width: var(--cert-avatar-size-mobile);
+    height: var(--cert-avatar-size-mobile);
+  }
+  /* On small screens keep image above text and centered */
+  .cert-slide .card { flex-direction: column; gap: 0.5rem; padding: 0.5rem; }
+  .cert-slide .card > div:first-child { margin: 0 auto; }
+
+  /* Slightly reduce description lines to keep layout compact */
+  .cert-slide .card .info > div:first-child p { -webkit-line-clamp: 3; line-clamp: 3; }
+
+  /* Make sure slider inner padding is small on phones */
+  .slider-inner { padding-left: 8px; padding-right: 8px; }
+}
+
+/* Ensure slick dots are visible on dark backgrounds */
+.slick-dots li button:before { color: #fff; opacity: 0.9; font-size: 12px; }
+.slick-dots li.slick-active button:before { opacity: 1; }
+
+/* Small visual polish */
+.cert-slide img { max-width: 100%; height: auto; }
+.slick-slide { outline: none; }
+
+/* Compact and align card description/meta */
+.card .info > div:first-child p {
+  margin-top: 0.15rem;
+  margin-bottom: 0;
+  line-height: 1.15;
+}
+.card .info h3 {
+  margin-bottom: 0.125rem;
+}
+.card .meta-and-action { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }
+.card .meta-left p { margin: 0; }
+.card .action-btn a { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+
+/* Clamp description to keep uniform height and symmetric look */
+.card .info > div:first-child p {
+  display: -webkit-box;
+  line-clamp: 4; /* show up to 4 lines (standard) */
+  -webkit-line-clamp: 4; /* show up to 4 lines (webkit) */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+

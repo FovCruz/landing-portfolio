@@ -2,7 +2,7 @@
     "aboutMe": {
         "title": "Sobre mí",
         "photoAlt": "Foto de Fabián Valencia Cruz",
-        "description1": "Soy Ingeniero Informático titulado de Duoc UC, especializado en el desarrollo de soluciones web escalables y modernas.<br/><br/>Tengo experiencia tanto en frontend como en backend, trabajando con arquitecturas full stack utilizando Python y Django. He creado interfaces dinámicas con frameworks como React y NodeJS, y he trabajado con bases de datos como PostgreSQL, así como en la gestión y orquestación de despliegues en la nube con AWS y Linode.<br/><br/>También he integrado tecnologías como Tailwind y MongoDB para construir aplicaciones modernas, escalables y eficientes. Cuento con una certificación en Desarrollo Full Stack Python, que me ha permitido profundizar en desarrollo frontend, bases de datos y programación avanzada en Python.<br/>",
+        "description1": "Ingeniero en Computación e Informática, titulado de Duoc UC, con más de 3 años de experiencia en TI, combinando desarrollo front-end, back-end, administración de sistemas y tecnologías cloud en proyectos web, plataformas institucionales y entornos ERP.<br/><br/>He trabajado en el desarrollo de soluciones full stack utilizando Python y Django, creando interfaces dinámicas y modernas con React, Node.js y Tailwind CSS, e integrando bases de datos relacionales y no relacionales como PostgreSQL y MongoDB. Además, cuento con experiencia en la gestión y despliegue de aplicaciones en la nube, utilizando AWS y Linode, asegurando entornos seguros, escalables y optimizados.<br/><br/>Estoy certificado como Full Stack Python Developer y recientemente certificado en Arquitectura Cloud sobre AWS. Actualmente me encuentro profundizando en la integración de inteligencia artificial en proyectos prácticos, trabajando con automatización de flujos mediante n8n, arquitecturas RAG con bases de datos, LangChain y webhooks, explorando el uso de IA aplicada a procesos, datos y aplicaciones web.",
         "description2": "",
         "and": "y plataformas en la nube como"
     },
@@ -10,8 +10,8 @@
         "greeting": "Hola!",
         "iAm": "soy",
         "name": "Fabián Cruz V.",
-        "description": "+3 años de experiencia en TI para área de operaciones, coordinación y desarrollo de tipo front-end. Últimamente certificado como Full Stack Python. Experiencia en desarrollo de software desde landings pages hasta aplicaciones web con interfaces dinámicas utilizando distintos frameworks y servicios en la nube.",
-        "photoAlt": "Foto de Fabián Valencia",
+        "description": "+3 años de experiencia en combinando desarrollo front-end, back-end, administración de sistemas y tecnologías cloud en proyectos web y plataformas institucionales y entornos ERP, participando tanto en la implementación técnica como en la gestión y coordinación de equipos TI.<br/><br/>Ingeniero Informático de profesión certificado en Full Stack Python y recientemente certificado en Arquitectura Cloud sobre AWS, actualmente me encuentro profundizando soluciones de IA en proyectos de practica utilizando n8n para automatización de flujos, arquitecturas RAG con bases de datos, LangChain y webhooks, explorando la incorporación de IA aplicada a procesos, datos y aplicaciones web.<br/><br/>",
+        "photoAlt": "Perfil",
         "viewCV": "Ver CV",
         "downloadCV": "Descargar CV"
     },
@@ -70,8 +70,45 @@
     },
     "knowledge": {
         "title": "Skills",
-        "description": "Lenguajes, herramientas y tecnologías que utilizo con mayor o menor frecuencia en distintos proyectos laborales, personales y educacionales. Actualmente estoy enfocado en el aprendizaje continuo de"
+        "description": "Lenguajes, herramientas y tecnologías que utilizo con mayor o menor frecuencia en distintos proyectos laborales, personales y educacionales. Actualmente estoy enfocado en el aprendizaje continuo de",
+        "tabs": {
+            "frontend": "Front-end",
+            "backend": "Back-end",
+            "technologies": "Tecnologías",
+            "education": "Educación",
+            "certifications": "Certificaciones"
+        },
+        "certifications": {
+            "viewCertificate": "Ver certificado",
+            "items": {
+                "fsPython": {
+                    "shortName": "Full Stack Python Developer",
+                    "description": "Programa orientado a desarrollar las habilidades necesarias para construir y mantener piezas de software en lenguaje Python y frameworks basados en Python, crear aplicaciones web en full stack Python y operar una base de datos para almacenar.",
+                    "institution": "Desafío Latam",
+                    "duration": "462 HORAS",
+                    "link": "https://www.acreditta.com/credential/57c58860-fd18-46b3-ad55-846a9d29057a?utm_source=copy&resource_type=badge&resource=57c58860-fd18-46b3-ad55-846a9d29057a",
+                    "image": "cert_python.webp"
+                },
+                "cloudArch": {
+                    "shortName": "Arquitectura Cloud",
+                    "description": "Certificación orientada a arquitecturas cloud en AWS, cubriendo diseño y buenas prácticas para desplegar aplicaciones seguras y escalables en la nube.",
+                    "institution": "Desafío Latam",
+                    "duration": "7 meses",
+                    "link": "https://www.acreditta.com/credential/4d9bf17b-9f7b-42e9-9b7d-dea9ce54d98b?utm_source=copy&resource_type=badge&resource=4d9bf17b-9f7b-42e9-9b7d-dea9ce54d98b",
+                    "image": "cert_arq_cloud.webp"
+                },
+                "agile": {
+                    "shortName": "Metodologías Ágiles",
+                    "description": "Curso introductorio a metodologías ágiles (Scrum y Kanban), roles, ceremonias y buenas prácticas para gestionar proyectos de forma iterativa.",
+                    "institution": "Oracle-Alura Latam",
+                    "duration": "2 meses",
+                    "link": "https://app.aluracursos.com/degree/certificate/674eeb31-7b47-494f-96ce-662b11ebbeda",
+                    "image": "new-logo-corner-cut.png"
+                }
+            }
+        }
     },
+
     "contact": {
         "title": "Contáctame",
         "description": "¡No dudes en ponerte en contacto, ya sea que tengas alguna pregunta, comentario o propuesta de colaboración, me encantaría leer de qué se trata!",
