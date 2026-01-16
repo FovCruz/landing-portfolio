@@ -44,9 +44,9 @@ const SocialIcons = () => {
             </a>
           </li>
 
-          {/* Ver CV Online */}
+          {/* Ver CV Online (abrir en modal) */}
           <li>
-            <a href="#!" onClick={toggleCVModal} aria-label="Ver CV Online">
+            <a href={`${base}Currículum-12-2025-act.pdf`} onClick={(e) => { e.preventDefault(); toggleCVModal(); }} aria-label="Ver CV Online" role="button">
               <FaEye />
               <span className="tooltip">Ver CV Online</span>
             </a>
@@ -56,16 +56,17 @@ const SocialIcons = () => {
 
       {/* MODAL */}
       {showCV && (
-        <div className="fixed inset-0 bg-opacity-100 flex items-center justify-center z-40" onClick={toggleCVModal}>
-          <div className="relative w-full h-3/4 max-w-4xl bg-white dark:bg-gray-900 p-1 rounded-md shadow-lg">
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-40" onClick={toggleCVModal}>
+          <div className="relative w-full h-3/4 max-w-4xl bg-white dark:bg-gray-900 p-1 rounded-md shadow-lg" onClick={(e) => e.stopPropagation()}>
             <button
               className="absolute top-2 right-2 text-gray-500 hover:text-black"
               onClick={toggleCVModal}
+              aria-label="Cerrar CV"
             >
               X
             </button>
             <iframe
-              src={`${base}CV-Fabian-Valencia-C-09-2024-mod09-3.pdf`}
+              src={`${base}Currículum-12-2025-act.pdf`}
               className="w-full h-full"
               title="CV Online"
             />
